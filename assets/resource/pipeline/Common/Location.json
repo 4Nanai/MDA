@@ -12,7 +12,8 @@
             "[JumpBack]SkipPlot",
             "[JumpBack]CloseSale",
             "[JumpBack]RewardConfirm",
-            "ActiveCheck"
+            "ActiveCheck",
+            "[JumpBack]ClickHall"
         ]
     },
     "EnterArk": {
@@ -398,6 +399,26 @@
             }
         },
         "post_wait_freezes": 20
+    },
+    "ClickHall": {
+        "desc": "点击大厅",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    625,
+                    686,
+                    30,
+                    18
+                ],
+                "expected": [
+                    "大厅"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
     "GoBack": {
         "desc": "返回",
