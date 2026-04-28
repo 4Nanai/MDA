@@ -95,12 +95,12 @@
             "type": "Click"
         },
         "next": [
-            "[JumpBack]ClickRedDot",
+            "[JumpBack]CashShopClickRedDot",
             "[JumpBack]RewardConfirm",
             "EndTask"
         ]
     },
-    "ClickRedDot": {
+    "CashShopClickRedDot": {
         "desc": "点击红点",
         "recognition": {
             "type": "TemplateMatch",
@@ -121,6 +121,6 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000
+        "post_wait_freezes": 200
     }
 }
