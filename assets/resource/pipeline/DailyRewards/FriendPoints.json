@@ -36,7 +36,8 @@
             }
         },
         "next": [
-            "SendAndReceive"
+            "SendAndReceive",
+            "PageClose"
         ]
     },
     "SendAndReceive": {
