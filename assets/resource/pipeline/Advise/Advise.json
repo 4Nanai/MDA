@@ -120,6 +120,7 @@
             "type": "Click"
         },
         "next": [
+            "ChooseNikke",
             "AdviseStart"
         ]
     }
