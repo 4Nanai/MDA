@@ -64,23 +64,6 @@
             "RecruitConfirm"
         ]
     },
-    "FreeRecruitFlag": {
-        "desc": "免费招募的标识",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    752,
-                    668,
-                    60,
-                    17
-                ],
-                "expected": [
-                    ".*免费.*"
-                ]
-            }
-        }
-    },
     "RecruitConfirm": {
         "desc": "招募确认",
         "recognition": {
@@ -101,5 +84,22 @@
             "type": "Click"
         },
         "post_wait_freezes": 1000
+    },
+    "FreeRecruitFlag": {
+        "desc": "免费招募的标识",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    752,
+                    668,
+                    60,
+                    17
+                ],
+                "expected": [
+                    ".*免费.*"
+                ]
+            }
+        }
     }
 }

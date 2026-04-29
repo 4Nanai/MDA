@@ -35,6 +35,27 @@
             "[JumpBack]NextAnomaly"
         ]
     },
+    "AnomalyKraken": {
+        "desc": "克拉肯",
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
+                "expected": [
+                    "克拉肯"
+                ]
+            }
+        },
+        "next": [
+            "InterceptionChallenge"
+        ]
+    },
     "InterceptionChallenge": {
         "desc": "挑战",
         "recognition": {
@@ -56,51 +77,6 @@
         },
         "next": [
             "StartBattle"
-        ]
-    },
-    "NextAnomaly": {
-        "desc": "切换异常个体",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    741,
-                    523,
-                    43,
-                    37
-                ],
-                "template": [
-                    "Interception/NextAnomaly1.png",
-                    "Interception/NextAnomaly2.png",
-                    "Interception/NextAnomaly3.png",
-                    "Interception/NextAnomaly4.png",
-                    "Interception/NextAnomaly5.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "AnomalyKraken": {
-        "desc": "克拉肯",
-        "enabled": false,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    531,
-                    522,
-                    224,
-                    36
-                ],
-                "expected": [
-                    "克拉肯"
-                ]
-            }
-        },
-        "next": [
-            "InterceptionChallenge"
         ]
     },
     "AnomalyMirrorContainer": {
@@ -145,6 +121,27 @@
             "InterceptionChallenge"
         ]
     },
+    "AnomalyHarvester": {
+        "desc": "死神",
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
+                "expected": [
+                    "死神"
+                ]
+            }
+        },
+        "next": [
+            "InterceptionChallenge"
+        ]
+    },
     "AnomalyUltra": {
         "desc": "过激派",
         "enabled": false,
@@ -166,25 +163,28 @@
             "InterceptionChallenge"
         ]
     },
-    "AnomalyHarvester": {
-        "desc": "死神",
-        "enabled": false,
+    "NextAnomaly": {
+        "desc": "切换异常个体",
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    531,
-                    522,
-                    224,
-                    36
+                    741,
+                    523,
+                    43,
+                    37
                 ],
-                "expected": [
-                    "死神"
+                "template": [
+                    "Interception/NextAnomaly1.png",
+                    "Interception/NextAnomaly2.png",
+                    "Interception/NextAnomaly3.png",
+                    "Interception/NextAnomaly4.png",
+                    "Interception/NextAnomaly5.png"
                 ]
             }
         },
-        "next": [
-            "InterceptionChallenge"
-        ]
+        "action": {
+            "type": "Click"
+        }
     }
 }

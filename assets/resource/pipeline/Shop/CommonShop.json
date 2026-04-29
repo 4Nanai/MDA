@@ -54,6 +54,47 @@
             }
         }
     },
+    "FreeGoodsPurchase": {
+        "desc": "购买免费商品",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    159,
+                    351,
+                    26,
+                    26
+                ],
+                "template": [
+                    "RedDot.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "CoreDustCasePurchase": {
+        "desc": "购买芯尘盒",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    182,
+                    352,
+                    109,
+                    164
+                ],
+                "template": [
+                    "Shop/CoreDustCase.png"
+                ],
+                "threshold": 0.9
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
     "FreeReset": {
         "desc": "免费刷新",
         "recognition": {
@@ -85,6 +126,27 @@
             "ResetConfirm",
             "FreeReset"
         ]
+    },
+    "ResetConfirm": {
+        "desc": "确认刷新",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    594,
+                    429,
+                    220,
+                    250
+                ],
+                "template": [
+                    "ConfirmWithCircle.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000
     },
     "PurchaseCheck": {
         "desc": "当货品为芯尘盒且货币为宝珠时不购买转而关闭页面",
@@ -134,67 +196,5 @@
                 "expected": "芯尘盒"
             }
         }
-    },
-    "FreeGoodsPurchase": {
-        "desc": "购买免费商品",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    159,
-                    351,
-                    26,
-                    26
-                ],
-                "template": [
-                    "RedDot.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "CoreDustCasePurchase": {
-        "desc": "购买芯尘盒",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    182,
-                    352,
-                    109,
-                    164
-                ],
-                "template": [
-                    "Shop/CoreDustCase.png"
-                ],
-                "threshold": 0.9
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "ResetConfirm": {
-        "desc": "确认刷新",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    594,
-                    429,
-                    220,
-                    250
-                ],
-                "template": [
-                    "ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000
     }
 }

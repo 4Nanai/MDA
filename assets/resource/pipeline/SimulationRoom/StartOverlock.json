@@ -55,128 +55,6 @@
             "BIOSSetting"
         ]
     },
-    "BeginOverlockSimulation": {
-        "desc": "开始超频",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    482,
-                    634,
-                    316,
-                    36
-                ],
-                "expected": [
-                    "开始模拟"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "SelectBattle"
-        ]
-    },
-    "SelectBattle": {
-        "desc": "选择战斗",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    474,
-                    406,
-                    333,
-                    158
-                ],
-                "template": [
-                    "SimulationRoom/BattleFlag.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
-        "next": [
-            "[JumpBack]EndSimulation",
-            "ConfirmEnd",
-            "SelectBattle",
-            "[JumpBack]SelectBuff",
-            "[JumpBack]StartBattle"
-        ]
-    },
-    "SelectBuff": {
-        "desc": "选择增益效果",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    474,
-                    406,
-                    333,
-                    158
-                ],
-                "expected": [
-                    "EPIC",
-                    "SSR",
-                    "SR"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
-        "next": [
-            "ConfirmBuff"
-        ]
-    },
-    "ConfirmBuff": {
-        "desc": "确认增益",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    650,
-                    567,
-                    150,
-                    95
-                ],
-                "template": [
-                    "ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500
-    },
-    "ConfirmEnd": {
-        "desc": "确认结束",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    515,
-                    384,
-                    249,
-                    131
-                ],
-                "template": [
-                    "ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
-        "next": [
-            "SelectBuff"
-        ]
-    },
     "BIOSSetting": {
         "desc": "BIOS设置",
         "next": [
@@ -251,5 +129,127 @@
             }
         },
         "post_wait_freezes": 20
+    },
+    "BeginOverlockSimulation": {
+        "desc": "开始超频",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    482,
+                    634,
+                    316,
+                    36
+                ],
+                "expected": [
+                    "开始模拟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "SelectBattle"
+        ]
+    },
+    "SelectBattle": {
+        "desc": "选择战斗",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    474,
+                    406,
+                    333,
+                    158
+                ],
+                "template": [
+                    "SimulationRoom/BattleFlag.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "[JumpBack]EndSimulation",
+            "ConfirmEnd",
+            "SelectBattle",
+            "[JumpBack]SelectBuff",
+            "[JumpBack]StartBattle"
+        ]
+    },
+    "ConfirmEnd": {
+        "desc": "确认结束",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    515,
+                    384,
+                    249,
+                    131
+                ],
+                "template": [
+                    "ConfirmWithCircle.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SelectBuff"
+        ]
+    },
+    "SelectBuff": {
+        "desc": "选择增益效果",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    474,
+                    406,
+                    333,
+                    158
+                ],
+                "expected": [
+                    "EPIC",
+                    "SSR",
+                    "SR"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmBuff"
+        ]
+    },
+    "ConfirmBuff": {
+        "desc": "确认增益",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    650,
+                    567,
+                    150,
+                    95
+                ],
+                "template": [
+                    "ConfirmWithCircle.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500
     }
 }

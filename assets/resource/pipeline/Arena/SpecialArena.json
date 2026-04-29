@@ -18,6 +18,28 @@
             "FlagInSpecialArena"
         ]
     },
+    "FlagInSpecialArena": {
+        "desc": "处于特殊竞技场",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
+                "expected": [
+                    "特殊竞技场"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]FreeBattle",
+            "FlagInArena",
+            "[JumpBack]GoBack"
+        ]
+    },
     "SpecialArenaRedDot": {
         "desc": "特殊竞技场的红点",
         "recognition": {
@@ -51,27 +73,5 @@
                 ]
             }
         }
-    },
-    "FlagInSpecialArena": {
-        "desc": "处于特殊竞技场",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    15,
-                    70,
-                    25
-                ],
-                "expected": [
-                    "特殊竞技场"
-                ]
-            }
-        },
-        "next": [
-            "[JumpBack]FreeBattle",
-            "FlagInArena",
-            "[JumpBack]GoBack"
-        ]
     }
 }

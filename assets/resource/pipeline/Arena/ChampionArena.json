@@ -18,40 +18,6 @@
             "FlagInChampionArena"
         ]
     },
-    "ChampionArenaRedDot": {
-        "desc": "冠军竞技场的红点",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    799,
-                    448,
-                    26,
-                    23
-                ],
-                "template": [
-                    "RedDot.png"
-                ]
-            }
-        }
-    },
-    "ChampionArena": {
-        "desc": "冠军竞技场",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    490,
-                    507,
-                    95,
-                    31
-                ],
-                "expected": [
-                    "CHAMPION"
-                ]
-            }
-        }
-    },
     "FlagInChampionArena": {
         "desc": "处于冠军竞技场",
         "recognition": {
@@ -231,5 +197,39 @@
         "next": [
             "ActionConfirm"
         ]
+    },
+    "ChampionArenaRedDot": {
+        "desc": "冠军竞技场的红点",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    799,
+                    448,
+                    26,
+                    23
+                ],
+                "template": [
+                    "RedDot.png"
+                ]
+            }
+        }
+    },
+    "ChampionArena": {
+        "desc": "冠军竞技场",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    490,
+                    507,
+                    95,
+                    31
+                ],
+                "expected": [
+                    "CHAMPION"
+                ]
+            }
+        }
     }
 }

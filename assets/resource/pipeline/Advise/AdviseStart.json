@@ -53,12 +53,6 @@
             "QuickAdvise"
         ]
     },
-    "AdviseCollectionNotCompleted": {
-        "desc": "未收集完咨询日志",
-        "next": [
-            "NormalAdvise"
-        ]
-    },
     "QuickAdvise": {
         "desc": "快速咨询",
         "recognition": {
@@ -101,6 +95,104 @@
             "type": "Click"
         }
     },
+    "AdviseConfirm": {
+        "desc": "确认咨询",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    617,
+                    390,
+                    122,
+                    121
+                ],
+                "template": [
+                    "ConfirmWithCircle.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000
+    },
+    "RankIncreaseConfirm": {
+        "desc": "提升好感等级确认",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    615,
+                    412,
+                    73,
+                    23
+                ],
+                "expected": [
+                    "追加能力值"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "NextAdvise": {
+        "desc": "下一个咨询",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1199,
+                    247,
+                    81,
+                    134
+                ],
+                "template": [
+                    "Advise/NextAdvise.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "AdviseStart"
+        ]
+    },
+    "AdviseCollectionNotCompleted": {
+        "desc": "未收集完咨询日志",
+        "next": [
+            "NormalAdvise"
+        ]
+    },
+    "NormalAdvise": {
+        "desc": "普通咨询",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    697,
+                    573,
+                    52,
+                    24
+                ],
+                "expected": [
+                    "咨询"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]AdviseConfirm",
+            "[JumpBack]AdviseStory",
+            "[JumpBack]RankIncreaseConfirm",
+            "[JumpBack]EpisodeReward",
+            "NextAdvise"
+        ]
+    },
     "Favorited": {
         "desc": "已收藏",
         "recognition": {
@@ -141,98 +233,6 @@
                     "MAX"
                 ]
             }
-        }
-    },
-    "NormalAdvise": {
-        "desc": "普通咨询",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    697,
-                    573,
-                    52,
-                    24
-                ],
-                "expected": [
-                    "咨询"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "[JumpBack]AdviseConfirm",
-            "[JumpBack]AdviseStory",
-            "[JumpBack]RankIncreaseConfirm",
-            "[JumpBack]EpisodeReward",
-            "NextAdvise"
-        ]
-    },
-    "AdviseConfirm": {
-        "desc": "确认咨询",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    617,
-                    390,
-                    122,
-                    121
-                ],
-                "template": [
-                    "ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 2000
-    },
-    "NextAdvise": {
-        "desc": "下一个咨询",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    1199,
-                    247,
-                    81,
-                    134
-                ],
-                "template": [
-                    "Advise/NextAdvise.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
-        "next": [
-            "AdviseStart"
-        ]
-    },
-    "RankIncreaseConfirm": {
-        "desc": "提升好感等级确认",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    615,
-                    412,
-                    73,
-                    23
-                ],
-                "expected": [
-                    "追加能力值"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
         }
     }
 }

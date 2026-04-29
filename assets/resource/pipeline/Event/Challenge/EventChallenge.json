@@ -38,23 +38,6 @@
             "ClearStage"
         ]
     },
-    "ChallengeStageFlag": {
-        "desc": "活动挑战入口的标识",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    5,
-                    18,
-                    50,
-                    16
-                ],
-                "expected": [
-                    "挑战关卡"
-                ]
-            }
-        }
-    },
     "ChallengeStage": {
         "desc": "未挑战的关卡",
         "recognition": {
@@ -100,5 +83,22 @@
         "next": [
             "StartBattle"
         ]
+    },
+    "ChallengeStageFlag": {
+        "desc": "活动挑战入口的标识",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    5,
+                    18,
+                    50,
+                    16
+                ],
+                "expected": [
+                    "挑战关卡"
+                ]
+            }
+        }
     }
 }

@@ -58,23 +58,6 @@
             "GoBack"
         ]
     },
-    "LargeEventStoryPageEventFlag": {
-        "desc": "大活动剧情活动页面标识",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    5,
-                    18,
-                    50,
-                    16
-                ],
-                "expected": [
-                    "剧情活动"
-                ]
-            }
-        }
-    },
     "LargeEventStoryEventPageRedDot": {
         "desc": "大活动剧情活动页面的红点",
         "recognition": {
@@ -154,6 +137,21 @@
             "LargeEventEventStageQuickBattle"
         ]
     },
+    "LargeEventEventStageBattlePage": {
+        "desc": "大活动活动关卡页面战斗页面",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BattleFlag"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]StartBattle",
+            "LargeEventGoBack"
+        ]
+    },
     "LargeEventEventStageQuickBattle": {
         "desc": "大活动活动关卡页面快速战斗",
         "recognition": {
@@ -179,19 +177,21 @@
             "LargeEventEventStageBattlePage"
         ]
     },
-    "LargeEventEventStageBattlePage": {
-        "desc": "大活动活动关卡页面战斗页面",
+    "LargeEventStoryPageEventFlag": {
+        "desc": "大活动剧情活动页面标识",
         "recognition": {
-            "type": "And",
+            "type": "OCR",
             "param": {
-                "all_of": [
-                    "BattleFlag"
+                "roi": [
+                    5,
+                    18,
+                    50,
+                    16
+                ],
+                "expected": [
+                    "剧情活动"
                 ]
             }
-        },
-        "next": [
-            "[JumpBack]StartBattle",
-            "LargeEventGoBack"
-        ]
+        }
     }
 }

@@ -35,23 +35,6 @@
             "PageClose"
         ]
     },
-    "EpisodeRedDot": {
-        "desc": "花絮奖励的红点",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    614,
-                    89,
-                    35,
-                    28
-                ],
-                "template": [
-                    "RedDot.png"
-                ]
-            }
-        }
-    },
     "EpisodeClick": {
         "desc": "点击花絮",
         "recognition": {
@@ -105,5 +88,22 @@
             }
         },
         "post_wait_freezes": 20
+    },
+    "EpisodeRedDot": {
+        "desc": "花絮奖励的红点",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    614,
+                    89,
+                    35,
+                    28
+                ],
+                "template": [
+                    "RedDot.png"
+                ]
+            }
+        }
     }
 }

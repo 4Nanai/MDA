@@ -85,26 +85,6 @@
             "LargeEventMissionRedDot"
         ]
     },
-    "LargeEventMissionClaimAll": {
-        "desc": "大活动任务奖励领取",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    680,
-                    624,
-                    137,
-                    35
-                ],
-                "expected": [
-                    ".*全部.*"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
     "LargeEventMissionClaimed": {
         "desc": "大活动任务奖励已领取",
         "recognition": {
@@ -132,5 +112,25 @@
         "next": [
             "GoBack"
         ]
+    },
+    "LargeEventMissionClaimAll": {
+        "desc": "大活动任务奖励领取",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    680,
+                    624,
+                    137,
+                    35
+                ],
+                "expected": [
+                    ".*全部.*"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     }
 }

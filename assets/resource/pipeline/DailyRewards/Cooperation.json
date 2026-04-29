@@ -23,24 +23,6 @@
             "EndTask"
         ]
     },
-    "SlideBanner": {
-        "max_hit": 10,
-        "desc": "滑动横幅",
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    20,
-                    80
-                ],
-                "end": [
-                    160,
-                    80
-                ],
-                "end_hold": 300
-            }
-        }
-    },
     "CooperationSearch": {
         "desc": "寻找协同作战",
         "recognition": {
@@ -92,5 +74,23 @@
         "next": [
             "EnterHall"
         ]
+    },
+    "SlideBanner": {
+        "max_hit": 10,
+        "desc": "滑动横幅",
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    20,
+                    80
+                ],
+                "end": [
+                    160,
+                    80
+                ],
+                "end_hold": 300
+            }
+        }
     }
 }

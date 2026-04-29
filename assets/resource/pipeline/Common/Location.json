@@ -16,6 +16,217 @@
             "[JumpBack]ClickHall"
         ]
     },
+    "ServerConfirm": {
+        "desc": "服务器确认",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    567,
+                    506,
+                    148,
+                    37
+                ],
+                "template": [
+                    "Confirm.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "DownloadConfirm": {
+        "desc": "下载内容确认",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    645,
+                    439,
+                    115,
+                    40
+                ],
+                "template": [
+                    "Confirm.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "LoginConfirm": {
+        "desc": "确认已经完全加载",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    176,
+                    91,
+                    116
+                ],
+                "template": [
+                    "ServerChoose.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    100,
+                    100,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "ClickHomeButton": {
+        "desc": "点击左下角的按钮直到返回大厅",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    91,
+                    664,
+                    39,
+                    32
+                ],
+                "template": [
+                    "HomeButton.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "SkipPlot": {
+        "desc": "跳过",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1218,
+                    9,
+                    50,
+                    16
+                ],
+                "expected": [
+                    "SKIP"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "CloseSale": {
+        "desc": "关闭推销",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    601,
+                    660,
+                    66,
+                    17
+                ],
+                "expected": [
+                    "点击关闭画面"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Confirm"
+        ]
+    },
+    "Confirm": {
+        "desc": "确认",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    617,
+                    390,
+                    122,
+                    121
+                ],
+                "template": [
+                    "ConfirmWithCircle.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "ActiveCheck": {
+        "desc": "检测是否处于自由状态",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BellFlag"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "NotionFlag",
+            "[Anchor]NeedCheck"
+        ]
+    },
+    "NotionFlag": {
+        "desc": "公告文本检测",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    634,
+                    63,
+                    39,
+                    25
+                ],
+                "expected": [
+                    "公告",
+                    "Notice"
+                ]
+            }
+        },
+        "next": [
+            "PageClose"
+        ]
+    },
+    "ClickHall": {
+        "desc": "点击大厅",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    625,
+                    686,
+                    30,
+                    18
+                ],
+                "expected": [
+                    "大厅"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
     "EnterArk": {
         "desc": "进入方舟",
         "next": [
@@ -93,109 +304,6 @@
             }
         }
     },
-    "Confirm": {
-        "desc": "确认",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    617,
-                    390,
-                    122,
-                    121
-                ],
-                "template": [
-                    "ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "CloseSale": {
-        "desc": "关闭推销",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    601,
-                    660,
-                    66,
-                    17
-                ],
-                "expected": [
-                    "点击关闭画面"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "Confirm"
-        ]
-    },
-    "SkipPlot": {
-        "desc": "跳过",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    1218,
-                    9,
-                    50,
-                    16
-                ],
-                "expected": [
-                    "SKIP"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "ActiveCheck": {
-        "desc": "检测是否处于自由状态",
-        "recognition": {
-            "type": "And",
-            "param": {
-                "all_of": [
-                    "BellFlag"
-                ]
-            }
-        },
-        "pre_wait_freezes": 500,
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "NotionFlag",
-            "[Anchor]NeedCheck"
-        ]
-    },
-    "NotionFlag": {
-        "desc": "公告文本检测",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    634,
-                    63,
-                    39,
-                    25
-                ],
-                "expected": [
-                    "公告",
-                    "Notice"
-                ]
-            }
-        },
-        "next": [
-            "PageClose"
-        ]
-    },
     "BellFlag": {
         "desc": "右上角铃铛标识",
         "recognition": {
@@ -211,94 +319,6 @@
                     "Bell.png"
                 ]
             }
-        }
-    },
-    "ClickHomeButton": {
-        "desc": "点击左下角的按钮直到返回大厅",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    91,
-                    664,
-                    39,
-                    32
-                ],
-                "template": [
-                    "HomeButton.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "LoginConfirm": {
-        "desc": "确认已经完全加载",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    0,
-                    176,
-                    91,
-                    116
-                ],
-                "template": [
-                    "ServerChoose.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    100,
-                    100,
-                    0,
-                    0
-                ]
-            }
-        }
-    },
-    "ServerConfirm": {
-        "desc": "服务器确认",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    567,
-                    506,
-                    148,
-                    37
-                ],
-                "template": [
-                    "Confirm.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "DownloadConfirm": {
-        "desc": "下载内容确认",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    645,
-                    439,
-                    115,
-                    40
-                ],
-                "template": [
-                    "Confirm.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
         }
     },
     "LoginReward": {
@@ -399,26 +419,6 @@
             }
         },
         "post_wait_freezes": 20
-    },
-    "ClickHall": {
-        "desc": "点击大厅",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    625,
-                    686,
-                    30,
-                    18
-                ],
-                "expected": [
-                    "大厅"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
     },
     "GoBack": {
         "desc": "返回",

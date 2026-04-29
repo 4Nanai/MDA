@@ -18,40 +18,6 @@
             "FlagInRookieArena"
         ]
     },
-    "RookieArenaRedDot": {
-        "desc": "新人竞技场的红点",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    615,
-                    313,
-                    27,
-                    25
-                ],
-                "template": [
-                    "RedDot.png"
-                ]
-            }
-        }
-    },
-    "RookieArena": {
-        "desc": "新人竞技场",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    468,
-                    356,
-                    84,
-                    35
-                ],
-                "expected": [
-                    "ROOKIE"
-                ]
-            }
-        }
-    },
     "FlagInRookieArena": {
         "desc": "处于新人竞技场",
         "recognition": {
@@ -137,6 +103,40 @@
         },
         "action": {
             "type": "Click"
+        }
+    },
+    "RookieArenaRedDot": {
+        "desc": "新人竞技场的红点",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    615,
+                    313,
+                    27,
+                    25
+                ],
+                "template": [
+                    "RedDot.png"
+                ]
+            }
+        }
+    },
+    "RookieArena": {
+        "desc": "新人竞技场",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    468,
+                    356,
+                    84,
+                    35
+                ],
+                "expected": [
+                    "ROOKIE"
+                ]
+            }
         }
     }
 }

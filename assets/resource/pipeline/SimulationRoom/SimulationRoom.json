@@ -30,6 +30,26 @@
             "EnterSimulationRoom"
         ]
     },
+    "BIOSUpdate": {
+        "desc": "模拟室超频更新",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    532,
+                    334,
+                    227,
+                    149
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
     "FlagInSimulationRoom": {
         "desc": "处于模拟室",
         "recognition": {
@@ -51,25 +71,5 @@
             "[JumpBack]StartOverlock",
             "EndTask"
         ]
-    },
-    "BIOSUpdate": {
-        "desc": "模拟室超频更新",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    532,
-                    334,
-                    227,
-                    149
-                ],
-                "expected": [
-                    "确认"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
     }
 }

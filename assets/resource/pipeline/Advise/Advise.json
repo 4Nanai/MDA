@@ -39,23 +39,6 @@
             "EnterNikke"
         ]
     },
-    "FlagInNikke": {
-        "desc": "进入妮姬界面",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    15,
-                    70,
-                    25
-                ],
-                "expected": [
-                    "妮姬"
-                ]
-            }
-        }
-    },
     "EnterAdvise": {
         "desc": "进入咨询界面",
         "recognition": {
@@ -83,23 +66,6 @@
             "EnterAdvise"
         ]
     },
-    "FlagInAdvise": {
-        "desc": "咨询界面的标识",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    15,
-                    70,
-                    25
-                ],
-                "expected": [
-                    "咨询"
-                ]
-            }
-        }
-    },
     "ChooseNikke": {
         "desc": "选择Nikke",
         "recognition": {
@@ -123,5 +89,39 @@
             "ChooseNikke",
             "AdviseStart"
         ]
+    },
+    "FlagInAdvise": {
+        "desc": "咨询界面的标识",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
+                "expected": [
+                    "咨询"
+                ]
+            }
+        }
+    },
+    "FlagInNikke": {
+        "desc": "进入妮姬界面",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
+                "expected": [
+                    "妮姬"
+                ]
+            }
+        }
     }
 }

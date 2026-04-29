@@ -18,40 +18,6 @@
             "QuickSimulation"
         ]
     },
-    "_BeginSimulation1": {
-        "desc": "开始模拟的红点",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    679,
-                    393,
-                    44,
-                    33
-                ],
-                "template": [
-                    "RedDot.png"
-                ]
-            }
-        }
-    },
-    "_BeginSimulation2": {
-        "desc": "开始模拟的文本",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    574,
-                    406,
-                    133,
-                    40
-                ],
-                "expected": [
-                    "开始模拟"
-                ]
-            }
-        }
-    },
     "ClaimImmediately": {
         "desc": "快速模拟将立即完成",
         "recognition": {
@@ -115,5 +81,39 @@
             "type": "Click"
         },
         "post_wait_freezes": 500
+    },
+    "_BeginSimulation1": {
+        "desc": "开始模拟的红点",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    679,
+                    393,
+                    44,
+                    33
+                ],
+                "template": [
+                    "RedDot.png"
+                ]
+            }
+        }
+    },
+    "_BeginSimulation2": {
+        "desc": "开始模拟的文本",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    574,
+                    406,
+                    133,
+                    40
+                ],
+                "expected": [
+                    "开始模拟"
+                ]
+            }
+        }
     }
 }

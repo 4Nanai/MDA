@@ -16,26 +16,6 @@
             "EndTask"
         ]
     },
-    "DialogueFlag": {
-        "desc": "剧情的标识",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    953,
-                    0,
-                    327,
-                    75
-                ],
-                "expected": [
-                    ".*HIDE.*",
-                    ".*AUTO.*",
-                    ".*LOG.*",
-                    ".*SKIP.*"
-                ]
-            }
-        }
-    },
     "SkipStory": {
         "desc": "跳过剧情",
         "recognition": {
@@ -101,6 +81,26 @@
                     0,
                     0,
                     0
+                ]
+            }
+        }
+    },
+    "DialogueFlag": {
+        "desc": "剧情的标识",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    953,
+                    0,
+                    327,
+                    75
+                ],
+                "expected": [
+                    ".*HIDE.*",
+                    ".*AUTO.*",
+                    ".*LOG.*",
+                    ".*SKIP.*"
                 ]
             }
         }

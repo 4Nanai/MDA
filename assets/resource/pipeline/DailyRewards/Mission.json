@@ -74,26 +74,6 @@
             "MissionRedDot"
         ]
     },
-    "MissionClaimAll": {
-        "desc": "任务奖励领取",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    707,
-                    630,
-                    108,
-                    35
-                ],
-                "expected": [
-                    ".*全部.*"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
     "MissionClaimed": {
         "desc": "已领取",
         "recognition": {
@@ -121,5 +101,25 @@
         "next": [
             "PageClose"
         ]
+    },
+    "MissionClaimAll": {
+        "desc": "任务奖励领取",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    707,
+                    630,
+                    108,
+                    35
+                ],
+                "expected": [
+                    ".*全部.*"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     }
 }
