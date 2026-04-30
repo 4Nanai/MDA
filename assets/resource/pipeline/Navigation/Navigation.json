@@ -129,8 +129,15 @@
     },
     "NavigationNoticeFlow": {
         "desc": "公告文本检测",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "NavigationNoticeVisible"
+                ]
+            }
+        },
         "next": [
-            "NavigationNoticeVisible",
             "CommonClosePage"
         ]
     },
@@ -157,12 +164,12 @@
     "HallEnterArk": {
         "desc": "进入方舟",
         "next": [
-            "ArkCornerVisible",
+            "NavigationArkEntered",
             "NavigationClickArk",
             "[JumpBack]NavigationEnterHall"
         ]
     },
-    "ArkCornerVisible": {
+    "NavigationArkEntered": {
         "desc": "处于方舟内部",
         "recognition": {
             "type": "OCR",
@@ -193,7 +200,7 @@
             "type": "Click"
         },
         "next": [
-            "ArkCornerVisible",
+            "NavigationArkEntered",
             "NavigationClickArk"
         ]
     },
