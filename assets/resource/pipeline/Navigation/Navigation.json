@@ -5,9 +5,9 @@
         "timeout": 120000,
         "next": [
             "[JumpBack]CommonClosePage",
-            "[JumpBack]ServerCommonConfirmAction",
-            "[JumpBack]DownloadCommonConfirmAction",
-            "[JumpBack]LoginCommonConfirmAction",
+            "[JumpBack]LoginConfirmServer",
+            "[JumpBack]LoginConfirmDownload",
+            "[JumpBack]LoginConfirmLogin",
             "[JumpBack]NavigationClickHomeButton",
             "[JumpBack]NavigationSkipPlot",
             "[JumpBack]CommonCloseSale",
@@ -15,74 +15,6 @@
             "NavigationClickFreeState",
             "[JumpBack]NavigationClickHall"
         ]
-    },
-    "ServerCommonConfirmAction": {
-        "desc": "服务器确认",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    567,
-                    506,
-                    148,
-                    37
-                ],
-                "template": [
-                    "Common/ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "DownloadCommonConfirmAction": {
-        "desc": "下载内容确认",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    645,
-                    439,
-                    115,
-                    40
-                ],
-                "template": [
-                    "Common/ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "LoginCommonConfirmAction": {
-        "desc": "确认已经完全加载",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    0,
-                    176,
-                    91,
-                    116
-                ],
-                "template": [
-                    "Common/ServerChoose.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    100,
-                    100,
-                    0,
-                    0
-                ]
-            }
-        }
     },
     "NavigationClickHomeButton": {
         "desc": "点击左下角的按钮直到返回大厅",
@@ -312,90 +244,6 @@
                 ],
                 "template": [
                     "Common/Bell.png"
-                ]
-            }
-        }
-    },
-    "LoginReward": {
-        "desc": "登录奖励",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    665,
-                    611,
-                    163,
-                    80
-                ],
-                "expected": [
-                    "全部领取"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "NavigationLoginRewardClaimedFlow",
-            "[JumpBack]CommonConfirmReward"
-        ]
-    },
-    "NavigationLoginRewardClaimed": {
-        "desc": "确认按钮变灰",
-        "recognition": {
-            "type": "ColorMatch",
-            "param": {
-                "roi": [
-                    665,
-                    611,
-                    163,
-                    80
-                ],
-                "lower": [
-                    100,
-                    100,
-                    100
-                ],
-                "upper": [
-                    180,
-                    180,
-                    180
-                ],
-                "count": 2500
-            }
-        }
-    },
-    "NavigationLoginRewardClaimedFlow": {
-        "desc": "确认按钮变灰",
-        "next": [
-            "NavigationLoginRewardClaimed",
-            "LoginRewardClose"
-        ]
-    },
-    "LoginRewardClose": {
-        "desc": "关闭登录奖励页面",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    665,
-                    611,
-                    163,
-                    80
-                ],
-                "expected": [
-                    "全部领取"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    200,
-                    0,
-                    0,
-                    0
                 ]
             }
         }
