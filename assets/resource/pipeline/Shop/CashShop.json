@@ -29,7 +29,7 @@
             "HallEnterCashShop"
         ]
     },
-    "CashShopCornerVisible": {
+    "CashShopMainPageEntered": {
         "desc": "处于付费商店",
         "recognition": {
             "type": "OCR",
@@ -49,7 +49,7 @@
     "CashShopCornerFlow": {
         "desc": "处于付费商店",
         "next": [
-            "CashShopCornerVisible",
+            "CashShopMainPageEntered",
             "[JumpBack]StepUpPackagePurchase",
             "ChooseOrdinaryPackage"
         ]
@@ -104,8 +104,8 @@
             "BaseEndTask"
         ]
     },
-    "CashShopRedDotVisible": {
-        "desc": "红点可见",
+    "CashShopClickRedDot": {
+        "desc": "点击红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -120,17 +120,6 @@
                 ],
                 "order_by": "Vertical",
                 "index": -1
-            }
-        }
-    },
-    "CashShopClickRedDot": {
-        "desc": "点击红点",
-        "recognition": {
-            "type": "And",
-            "param": {
-                "all_of": [
-                    "CashShopRedDotVisible"
-                ]
             }
         },
         "action": {
