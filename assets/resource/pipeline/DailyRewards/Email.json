@@ -8,7 +8,7 @@
         ]
     },
     "EmailStart": {
-        "desc": "邮箱",
+        "desc": "邮箱入口",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -57,7 +57,7 @@
         }
     },
     "DailyRewardsEmailFlow": {
-        "desc": "邮箱的标志",
+        "desc": "邮箱流程",
         "next": [
             "DailyRewardsEmailVisible",
             "[JumpBack]DailyRewardsHandleEmailRedDot",
@@ -83,7 +83,7 @@
         }
     },
     "DailyRewardsHandleEmailRedDot": {
-        "desc": "邮箱内部的的红点，代表有未领取的奖励",
+        "desc": "处理邮箱红点",
         "recognition": {
             "type": "And",
             "param": {

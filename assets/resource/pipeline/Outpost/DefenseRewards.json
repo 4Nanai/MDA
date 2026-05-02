@@ -41,9 +41,16 @@
         }
     },
     "OutpostDefenseRewardsFlow": {
-        "desc": "防御奖励标志",
+        "desc": "防御奖励流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "OutpostDefenseRewardsVisible"
+                ]
+            }
+        },
         "next": [
-            "OutpostDefenseRewardsVisible",
             "[JumpBack]OutpostClaimDefenseRewards",
             "[JumpBack]WipeOut",
             "[JumpBack]CommonConfirmReward",

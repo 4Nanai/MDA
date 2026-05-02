@@ -47,9 +47,16 @@
         }
     },
     "CashShopCornerFlow": {
-        "desc": "处于付费商店",
+        "desc": "付费商店流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CashShopMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "CashShopMainPageEntered",
             "[JumpBack]StepUpPackagePurchase",
             "ChooseOrdinaryPackage"
         ]
@@ -105,7 +112,7 @@
         ]
     },
     "CashShopClickRedDot": {
-        "desc": "点击红点",
+        "desc": "点击付费商店红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {

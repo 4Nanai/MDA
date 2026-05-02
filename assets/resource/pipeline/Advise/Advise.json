@@ -91,7 +91,7 @@
         ]
     },
     "AdviseMainPageEntered": {
-        "desc": "咨询界面的标识",
+        "desc": "处于咨询界面",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -108,7 +108,7 @@
         }
     },
     "NikkeMainPageEntered": {
-        "desc": "进入妮姬界面",
+        "desc": "处于妮姬界面",
         "recognition": {
             "type": "OCR",
             "param": {

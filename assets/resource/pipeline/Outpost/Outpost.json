@@ -47,7 +47,7 @@
         ]
     },
     "OutpostMainPageEntered": {
-        "desc": "前哨基地的标识",
+        "desc": "处于前哨基地",
         "recognition": {
             "type": "OCR",
             "param": {

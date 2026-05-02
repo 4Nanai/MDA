@@ -17,7 +17,7 @@
         ]
     },
     "NavigationClickHomeButton": {
-        "desc": "点击左下角的按钮直到返回大厅",
+        "desc": "点击主页按钮",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -37,7 +37,7 @@
         }
     },
     "NavigationSkipPlot": {
-        "desc": "跳过",
+        "desc": "跳过剧情",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -80,7 +80,7 @@
         ]
     },
     "NavigationFreeStateVisible": {
-        "desc": "检测是否处于自由状态",
+        "desc": "自由状态可见",
         "recognition": {
             "type": "And",
             "param": {
@@ -91,7 +91,7 @@
         }
     },
     "NavigationClickFreeState": {
-        "desc": "检测是否处于自由状态",
+        "desc": "点击自由状态",
         "pre_wait_freezes": 500,
         "recognition": {
             "type": "And",
@@ -110,7 +110,7 @@
         ]
     },
     "NavigationNoticeVisible": {
-        "desc": "公告文本检测",
+        "desc": "公告可见",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -128,7 +128,7 @@
         }
     },
     "NavigationNoticeFlow": {
-        "desc": "公告文本检测",
+        "desc": "公告流程",
         "recognition": {
             "type": "And",
             "param": {
@@ -187,7 +187,7 @@
         }
     },
     "NavigationClickArk": {
-        "desc": "点大厅的方舟",
+        "desc": "点击方舟",
         "recognition": {
             "type": "And",
             "param": {

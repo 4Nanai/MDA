@@ -92,7 +92,7 @@
         ]
     },
     "LoginRewardClaimed": {
-        "desc": "确认按钮变灰",
+        "desc": "登录奖励已领取",
         "recognition": {
             "type": "ColorMatch",
             "param": {
@@ -117,7 +117,7 @@
         }
     },
     "LoginRewardClaimedFlow": {
-        "desc": "确认按钮变灰",
+        "desc": "登录奖励已领取流程",
         "next": [
             "LoginRewardClaimed",
             "LoginRewardClose"

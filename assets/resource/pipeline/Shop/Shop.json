@@ -47,9 +47,16 @@
         }
     },
     "ShopCornerFlow": {
-        "desc": "处于百货商店",
+        "desc": "商店流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "ShopMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "ShopMainPageEntered",
             "[JumpBack]CommonShop",
             "[JumpBack]ArenaShop",
             "[JumpBack]RecyclingShop",

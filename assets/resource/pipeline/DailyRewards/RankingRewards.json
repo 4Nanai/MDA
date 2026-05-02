@@ -26,7 +26,7 @@
         ]
     },
     "DailyRewardsRankingRewardVisible": {
-        "desc": "处于方舟内部",
+        "desc": "排名奖励可见",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -43,7 +43,7 @@
         }
     },
     "DailyRewardsRankingRewardFlow": {
-        "desc": "处于方舟内部",
+        "desc": "排名奖励流程",
         "next": [
             "DailyRewardsRankingRewardVisible",
             "DailyRewardsClickRankingRewardRedDot",

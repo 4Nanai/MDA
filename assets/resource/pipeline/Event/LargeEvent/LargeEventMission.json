@@ -49,7 +49,7 @@
         }
     },
     "LargeEventMissionFlow": {
-        "desc": "大活动任务内部的标识",
+        "desc": "大活动任务流程",
         "next": [
             "LargeEventMissionVisible",
             "LargeEventClickMissionRedDot"
@@ -115,7 +115,7 @@
         }
     },
     "LargeEventMissionClaimedFlow": {
-        "desc": "大活动任务奖励已领取",
+        "desc": "大活动任务奖励已领取流程",
         "next": [
             "LargeEventMissionClaimed",
             "CommonGoBack"

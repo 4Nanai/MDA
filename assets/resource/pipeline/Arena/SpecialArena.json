@@ -36,9 +36,16 @@
         }
     },
     "SpecialArenaCornerFlow": {
-        "desc": "处于特殊竞技场",
+        "desc": "特殊竞技场流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SpecialArenaMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "SpecialArenaMainPageEntered",
             "[JumpBack]ArenaFreeBattle",
             "ArenaCornerFlow",
             "[JumpBack]CommonGoBack"

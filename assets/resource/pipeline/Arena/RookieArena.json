@@ -36,16 +36,23 @@
         }
     },
     "RookieArenaCornerFlow": {
-        "desc": "处于新人竞技场",
+        "desc": "新人竞技场流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "RookieArenaMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "RookieArenaMainPageEntered",
             "[JumpBack]ArenaFreeBattle",
             "ArenaCornerFlow",
             "[JumpBack]CommonGoBack"
         ]
     },
     "RookieArenaClickQuickBattleToggle": {
-        "desc": "快速战斗检查",
+        "desc": "点击快速战斗开关",
         "recognition": {
             "type": "OCR",
             "param": {

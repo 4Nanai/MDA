@@ -76,9 +76,16 @@
         }
     },
     "ArenaCornerFlow": {
-        "desc": "处于竞技场",
+        "desc": "竞技场流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "ArenaMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "ArenaMainPageEntered",
             "ArenaEnterRookieArena",
             "ArenaEnterSpecialArena",
             "ArenaEnterChampionArena",
@@ -110,7 +117,7 @@
         ]
     },
     "ArenaFreeBattleVisible": {
-        "desc": "检测免费战斗的页面",
+        "desc": "免费战斗页面可见",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -127,7 +134,7 @@
         }
     },
     "ArenaFreeBattleFlow": {
-        "desc": "检测免费战斗的页面",
+        "desc": "免费战斗流程",
         "next": [
             "ArenaFreeBattleVisible",
             "[JumpBack]RookieArenaClickQuickBattleToggle",

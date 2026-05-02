@@ -38,7 +38,7 @@
         }
     },
     "DailyRewardsHandleFreeRecruitAvailable": {
-        "desc": "可以免费招募",
+        "desc": "处理免费招募可用",
         "recognition": {
             "type": "And",
             "param": {

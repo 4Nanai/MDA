@@ -8,7 +8,7 @@
         ]
     },
     "PassStart": {
-        "desc": "Pass",
+        "desc": "Pass入口",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -96,7 +96,7 @@
         ]
     },
     "DailyRewardsClickPassRewardRedDot": {
-        "desc": "Pass奖励",
+        "desc": "点击Pass奖励红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -154,14 +154,14 @@
         }
     },
     "DailyRewardsPassClaimedFlow": {
-        "desc": "已领取",
+        "desc": "Pass已领取流程",
         "next": [
             "DailyRewardsPassClaimed",
             "CommonClosePage"
         ]
     },
     "PassClaimAll": {
-        "desc": "任务奖励领取",
+        "desc": "领取所有Pass奖励",
         "recognition": {
             "type": "OCR",
             "param": {

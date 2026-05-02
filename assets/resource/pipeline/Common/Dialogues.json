@@ -37,7 +37,7 @@
         }
     },
     "DialoguesClickContinue": {
-        "desc": "点继续",
+        "desc": "点击继续",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -57,7 +57,7 @@
         }
     },
     "DialoguesClickOption": {
-        "desc": "点选项",
+        "desc": "点击选项",
         "recognition": {
             "type": "OCR",
             "param": {

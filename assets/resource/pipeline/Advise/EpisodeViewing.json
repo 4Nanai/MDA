@@ -31,7 +31,7 @@
         ]
     },
     "AdviseClickEpisodeViewingRedDot": {
-        "desc": "点红点",
+        "desc": "点击花絮鉴赏会红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {

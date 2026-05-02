@@ -68,9 +68,16 @@
         }
     },
     "SimulationRoomCornerFlow": {
-        "desc": "处于模拟室",
+        "desc": "模拟室流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SimulationRoomMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "SimulationRoomMainPageEntered",
             "[JumpBack]SimulationRoomBeginSimulation",
             "[JumpBack]SimulationRoomStartOverclock",
             "BaseEndTask"

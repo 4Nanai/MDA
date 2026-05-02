@@ -149,7 +149,7 @@
         "post_wait_freezes": 1000
     },
     "ShopPurchaseBlockedByGemVisible": {
-        "desc": "当货品为芯尘盒且货币为宝珠时不购买转而关闭页面",
+        "desc": "宝珠购买受阻可见",
         "recognition": {
             "type": "And",
             "param": {
@@ -161,7 +161,7 @@
         }
     },
     "ShopPurchaseBlockedByGemFlow": {
-        "desc": "当货品为芯尘盒且货币为宝珠时不购买转而关闭页面",
+        "desc": "宝珠购买受阻流程",
         "next": [
             "ShopPurchaseBlockedByGemVisible",
             "[JumpBack]CommonClosePage",
@@ -170,7 +170,7 @@
         ]
     },
     "ShopGemVisible": {
-        "desc": "宝珠检查",
+        "desc": "宝珠可见",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -187,7 +187,7 @@
         }
     },
     "ShopGoodsVisible": {
-        "desc": "商品检查",
+        "desc": "商品可见",
         "recognition": {
             "type": "OCR",
             "param": {

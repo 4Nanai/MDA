@@ -37,16 +37,23 @@
         "post_wait_freezes": 500
     },
     "ChampionArenaCornerFlow": {
-        "desc": "处于冠军竞技场",
+        "desc": "冠军竞技场流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "ChampionArenaMainPageEntered"
+                ]
+            }
+        },
         "next": [
-            "ChampionArenaMainPageEntered",
             "ChampionArenaEnterChampionsDuel",
             "ArenaCornerFlow",
             "[JumpBack]CommonGoBack"
         ]
     },
     "ChampionArenaEnterChampionsDuel": {
-        "desc": "进入应援",
+        "desc": "进入冠军对决",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -90,7 +97,7 @@
         }
     },
     "ChampionArenaCompetitionEntered": {
-        "desc": "比赛的标识",
+        "desc": "处于比赛页面",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -109,9 +116,16 @@
         }
     },
     "ChampionArenaCompetitionFlow": {
-        "desc": "比赛的标识",
+        "desc": "比赛流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "ChampionArenaCompetitionEntered"
+                ]
+            }
+        },
         "next": [
-            "ChampionArenaCompetitionEntered",
             "CheerUp"
         ]
     },
@@ -141,7 +155,7 @@
         ]
     },
     "ChampionArenaCheerUpAvailable": {
-        "desc": "应援检测",
+        "desc": "应援可用",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -158,9 +172,16 @@
         }
     },
     "ChampionArenaCheerUpAvailableFlow": {
-        "desc": "应援检测",
+        "desc": "应援可用流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "ChampionArenaCheerUpAvailable"
+                ]
+            }
+        },
         "next": [
-            "ChampionArenaCheerUpAvailable",
             "CheerUpLeft"
         ]
     },

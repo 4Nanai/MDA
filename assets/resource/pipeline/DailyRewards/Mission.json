@@ -8,7 +8,7 @@
         ]
     },
     "MissionStart": {
-        "desc": "任务收取",
+        "desc": "任务入口",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -41,7 +41,7 @@
         ]
     },
     "DailyRewardsClickMissionRedDot": {
-        "desc": "任务的红点",
+        "desc": "点击任务红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -100,7 +100,7 @@
         }
     },
     "DailyRewardsMissionClaimedFlow": {
-        "desc": "已领取",
+        "desc": "任务已领取流程",
         "next": [
             "DailyRewardsMissionClaimed",
             "CommonClosePage"

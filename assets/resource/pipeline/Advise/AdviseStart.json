@@ -51,7 +51,7 @@
         }
     },
     "AdviseCollectionCompletedFlow": {
-        "desc": "已收集完咨询日志",
+        "desc": "咨询日志收集完成流程",
         "next": [
             "AdviseCollectionCompleted",
             "QuickAdvise"

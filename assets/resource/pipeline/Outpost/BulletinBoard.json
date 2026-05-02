@@ -49,9 +49,16 @@
         }
     },
     "OutpostBulletinBoardFlow": {
-        "desc": "派遣公告栏标志",
+        "desc": "派遣公告栏流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "OutpostBulletinBoardVisible"
+                ]
+            }
+        },
         "next": [
-            "OutpostBulletinBoardVisible",
             "[JumpBack]BulletinBoardClaim",
             "[JumpBack]BulletinBoardDispatch",
             "OutpostMainPageEntered",
@@ -111,7 +118,7 @@
         ]
     },
     "OutpostConfirmDispatch": {
-        "desc": "全部派遣",
+        "desc": "确认派遣",
         "recognition": {
             "type": "OCR",
             "param": {
