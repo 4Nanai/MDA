@@ -28,7 +28,7 @@
                     390
                 ],
                 "template": [
-                    "Shop/RecyclingShop.png"
+                    "Shop/RecyclingShop/RecyclingShop.png"
                 ]
             }
         },
@@ -69,7 +69,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/GoodTeamworkBox.png",
+                "template": "Shop/RecyclingShop/GoodTeamworkBox.png",
                 "threshold": 0.9
             }
         },
@@ -89,7 +89,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/MaintenanceKitBox.png",
+                "template": "Shop/RecyclingShop/MaintenanceKitBox.png",
                 "threshold": 0.9
             }
         },
@@ -109,7 +109,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/CuratedManufacturerArms.png",
+                "template": "Shop/RecyclingShop/CuratedManufacturerArms.png",
                 "threshold": 0.9
             }
         },
@@ -129,7 +129,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/Gem.png",
+                "template": "Shop/RecyclingShop/Gem.png",
                 "threshold": 0.9
             }
         },
@@ -150,12 +150,12 @@
                     325
                 ],
                 "template": [
-                    "Shop/Darlingforaday.png",
-                    "Shop/ElysionVIPBuffetVoucher.png",
-                    "Shop/MissilisVIPCard.png",
-                    "Shop/TetraVIPSpaVoucher.png",
-                    "Shop/PilgrimSupplySetVoucher.png",
-                    "Shop/AbnormalAnnualTicket.png"
+                    "Shop/Voucher/Darlingforaday.png",
+                    "Shop/Voucher/ElysionVIPBuffetVoucher.png",
+                    "Shop/Voucher/MissilisVIPCard.png",
+                    "Shop/Voucher/TetraVIPSpaVoucher.png",
+                    "Shop/Voucher/PilgrimSupplySetVoucher.png",
+                    "Shop/Voucher/AbnormalAnnualTicket.png"
                 ],
                 "threshold": 0.9
             }
@@ -177,10 +177,10 @@
                     325
                 ],
                 "template": [
-                    "Shop/CreditCase.png",
-                    "Shop/BattleDataSetCase.png",
-                    "Shop/CoreDustCase.png",
-                    "Shop/Credit.png"
+                    "Shop/RecyclingShop/CreditCase.png",
+                    "Shop/RecyclingShop/BattleDataSetCase.png",
+                    "Shop/CommonShop/CoreDustCase.png",
+                    "Shop/RecyclingShop/Credit.png"
                 ],
                 "threshold": 0.8
             }

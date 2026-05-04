@@ -27,7 +27,7 @@
                     390
                 ],
                 "template": [
-                    "Shop/ArenaShop.png"
+                    "Shop/ArenaShop/ArenaShop.png"
                 ]
             }
         },
@@ -68,7 +68,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/FireCodeManual.png",
+                "template": "Shop/ArenaShop/FireCodeManual.png",
                 "threshold": 0.95
             }
         },
@@ -88,7 +88,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/WaterCodeManual.png",
+                "template": "Shop/ArenaShop/WaterCodeManual.png",
                 "threshold": 0.9
             }
         },
@@ -108,7 +108,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/WindCodeManual.png",
+                "template": "Shop/ArenaShop/WindCodeManual.png",
                 "threshold": 0.9
             }
         },
@@ -128,7 +128,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/ElectricCodeManual.png",
+                "template": "Shop/ArenaShop/ElectricCodeManual.png",
                 "threshold": 0.9
             }
         },
@@ -148,7 +148,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/IronCodeManual.png",
+                "template": "Shop/ArenaShop/IronCodeManual.png",
                 "threshold": 0.9
             }
         },
@@ -168,7 +168,7 @@
                     1222,
                     325
                 ],
-                "template": "Shop/CodeManualSelectionBox.png",
+                "template": "Shop/ArenaShop/CodeManualSelectionBox.png",
                 "threshold": 0.9
             }
         },

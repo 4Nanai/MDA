@@ -24,8 +24,8 @@
                     390
                 ],
                 "template": [
-                    "Shop/CommonShopSelected.png",
-                    "Shop/CommonShopNotSelected.png"
+                    "Shop/CommonShop/CommonShopSelected.png",
+                    "Shop/CommonShop/CommonShopNotSelected.png"
                 ]
             }
         },
@@ -87,7 +87,7 @@
                     164
                 ],
                 "template": [
-                    "Shop/CoreDustCase.png"
+                    "Shop/CommonShop/CoreDustCase.png"
                 ],
                 "threshold": 0.9
             }
@@ -108,7 +108,7 @@
                     27
                 ],
                 "template": [
-                    "Shop/FreeReset.png"
+                    "Shop/CommonShop/FreeReset.png"
                 ]
             }
         },
@@ -178,7 +178,7 @@
                     34
                 ],
                 "template": [
-                    "Shop/GemCheck.png"
+                    "Shop/CommonShop/GemCheck.png"
                 ]
             }
         }
