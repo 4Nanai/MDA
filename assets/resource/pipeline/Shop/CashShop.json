@@ -98,6 +98,9 @@
                 ],
                 "template": [
                     "CashShop/OrdinaryPackage.png"
+                ],
+                "threshold": [
+                    0.9
                 ]
             }
         },
