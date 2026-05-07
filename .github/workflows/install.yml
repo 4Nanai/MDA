@@ -71,11 +71,12 @@ jobs:
 
   install:
     needs: meta
-    runs-on: ${{ matrix.os == 'win' && 'windows-latest' || (matrix.os == 'macos' && 'macos-latest' || 'ubuntu-latest') }}
+    runs-on: ${{ matrix.os == 'win' && 'windows-latest' || (matrix.os == 'macos' &&
+      'macos-latest' || 'ubuntu-latest') }}
     strategy:
       matrix:
-        os: [win, macos, linux]
-        arch: [x86_64, aarch64]
+        os: [ win, macos, linux ]
+        arch: [ x86_64, aarch64 ]
       fail-fast: false
 
     steps:
@@ -149,17 +150,21 @@ jobs:
         run: |
           if [ -d "MXU" ]; then
             echo "Integrating MXU into install directory..."
-            # Copy MXU executable to install directory
+
+            # 先把 MXU 可执行文件统一落到最终命名，避免后续步骤改错目标文件
             if [[ "${{ matrix.os }}" == "win" ]]; then
               if [ -f "MXU/mxu.exe" ]; then
-                cp MXU/mxu.exe install/
+                cp "MXU/mxu.exe" "install/MDA.exe"
+                echo "Copied MXU executable to install/MDA.exe"
               fi
             else
               if [ -f "MXU/mxu" ]; then
-                cp MXU/mxu install/
+                cp "MXU/mxu" "install/MDA"
+                echo "Copied MXU executable to install/MDA"
               fi
             fi
-            # Copy other necessary files from MXU
+
+            # 再复制 MXU 其余必要文件，保持目录结构一致
             for dir in $(find MXU -maxdepth 1 -type d ! -name "." ! -name ".." | head -20); do
               if [ -d "$dir" ] && [ $(basename "$dir") != "MXU" ]; then
                 cp -r "$dir" install/
@@ -175,16 +180,19 @@ jobs:
         shell: bash
         run: |
           choco install imagemagick -y
-          magick convert assets/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 mda.ico
-          cp mda.ico install/logo.ico
+          magick convert assets/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 MDA.ico
+          cp MDA.ico install/logo.ico
 
       - name: Modify MXU exe icon
         if: matrix.os == 'win' && matrix.arch == 'x86_64'
         shell: bash
         run: |
           curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
-          if [ -f "install/mxu.exe" ]; then
-            ./rcedit.exe "install/mxu.exe" --set-icon "mda.ico"
+          if [ -f "install/MDA.exe" ]; then
+            ./rcedit.exe "install/MDA.exe" --set-icon "MDA.ico"
+            echo "MXU icon modified successfully"
+          elif [ -f "install/mxu.exe" ]; then
+            ./rcedit.exe "install/mxu.exe" --set-icon "MDA.ico"
             echo "MXU icon modified successfully"
           else
             echo "MXU exe not found, skipping icon update."
@@ -204,7 +212,7 @@ jobs:
 
       - uses: actions/upload-artifact@v6
         with:
-          name: MDA-${{ matrix.os }}-${{ matrix.arch }}
+          name: MDA-${{ matrix.os }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
           path: "install"
           retention-days: 1
 
@@ -236,7 +244,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, install, changelog]
+    needs: [ meta, install, changelog ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v7
@@ -246,7 +254,7 @@ jobs:
       - run: |
           cd assets
           for f in *; do
-            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
+            (cd "$f" && zip -r "../$f-${{ needs.meta.outputs.tag }}.zip" .)
           done
 
       - uses: softprops/action-gh-release@v2
