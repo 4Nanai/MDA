@@ -61,7 +61,7 @@
     "LargeEventClickStoryEventPageRedDot": {
         "desc": "大活动剧情活动页面的红点",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     314,
@@ -69,13 +69,21 @@
                     661,
                     294
                 ],
-                "template": [
-                    "Common/RedDot.png"
+                "expected": [
+                    ".*剩余.*"
                 ]
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -50,
+                    0,
+                    0
+                ]
+            }
         },
         "post_wait_freezes": 500,
         "next": [
