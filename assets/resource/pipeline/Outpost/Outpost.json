@@ -49,16 +49,16 @@
     "OutpostMainPageEntered": {
         "desc": "处于前哨基地",
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    616,
-                    630,
-                    47,
-                    18
+                    591,
+                    578,
+                    98,
+                    62
                 ],
-                "expected": [
-                    "指挥中心"
+                "template": [
+                    "Outpost/CommandCenter.png"
                 ]
             }
         }
