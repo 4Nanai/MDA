@@ -18,6 +18,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "next": [
             "LargeEventStarAnisMerchLotteryClick",
             "LargeEventStarAnisMerchGachaClick"
