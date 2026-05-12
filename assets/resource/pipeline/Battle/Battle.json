@@ -71,13 +71,15 @@
                 ],
                 "template": [
                     "Common/MAX.png"
-                ]
+                ],
+                "threshold": 0.9
             }
         },
         "action": {
             "type": "Click"
         },
         "next": [
+            "MultipleBattleClickMax",
             "MultipleBattleStart"
         ]
     },
