@@ -44,9 +44,9 @@
             "type": "Click"
         },
         "next": [
+            "LargeEventStarAnisLotteryComplete",
             "LargeEventStarAnisPlayMerchLotteryClick",
-            "LargeEventStarAnisMerchLotteryClick",
-            "LargeEventStarAnisLotteryComplete"
+            "LargeEventStarAnisMerchLotteryClick"
         ]
     },
     "LargeEventStarAnisMerchGachaClick": {
