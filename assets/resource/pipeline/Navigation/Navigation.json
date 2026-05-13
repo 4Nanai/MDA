@@ -286,7 +286,8 @@
                     73
                 ],
                 "template": [
-                    "Common/GoBack.png"
+                    "Common/GoBack1.png",
+                    "Common/GoBack2.png"
                 ]
             }
         },
