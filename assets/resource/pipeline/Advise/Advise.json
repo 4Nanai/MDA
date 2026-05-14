@@ -40,7 +40,8 @@
                     23
                 ],
                 "template": [
-                    "Common/RedDot.png"
+                    "Common/RedDot.png",
+                    "Common/New.png"
                 ]
             }
         },
