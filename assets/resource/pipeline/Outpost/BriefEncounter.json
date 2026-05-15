@@ -105,7 +105,7 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500,
+        "post_delay": 500,
         "next": [
             "OutpostDailyEventFlow"
         ]
@@ -113,30 +113,52 @@
     "OutpostDailyEventFlow": {
         "desc": "进入剧情",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    756,
-                    566,
-                    41,
-                    38
+                    713,
+                    437,
+                    44,
+                    27
                 ],
-                "template": [
-                    "Outpost/Event.png"
+                "expected": [
+                    "确认"
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500,
+        "post_delay": 2500,
         "next": [
             "[JumpBack]CommonConfirmAction",
             "[JumpBack]DialoguesSkipStory",
             "[JumpBack]CommonConfirmReward",
+            "[JumpBack]ExitDailyEventPage",
             "BriefEncounterRepeat",
             "OutpostDailyEventFlow"
         ]
+    },
+    "ExitDailyEventPage": {
+        "desc": "退出活动页面",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    571,
+                    660,
+                    67,
+                    49
+                ],
+                "template": [
+                    "Common/CloseButton5.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
     "BriefEncounterRepeat": {
         "desc": "再次执行突发活动",
@@ -148,6 +170,10 @@
                 ]
             }
         },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
         "next": [
             "OutpostEnterBriefEncounter",
             "CommonEndTask"
