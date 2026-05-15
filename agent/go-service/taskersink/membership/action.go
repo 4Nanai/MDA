@@ -65,5 +65,5 @@ func (a *MembershipCheckAction) Run(ctx *maa.Context, arg *maa.CustomActionArg) 
 		sponsorURL,
 	))
 
-	return false
+	return true
 }
