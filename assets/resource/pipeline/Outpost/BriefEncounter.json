@@ -134,7 +134,8 @@
             "[JumpBack]CommonConfirmAction",
             "[JumpBack]DialoguesSkipStory",
             "[JumpBack]CommonConfirmReward",
-            "BriefEncounterRepeat"
+            "BriefEncounterRepeat",
+            "OutpostDailyEventFlow"
         ]
     },
     "BriefEncounterRepeat": {
