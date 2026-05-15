@@ -191,7 +191,12 @@ func fetchMemberData() ([]MemberRecord, error) {
 
 // fetchFromSource fetches and parses member data from a single URL.
 func fetchFromSource(client *http.Client, url string) ([]MemberRecord, error) {
-	resp, err := client.Get(url)
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("User-Agent", "MDA/"+appVersion)
+	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
 	}
