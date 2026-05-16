@@ -199,6 +199,38 @@
     "BattleNextStateAvailable": {
         "desc": "下一关卡可点击",
         "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "BattleNextStateAvailableBlue",
+                    "BattleNextStateAvailableWhite"
+                ]
+            }
+        }
+    },
+    "BattleNextStateAvailableBlue": {
+        "desc": "下一关卡可点击（蓝色）",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": "BattleNextStateVisible",
+                "lower": [
+                    0,
+                    130,
+                    220
+                ],
+                "upper": [
+                    50,
+                    190,
+                    255
+                ],
+                "count": 100
+            }
+        }
+    },
+    "BattleNextStateAvailableWhite": {
+        "desc": "下一关卡可点击（白色）",
+        "recognition": {
             "type": "ColorMatch",
             "param": {
                 "roi": "BattleNextStateVisible",

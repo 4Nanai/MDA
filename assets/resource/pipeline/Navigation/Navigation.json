@@ -295,6 +295,6 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000
+        "post_wait_freezes": 500
     }
 }
