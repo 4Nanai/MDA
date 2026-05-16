@@ -218,7 +218,7 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_delay": 500
     },
     "AdviseBondIncreasedVisible": {
         "desc": "好感度提升的标识",
@@ -226,10 +226,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    593,
-                    351,
-                    96,
-                    19
+                    585,
+                    347,
+                    115,
+                    47
                 ],
                 "expected": [
                     ".*好感度提升.*"
