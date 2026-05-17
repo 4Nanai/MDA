@@ -8,8 +8,23 @@
             }
         },
         "next": [
-            "LargeEventEntry",
+            "LargeEventStart",
             "[JumpBack]NavigationEnterHall"
+        ]
+    },
+    "LargeEventStart": {
+        "desc": "大活动开始",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
+            }
+        },
+        "next": [
+            "LargeEventEntry",
+            "CommonEndTask"
         ]
     },
     "LargeEventEntry": {

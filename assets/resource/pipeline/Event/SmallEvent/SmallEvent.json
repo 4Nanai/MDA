@@ -8,8 +8,23 @@
             }
         },
         "next": [
-            "SmallEventEntry",
+            "SmallEventStart",
             "[JumpBack]NavigationEnterHall"
+        ]
+    },
+    "SmallEventStart": {
+        "desc": "小活动开始",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
+            }
+        },
+        "next": [
+            "SmallEventEntry",
+            "CommonEndTask"
         ]
     },
     "SmallEventEntry": {
