@@ -116,7 +116,8 @@
             "[JumpBack]DialoguesSkipStory",
             "[JumpBack]BattleNextState",
             "BattleOperationComplete",
-            "BattleOperationFailed"
+            "BattleOperationFailed",
+            "BattleOperationTimeout"
         ]
     },
     "BattleClickAutoBurst": {
@@ -281,6 +282,21 @@
             "BattleOperationFailed"
         ]
     },
+    "BattleOperationTimeout": {
+        "desc": "战斗超时",
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "BattleTimeoutVisible"
+                ]
+            }
+        },
+        "next": [
+            "CommonGoBack",
+            "BattleOperationTimeout"
+        ]
+    },
     "BattleEscVisible": {
         "desc": "Esc可见",
         "recognition": {
@@ -311,6 +327,23 @@
                 ],
                 "expected": [
                     "战败"
+                ]
+            }
+        }
+    },
+    "BattleTimeoutVisible": {
+        "desc": "战斗超时可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    612,
+                    263,
+                    55,
+                    28
+                ],
+                "expected": [
+                    "逾时"
                 ]
             }
         }
