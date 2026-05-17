@@ -101,6 +101,7 @@
             }
         },
         "next": [
+            "DailyRewardsEmailClaimUnable",
             "DailyRewardsEmailClaim"
         ]
     },
@@ -124,5 +125,30 @@
             "type": "Click"
         },
         "post_wait_freezes": 1500
+    },
+    "DailyRewardsEmailClaimUnable": {
+        "desc": "邮箱无法收取",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    667,
+                    592,
+                    136,
+                    37
+                ],
+                "lower": [
+                    150,
+                    150,
+                    150
+                ],
+                "upper": [
+                    170,
+                    170,
+                    170
+                ],
+                "count": 3000
+            }
+        }
     }
 }
