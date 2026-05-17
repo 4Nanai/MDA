@@ -13,6 +13,7 @@
             "[JumpBack]CommonCloseSale",
             "[JumpBack]LoginRewardClaim",
             "[JumpBack]CommonConfirmReward",
+            "[JumpBack]NavigationOutpostBack",
             "NavigationClickFreeState",
             "[JumpBack]NavigationClickHall"
         ]
@@ -109,6 +110,27 @@
             "NavigationNoticeFlow",
             "[Anchor]NeedCheck"
         ]
+    },
+    "NavigationOutpostBack": {
+        "desc": "前哨基地误触返回",
+        "pre_wait_freezes": 500,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    633,
+                    668,
+                    60,
+                    33
+                ],
+                "expected": [
+                    "关闭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
     "NavigationNoticeVisible": {
         "desc": "公告可见",
