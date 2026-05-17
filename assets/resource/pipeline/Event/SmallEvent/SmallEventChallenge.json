@@ -3,7 +3,7 @@
         "max_hit": 1,
         "timeout": 60000,
         "desc": "小活动挑战",
-        "enabled": false,
+        "enabled": true,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -27,6 +27,8 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 100,
+        "post_wait_freezes": 50,
         "next": [
             "[JumpBack]EventChallenge",
             "SmallEventGoBack"
