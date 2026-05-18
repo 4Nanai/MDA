@@ -117,6 +117,7 @@
             "[JumpBack]SmallEventChallenge",
             "[JumpBack]SmallEventStory",
             "[JumpBack]SmallEventMission",
+            "[JumpBack]SmallEventShop",
             "CommonEndTask"
         ]
     },

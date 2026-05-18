@@ -112,6 +112,15 @@
                             "enabled": true
                         }
                     }
+                },
+                {
+                    "name": "SmallEventShop",
+                    "label": "$option.SmallEventContent.SmallEventShop",
+                    "pipeline_override": {
+                        "SmallEventShop": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         }

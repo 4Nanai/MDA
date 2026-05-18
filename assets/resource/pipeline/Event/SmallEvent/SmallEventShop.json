@@ -1,0 +1,31 @@
+{
+    "SmallEventShop": {
+        "max_hit": 1,
+        "timeout": 60000,
+        "desc": "小活动商店",
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    485,
+                    536,
+                    308,
+                    79
+                ],
+                "expected": [
+                    ".*商店.*"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 100,
+        "next": [
+            "[JumpBack]EventShop",
+            "SmallEventGoBack"
+        ]
+    }
+}
