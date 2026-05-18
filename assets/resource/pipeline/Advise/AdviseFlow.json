@@ -146,7 +146,7 @@
     },
     "AdviseSettlement": {
         "desc": "咨询结算",
-        "post_wait_freezes": {
+        "pre_wait_freezes": {
             "time": 500,
             "target": [
                 741,
@@ -155,9 +155,11 @@
                 137
             ]
         },
+        "post_wait_freezes": 100,
         "next": [
             "[JumpBack]AdviseRemoveFavorites",
             "[JumpBack]AdviseConfirmRankIncrease",
+            "[JumpBack]AdviseEpisodeUnlocked",
             "[JumpBack]AdviseBondIncreasedVisible",
             "[JumpBack]AdviseEpisodeReward",
             "AdviseNextAdvise"
@@ -212,6 +214,27 @@
                 ],
                 "expected": [
                     "追加能力值"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500
+    },
+    "AdviseEpisodeUnlocked": {
+        "desc": "新花絮解锁",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    593,
+                    458,
+                    95,
+                    41
+                ],
+                "expected": [
+                    ".*解锁花.*"
                 ]
             }
         },
