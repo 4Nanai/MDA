@@ -47,7 +47,7 @@
             "type": "Click"
         },
         "next": [
-            "SmallEventMainPageFlow",
+            "EnteringSmallEvent",
             "SmallEventEntry"
         ]
     },
@@ -67,6 +67,31 @@
                 ]
             }
         }
+    },
+    "EnteringSmallEvent": {
+        "desc": "跳过小活动进入动画",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SmallEventMainPageEntered"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "SmallEventMainPageFlow"
+        ]
     },
     "SmallEventMainPageFlow": {
         "desc": "活动地区流程",
