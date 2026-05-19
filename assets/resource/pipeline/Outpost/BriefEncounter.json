@@ -171,7 +171,7 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "DoNothing"
         },
         "post_wait_freezes": 500,
         "next": [
