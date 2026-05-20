@@ -484,3 +484,7 @@ tests/maatools
 
 # oh-my-opencode
 .sisyphus/
+
+# Local AI/code intelligence preferences
+.codegraph/
+.cursor/
