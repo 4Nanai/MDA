@@ -1,11 +1,5 @@
 {
     "TribeTowerMain": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "MembershipCheck"
-            }
-        },
         "next": [
             "ArkEnterTribeTower",
             "[JumpBack]HallEnterArk"

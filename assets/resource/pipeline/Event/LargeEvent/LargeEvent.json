@@ -1,12 +1,6 @@
 {
     "LargeEventMain": {
         "desc": "大活动",
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "MembershipCheck"
-            }
-        },
         "next": [
             "LargeEventStart",
             "[JumpBack]NavigationEnterHall"

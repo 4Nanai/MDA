@@ -2,12 +2,6 @@
     "AdviseMain": {
         "desc": "咨询入口",
         "max_hit": 1,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "MembershipCheck"
-            }
-        },
         "next": [
             "AdviseStart",
             "[JumpBack]NavigationEnterHall"

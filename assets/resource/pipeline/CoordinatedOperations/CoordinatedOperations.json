@@ -2,12 +2,6 @@
     "CoordinatedOperationsMain": {
         "desc": "协同作战入口",
         "max_hit": 1,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "MembershipCheck"
-            }
-        },
         "next": [
             "CoordinatedOperationsStart",
             "[JumpBack]NavigationEnterHall"

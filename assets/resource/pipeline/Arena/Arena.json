@@ -1,11 +1,5 @@
 {
     "ArenaMain": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "MembershipCheck"
-            }
-        },
         "next": [
             "[JumpBack]ArenaSpecialRewardClaim",
             "ArkEnterArena",
