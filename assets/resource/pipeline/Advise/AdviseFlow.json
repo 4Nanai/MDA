@@ -139,15 +139,8 @@
         "action": {
             "type": "Click"
         },
-        "next": [
-            "[JumpBack]AdviseConfirmAction",
-            "AdviseSettlement"
-        ]
-    },
-    "AdviseSettlement": {
-        "desc": "咨询结算",
-        "pre_wait_freezes": {
-            "time": 500,
+        "post_wait_freezes": {
+            "time": 200,
             "target": [
                 741,
                 357,
@@ -155,6 +148,13 @@
                 137
             ]
         },
+        "next": [
+            "[JumpBack]AdviseConfirmAction",
+            "AdviseSettlement"
+        ]
+    },
+    "AdviseSettlement": {
+        "desc": "咨询结算",
         "post_wait_freezes": 100,
         "next": [
             "[JumpBack]AdviseRemoveFavorites",

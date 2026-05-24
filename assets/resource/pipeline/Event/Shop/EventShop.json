@@ -56,16 +56,105 @@
     },
     "EventShopPageFlow": {
         "desc": "活动商店页面流程",
+        "post_wait_freezes": {
+            "target": [
+                570,
+                148,
+                138,
+                143
+            ],
+            "time": 100
+        },
         "next": [
-            "[JumpBack]ShopConfirmPurchase",
-            "[JumpBack]ShopAdvancedRecruitVoucher",
-            "[JumpBack]ShopNormalRecruitVoucher",
-            "[JumpBack]ShopSkillManual",
-            "[JumpBack]ShopBurstManual",
-            "[JumpBack]ShopBattleDataSetCase",
-            "[JumpBack]ShopCoreDustCase",
+            "ShopAdvancedRecruitVoucher",
+            "ShopNormalRecruitVoucher",
+            "ShopSkillManualI",
+            "ShopSkillManualII",
+            "ShopBurstManualI",
+            "ShopBurstManualII",
+            "ShopBattleDataSetCase",
+            "ShopCoreDustCase",
             "CommonEndTask"
         ]
+    },
+    "ShopGoodsAvailable": {
+        "desc": "商店有货",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    572,
+                    119,
+                    135,
+                    51
+                ],
+                "expected": [
+                    "购买道具"
+                ]
+            }
+        },
+        "next": [
+            "CheckEventBalance",
+            "[JumpBack]CommonClosePage",
+            "CommonEndTask"
+        ]
+    },
+    "CheckEventBalance": {
+        "desc": "检测活动余额",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "GoodsCostsVisible",
+                    "GoodsCostsAffordable"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]ShopConfirmPurchase",
+            "EventShopPageFlow"
+        ]
+    },
+    "GoodsCostsVisible": {
+        "desc": "活动余额可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    672,
+                    485,
+                    42,
+                    30
+                ],
+                "expected": [
+                    "\\d+"
+                ]
+            }
+        }
+    },
+    "GoodsCostsAffordable": {
+        "desc": "活动余额足够",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    672,
+                    485,
+                    42,
+                    30
+                ],
+                "lower": [
+                    225,
+                    225,
+                    225
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ]
+            }
+        }
     },
     "ShopAdvancedRecruitVoucher": {
         "desc": "高级招募券",
@@ -88,7 +177,20 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "post_wait_freezes": {
+            "target": [
+                570,
+                148,
+                138,
+                143
+            ],
+            "time": 200
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopNormalRecruitVoucher": {
         "desc": "普通招募券",
@@ -111,11 +213,15 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
-    "ShopSkillManual": {
-        "desc": "技能手册",
-        "max_hit": 2,
+        "ShopSkillManualII": {
+        "desc": "技能手册II",
+        "max_hit": 1,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -132,11 +238,65 @@
                 "index": -1
             }
         },
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
-    "ShopBurstManual": {
-        "desc": "爆裂手册",
-        "max_hit": 2,
+    "ShopBurstManualI": {
+        "desc": "爆裂手册I",
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    22,
+                    283,
+                    1232,
+                    39
+                ],
+                "expected": [
+                    ".*爆裂手册.*"
+                ],
+                "order_by": "Horizontal",
+                "index": 0
+            }
+        },
+        "action": "Click",
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopSkillManualI": {
+        "desc": "技能手册I",
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    22,
+                    283,
+                    1232,
+                    39
+                ],
+                "expected": [
+                    ".*技能手册.*"
+                ],
+                "order_by": "Horizontal",
+                "index": 0
+            }
+        },
+        "action": "Click",
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopBurstManualII": {
+        "desc": "爆裂手册II",
+        "max_hit": 1,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -153,7 +313,11 @@
                 "index": -1
             }
         },
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopBattleDataSetCase": {
         "desc": "战斗数据集",
@@ -174,7 +338,11 @@
         },
         "action": {
             "type": "Click"
-        }    
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopCoreDustCase": {
         "desc": "芯尘盒",
@@ -195,6 +363,10 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     }
 }
