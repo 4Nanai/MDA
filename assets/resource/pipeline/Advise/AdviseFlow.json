@@ -172,7 +172,8 @@
             "param": {
                 "all_of": [
                     "AdviseFavoriteSelected",
-                    "AdviseMaxLevelVisible"
+                    "AdviseMaxLevelVisible",
+                    "AdviseCollectionCompletedVisible"
                 ]
             }
         },
