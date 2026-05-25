@@ -397,6 +397,18 @@
             "BattleInBattle"
         ]
     },
+    "BattleCannotBattle": {
+        "desc": "不可战斗",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BattleMainVisible",
+                    "BattleUnavailable"
+                ]
+            }
+        }
+    },
     "BattleClosePage": {
         "desc": "退出战斗",
         "recognition": {
@@ -486,6 +498,26 @@
                     255,
                     255,
                     255
+                ],
+                "count": 100
+            }
+        }
+    },
+    "BattleUnavailable": {
+        "desc": "无法战斗的标识",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": "BattleMainVisible",
+                "lower": [
+                    60,
+                    60,
+                    60
+                ],
+                "upper": [
+                    170,
+                    170,
+                    170
                 ],
                 "count": 100
             }
