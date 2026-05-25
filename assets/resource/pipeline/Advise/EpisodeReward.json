@@ -29,7 +29,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "AdviseClickEpisode",
+            "[JumpBack]AdviseClickEpisode",
             "[JumpBack]AdviseEpisodeRewardScrollDown",
             "AdviseClickAdviceCollection",
             "CommonClosePage"
@@ -67,7 +67,8 @@
         "next": [
             "[JumpBack]AdviseStory",
             "[JumpBack]CommonConfirmReward",
-            "CommonClosePage"
+            "[JumpBack]HasNextStory",
+            "CommonEndTask"
         ]
     },
     "AdviseClickAdviceCollection": {
@@ -155,5 +156,25 @@
             }
         },
         "post_delay": 500
+    },
+    "HasNextStory": {
+        "desc": "是否还有下一个花絮",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    545,
+                    242,
+                    190,
+                    36
+                ],
+                "expected": [
+                    ".*下一个.*"
+                ]
+            }
+        },
+        "next": [
+            "CommonClosePage"
+        ]
     }
 }
