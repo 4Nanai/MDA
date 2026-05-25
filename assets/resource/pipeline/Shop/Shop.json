@@ -79,6 +79,15 @@
                 ]
             }
         },
+        "post_wait_freezes": {
+            "time": 200,
+            "target": [
+                594,
+                429,
+                220,
+                250
+            ]
+        },
         "next": [
             "ShopPurchaseGemBlocked",
             "ShopPurchasePriceBlocked",
