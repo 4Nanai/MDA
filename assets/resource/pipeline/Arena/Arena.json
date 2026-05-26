@@ -78,6 +78,7 @@
     },
     "ArenaCornerFlow": {
         "desc": "竞技场流程",
+        "pre_wait_freezes": 200,
         "recognition": {
             "type": "And",
             "param": {

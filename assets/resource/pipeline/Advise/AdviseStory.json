@@ -15,5 +15,84 @@
             "[JumpBack]DialoguesClickOption",
             "CommonEndTask"
         ]
+    },
+    "EnterAdviseEpisodeStory": {
+        "desc": "加载花絮剧情",
+        "action": "DoNothing",
+        "next": [
+            "AdviseEpisodeStory",
+            "EnterAdviseEpisodeStory"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "[JumpBack]CommonClosePage",
+            "AdviseSettlement",
+            "CommonEndTask"
+        ]
+    },
+    "AdviseEpisodeStory": {
+        "desc": "花絮剧情",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "DialoguesMainVisible"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]DialoguesSkipStory",
+            "[JumpBack]DialoguesClickContinue",
+            "[JumpBack]DialoguesClickOption",
+            "WaitingAdviseEpisodeStoryEnd"
+        ]
+    },
+    "WaitingAdviseEpisodeStoryEnd": {
+        "desc": "等待花絮剧情结束",
+        "action": "DoNothing",
+        "pre_delay": 1000,
+        "next": [
+            "[JumpBack]CommonConfirmReward",
+            "PlayNextEpisodeStory",
+            "AdviseEpisodeStoryEnd",
+            "WaitingAdviseEpisodeStoryEnd"
+        ],
+        "timeout": 5000
+    },
+    "PlayNextEpisodeStory": {
+        "desc": "播放下一个花絮",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    685,
+                    379,
+                    92,
+                    33
+                ],
+                "expected": [
+                    ".*放花.*"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "AdviseEpisodeStory"
+        ]
+    },
+    "AdviseEpisodeStoryEnd": {
+        "desc": "剧情结束",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [582,60,127,34],
+                "expected": [
+                    ".*日.*"
+                ]
+            }
+        },
+        "next": [
+            "AdviseEpisodeWorkflow"
+        ]
     }
 }

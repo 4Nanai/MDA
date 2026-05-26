@@ -29,7 +29,13 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "[JumpBack]AdviseClickEpisode",
+            "AdviseEpisodeWorkflow"
+        ]
+    },
+    "AdviseEpisodeWorkflow": {
+        "desc": "花絮奖励流程",
+        "next": [
+            "AdviseClickEpisode",
             "[JumpBack]AdviseEpisodeRewardScrollDown",
             "AdviseClickAdviceCollection",
             "CommonClosePage"
@@ -63,12 +69,9 @@
                 ]
             }
         },
-        "post_delay": 2500,
         "next": [
-            "[JumpBack]AdviseStory",
-            "[JumpBack]CommonConfirmReward",
-            "[JumpBack]HasNextStory",
-            "CommonEndTask"
+            "AdviseClickEpisode",
+            "EnterAdviseEpisodeStory"
         ]
     },
     "AdviseClickAdviceCollection": {
@@ -156,25 +159,5 @@
             }
         },
         "post_delay": 500
-    },
-    "HasNextStory": {
-        "desc": "是否还有下一个花絮",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    545,
-                    242,
-                    190,
-                    36
-                ],
-                "expected": [
-                    ".*下一个.*"
-                ]
-            }
-        },
-        "next": [
-            "CommonClosePage"
-        ]
     }
 }
