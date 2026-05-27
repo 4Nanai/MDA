@@ -42,8 +42,8 @@
         "repeat": 5,
         "repeat_delay": 200
     },
-    "DialoguesClickOption": {
-        "desc": "点击选项",
+    "DialoguesOptionOCR": {
+        "desc": "对话选项OCR",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -58,6 +58,37 @@
                     "[①②③④⑤⑥⑦⑧⑨]"
                 ],
                 "threshold": 0.7
+            }
+        }
+    },
+    "DialoguesOptionTemplate": {
+        "desc": "对话选项模板",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    452,
+                    383,
+                    56,
+                    324
+                ],
+                "template": [
+                    "Common/DialogueOption1.png",
+                    "Common/DialogueOption2.png"
+                ],
+                "green_mask": true
+            }
+        }
+    },
+    "DialoguesClickOption": {
+        "desc": "点击选项",
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "DialoguesOptionTemplate",
+                    "DialoguesOptionOCR"
+                ]
             }
         },
         "action": {
