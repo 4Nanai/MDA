@@ -4,15 +4,8 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    1218,
-                    9,
-                    39,
-                    16
-                ],
-                "expected": [
-                    ".*SKI.*"
-                ]
+                "roi": [1218, 9, 39, 16],
+                "expected": [".*SKI.*"]
             }
         },
         "action": {
@@ -24,15 +17,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    622,
-                    646,
-                    336,
-                    70
-                ],
-                "template": [
-                    "Dialogues/Continue.png"
-                ]
+                "roi": [622, 646, 336, 70],
+                "template": ["Dialogues/Continue.png"]
             }
         },
         "action": {
@@ -44,16 +30,8 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    452,
-                    383,
-                    56,
-                    324
-                ],
-                "expected": [
-                    "[0-9]",
-                    "[①②③④⑤⑥⑦⑧⑨]"
-                ],
+                "roi": [452, 383, 56, 324],
+                "expected": ["[0-9]", "[①②③④⑤⑥⑦⑧⑨]"],
                 "threshold": 0.7
             }
         }
@@ -63,16 +41,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    452,
-                    383,
-                    56,
-                    324
-                ],
-                "template": [
-                    "Common/DialogueOption1.png",
-                    "Common/DialogueOption2.png"
-                ],
+                "roi": [452, 383, 56, 324],
+                "template": ["Common/DialogueOption1.png", "Common/DialogueOption2.png"],
                 "green_mask": true
             }
         }
@@ -82,21 +52,13 @@
         "recognition": {
             "type": "Or",
             "param": {
-                "any_of": [
-                    "DialoguesOptionTemplate",
-                    "DialoguesOptionOCR"
-                ]
+                "any_of": ["DialoguesOptionTemplate", "DialoguesOptionOCR"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [
-                    50,
-                    0,
-                    0,
-                    0
-                ]
+                "target_offset": [50, 0, 0, 0]
             }
         }
     },
@@ -105,18 +67,8 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    953,
-                    0,
-                    327,
-                    75
-                ],
-                "expected": [
-                    ".*HIDE.*",
-                    ".*AUTO.*",
-                    ".*LOG.*",
-                    ".*SKIP.*"
-                ]
+                "roi": [953, 0, 327, 75],
+                "expected": [".*HIDE.*", ".*AUTO.*", ".*LOG.*", ".*SKIP.*"]
             }
         }
     },
@@ -125,34 +77,23 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": [
-                    "DialoguesMainVisible"
-                ]
+                "all_of": ["DialoguesMainVisible"]
             }
         },
-        "next": [
-            "DialoguesSkipStoryAndEndTask",
-            "[JumpBack]DialoguesClickContinue",
-            "[JumpBack]DialoguesClickOption"
-        ],
-        "rate_limit": 200
+        "rate_limit": 200,
+        "next": ["DialoguesSkipStoryAndEndTask", "[JumpBack]DialoguesClickContinue", "[JumpBack]DialoguesClickOption"]
     },
     "DialoguesSkipStoryAndEndTask": {
         "desc": "跳过剧情并结束流程",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": [
-                    "DialoguesSkipStory"
-                ]
+                "all_of": ["DialoguesSkipStory"]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": [
-            "DialoguesSkipStoryAndEndTask",
-            "CommonEndTask"
-        ]
+        "next": ["DialoguesSkipStoryAndEndTask", "CommonEndTask"]
     }
 }

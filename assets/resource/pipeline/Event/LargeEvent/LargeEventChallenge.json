@@ -1,35 +1,20 @@
 {
     "LargeEventChallenge": {
-        "max_hit": 1,
-        "timeout": 60000,
         "desc": "大活动挑战",
         "enabled": false,
+        "max_hit": 1,
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    485,
-                    536,
-                    308,
-                    79
-                ],
-                "replace": [
-                    [
-                        "排",
-                        "挑"
-                    ]
-                ],
-                "expected": [
-                    ".*挑战.*"
-                ]
+                "roi": [485, 536, 308, 79],
+                "expected": [".*挑战.*"],
+                "replace": [["排", "挑"]]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": [
-            "[JumpBack]EventChallenge",
-            "LargeEventGoBack"
-        ]
+        "timeout": 60000,
+        "next": ["[JumpBack]EventChallenge", "LargeEventGoBack"]
     }
 }

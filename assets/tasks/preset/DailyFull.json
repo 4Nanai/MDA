@@ -97,7 +97,12 @@
                     "option": {
                         "LargeEventTheme": "StarAnis",
                         "LargeEventStoryPriority": "Story2First",
-                        "LargeEventContent": ["LargeEventLoginStamp", "LargeEventChallenge", "LargeEventStory", "LargeEventMission"]
+                        "LargeEventContent": [
+                            "LargeEventLoginStamp",
+                            "LargeEventChallenge",
+                            "LargeEventStory",
+                            "LargeEventMission"
+                        ]
                     }
                 }
             ]

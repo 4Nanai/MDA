@@ -4,116 +4,72 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": [
-                    "DialoguesMainVisible"
-                ]
+                "all_of": ["DialoguesMainVisible"]
             }
         },
-        "next": [
-            "[JumpBack]DialoguesSkipWorkflow",
-            "CommonEndTask"
-        ]
+        "next": ["[JumpBack]DialoguesSkipWorkflow", "CommonEndTask"]
     },
     "AdviseEpisodeStory": {
         "desc": "花絮剧情",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": [
-                    "DialoguesMainVisible"
-                ]
+                "all_of": ["DialoguesMainVisible"]
             }
         },
-        "next": [
-            "[JumpBack]DialoguesSkipWorkflow",
-            "WaitingAdviseEpisodeStoryAward"
-        ]
+        "next": ["[JumpBack]DialoguesSkipWorkflow", "WaitingAdviseEpisodeStoryAward"]
     },
     "WaitingAdviseEpisodeStoryAward": {
         "desc": "等待花絮剧情奖励界面",
         "action": "DoNothing",
-        "next": [
-            "AdviseEpisodeStoryAwardVisible"
-        ],
         "timeout": 5000,
         "rate_limit": 100,
-        "on_error": [
-            "WaitingAdviseEpisodeStoryEnd"
-        ]
+        "next": ["AdviseEpisodeStoryAwardVisible"],
+        "on_error": ["WaitingAdviseEpisodeStoryEnd"]
     },
     "AdviseEpisodeStoryAwardVisible": {
         "desc": "等待花絮剧情奖励",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": [
-                    "CommonConfirmReward"
-                ]
+                "all_of": ["CommonConfirmReward"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target": [
-                    582,
-                    430,
-                    115,
-                    62
-                ]
+                "target": [582, 430, 115, 62]
             }
         },
-        "next": [
-            "WaitingAdviseEpisodeStoryEnd"
-        ]
+        "next": ["WaitingAdviseEpisodeStoryEnd"]
     },
     "WaitingAdviseEpisodeStoryEnd": {
         "desc": "等待花絮剧情结束",
         "action": "DoNothing",
-        "next": [
-            "PlayNextEpisodeStory",
-            "AdviseEpisodeStoryEnd"
-        ],
-        "timeout": 5000
+        "timeout": 5000,
+        "next": ["PlayNextEpisodeStory", "AdviseEpisodeStoryEnd"]
     },
     "PlayNextEpisodeStory": {
         "desc": "播放下一个花絮",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    685,
-                    379,
-                    92,
-                    33
-                ],
-                "expected": [
-                    ".*放花.*"
-                ]
+                "roi": [685, 379, 92, 33],
+                "expected": [".*放花.*"]
             }
         },
         "action": "Click",
-        "next": [
-            "AdviseEpisodeStory"
-        ]
+        "next": ["AdviseEpisodeStory"]
     },
     "AdviseEpisodeStoryEnd": {
         "desc": "剧情结束",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    582,
-                    60,
-                    127,
-                    34
-                ],
-                "expected": [
-                    ".*日.*"
-                ]
+                "roi": [582, 60, 127, 34],
+                "expected": [".*日.*"]
             }
         },
-        "next": [
-            "AdviseEpisodeWorkflow"
-        ]
+        "next": ["AdviseEpisodeWorkflow"]
     }
 }

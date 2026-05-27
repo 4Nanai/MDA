@@ -13,9 +13,7 @@
                 "DailyRewardsPassMain",
                 "DailyRewardsFreeRecruit"
             ],
-            "group": [
-                "daily"
-            ]
+            "group": ["daily"]
         }
     ],
     "option": {

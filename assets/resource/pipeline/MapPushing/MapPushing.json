@@ -1,24 +1,16 @@
 {
     "MapPushingFlow": {
         "desc": "推图流程",
-        "next": [
-            "[JumpBack]BattleStart",
-            "[JumpBack]MapPushingMonsterClick",
-            "[JumpBack]MapPushingplateClick"
-        ]
+        "next": ["[JumpBack]BattleStart", "[JumpBack]MapPushingMonsterClick", "[JumpBack]MapPushingplateClick"]
     },
     "MapPushingMonsterClick": {
         "desc": "推图点击怪物",
         "recognition": {
             "type": "NeuralNetworkDetect",
             "param": {
+                "expected": [0],
                 "model": "MapPushing.onnx",
-                "labels": [
-                    "monster"
-                ],
-                "expected": [
-                    0
-                ],
+                "labels": ["monster"],
                 "order_by": "Area"
             }
         },
@@ -27,12 +19,7 @@
         },
         "post_wait_freezes": {
             "time": 500,
-            "target": [
-                448,
-                512,
-                385,
-                79
-            ]
+            "target": [448, 512, 385, 79]
         }
     },
     "MapPushingplateClick": {
@@ -40,13 +27,9 @@
         "recognition": {
             "type": "NeuralNetworkDetect",
             "param": {
+                "expected": [0],
                 "model": "MapPushing.onnx",
-                "labels": [
-                    "plate0"
-                ],
-                "expected": [
-                    0
-                ],
+                "labels": ["plate0"],
                 "order_by": "Area"
             }
         },
@@ -55,12 +38,7 @@
         },
         "post_wait_freezes": {
             "time": 500,
-            "target": [
-                448,
-                512,
-                385,
-                79
-            ]
+            "target": [448, 512, 385, 79]
         }
     }
 }

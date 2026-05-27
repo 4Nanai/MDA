@@ -4,7 +4,7 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [18,20,19,9],
+                "roi": [18, 20, 19, 9],
                 "lower": [200, 200, 200],
                 "upper": [255, 255, 255]
             }
