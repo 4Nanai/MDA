@@ -24,7 +24,6 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000,
         "next": [
             "TribeTowerTask",
             "ArkEnterTribeTower"
@@ -69,7 +68,6 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000,
         "next": [
             "TribeTowerChooseStage"
         ]
@@ -101,7 +99,6 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
         "next": [
             "TribeTowerBattleFlow"
         ]
@@ -143,7 +140,6 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
         "next": [
             "TribeTowerChooseStage"
         ]
@@ -176,7 +172,6 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
         "next": [
             "TribeTowerChooseStage"
         ]
@@ -209,7 +204,6 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
         "next": [
             "TribeTowerChooseStage"
         ]
@@ -242,7 +236,6 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
         "next": [
             "TribeTowerChooseStage"
         ]
