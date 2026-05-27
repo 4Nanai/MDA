@@ -70,7 +70,7 @@
                     325
                 ],
                 "template": "Shop/ArenaShop/FireCodeManual.png",
-                "threshold": 0.95
+                "threshold": 0.9
             }
         },
         "action": {

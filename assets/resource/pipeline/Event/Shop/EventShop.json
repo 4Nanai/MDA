@@ -183,7 +183,7 @@
                 "template": [
                     "SmallEvent/Shop/AdvancedRecruitVoucher.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -218,7 +218,7 @@
                 "template": [
                     "SmallEvent/Shop/NormalRecruitVoucher.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -244,7 +244,7 @@
                 "template": [
                     "SmallEvent/Shop/SkillManualII.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": "Click",
@@ -268,7 +268,7 @@
                 "template": [
                     "SmallEvent/Shop/BurstManualI.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": "Click",
@@ -292,7 +292,7 @@
                 "template": [
                     "SmallEvent/Shop/SkillManualI.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": "Click",
@@ -316,7 +316,7 @@
                 "template": [
                     "SmallEvent/Shop/BurstManualII.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": "Click",
@@ -340,7 +340,7 @@
                 "template": [
                     "SmallEvent/Shop/BattleDataSetCase.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -391,7 +391,7 @@
                 "template": [
                     "SmallEvent/Shop/AttackerConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -417,7 +417,7 @@
                 "template": [
                     "SmallEvent/Shop/DefenseConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -443,7 +443,7 @@
                 "template": [
                     "SmallEvent/Shop/SupporterConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -469,7 +469,7 @@
                 "template": [
                     "SmallEvent/Shop/ElysionConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -495,7 +495,7 @@
                 "template": [
                     "SmallEvent/Shop/MissilisConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -521,7 +521,7 @@
                 "template": [
                     "SmallEvent/Shop/TetraConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -547,7 +547,7 @@
                 "template": [
                     "SmallEvent/Shop/PilgrimConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -573,7 +573,7 @@
                 "template": [
                     "SmallEvent/Shop/AbnormalConsole.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -599,7 +599,7 @@
                 "template": [
                     "SmallEvent/Shop/ReEnergy.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -625,7 +625,7 @@
                 "template": [
                     "SmallEvent/Shop/CoreDust.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
@@ -651,7 +651,7 @@
                 "template": [
                     "SmallEvent/Shop/Credits.png"
                 ],
-                "threshold": 0.98
+                "threshold": 0.9
             }
         },
         "action": {
