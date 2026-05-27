@@ -74,6 +74,17 @@
             "ShopBurstManualII",
             "ShopBattleDataSetCase",
             "ShopCoreDustCase",
+            "ShopAttackerConsole",
+            "ShopDefenseConsole",
+            "ShopSupporterConsole",
+            "ShopElysionConsole",
+            "ShopMissilisConsole",
+            "ShopTetraConsole",
+            "ShopPilgrimConsole",
+            "ShopAbnormalConsole",
+            "ShopReEnergy",
+            "ShopCoreDust",
+            "ShopCredits",
             "CommonEndTask"
         ]
     },
@@ -152,7 +163,8 @@
                     255,
                     255,
                     255
-                ]
+                ],
+                "count": 100
             }
         }
     },
@@ -160,19 +172,18 @@
         "desc": "高级招募券",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*招募券.*"
+                "template": [
+                    "SmallEvent/Shop/AdvancedRecruitVoucher.png"
                 ],
-                "order_by": "Horizontal",
-                "index": 0
+                "threshold": 0.98
             }
         },
         "action": {
@@ -196,19 +207,18 @@
         "desc": "普通招募券",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*招募券.*"
+                "template": [
+                    "SmallEvent/Shop/NormalRecruitVoucher.png"
                 ],
-                "order_by": "Horizontal",
-                "index": -1
+                "threshold": 0.98
             }
         },
         "action": {
@@ -223,19 +233,18 @@
         "desc": "技能手册II",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*技能手册.*"
+                "template": [
+                    "SmallEvent/Shop/SkillManualII.png"
                 ],
-                "order_by": "Horizontal",
-                "index": -1
+                "threshold": 0.98
             }
         },
         "action": "Click",
@@ -248,19 +257,18 @@
         "desc": "爆裂手册I",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*爆裂手册.*"
+                "template": [
+                    "SmallEvent/Shop/BurstManualI.png"
                 ],
-                "order_by": "Horizontal",
-                "index": 0
+                "threshold": 0.98
             }
         },
         "action": "Click",
@@ -273,19 +281,18 @@
         "desc": "技能手册I",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*技能手册.*"
+                "template": [
+                    "SmallEvent/Shop/SkillManualI.png"
                 ],
-                "order_by": "Horizontal",
-                "index": 0
+                "threshold": 0.98
             }
         },
         "action": "Click",
@@ -298,19 +305,18 @@
         "desc": "爆裂手册II",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*爆裂手册.*"
+                "template": [
+                    "SmallEvent/Shop/BurstManualII.png"
                 ],
-                "order_by": "Horizontal",
-                "index": -1
+                "threshold": 0.98
             }
         },
         "action": "Click",
@@ -320,20 +326,21 @@
         ]
     },
     "ShopBattleDataSetCase": {
-        "desc": "战斗数据集",
+        "desc": "战斗数据集盒",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*战斗数据.*"
-                ]
+                "template": [
+                    "SmallEvent/Shop/BattleDataSetCase.png"
+                ],
+                "threshold": 0.98
             }
         },
         "action": {
@@ -348,17 +355,303 @@
         "desc": "芯尘盒",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    22,
-                    283,
-                    1232,
-                    39
+                    45,
+                    314,
+                    1192,
+                    230
                 ],
-                "expected": [
-                    ".*芯尘.*"
+                "template": [
+                    "SmallEvent/Shop/CoreDustCase.png"
                 ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopAttackerConsole": {
+        "desc": "火力型通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/AttackerConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopDefenseConsole": {
+        "desc": "防御型通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/DefenseConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopSupporterConsole": {
+        "desc": "辅助型通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/SupporterConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopElysionConsole": {
+        "desc": "极乐净土通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/ElysionConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopMissilisConsole": {
+        "desc": "米西利斯通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/MissilisConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopTetraConsole": {
+        "desc": "泰特拉通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/TetraConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopPilgrimConsole": {
+        "desc": "朝圣者通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/PilgrimConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopAbnormalConsole": {
+        "desc": "异常通用主机",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/AbnormalConsole.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopReEnergy": {
+        "desc": "循环能量",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/ReEnergy.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopCoreDust": {
+        "desc": "芯尘",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/CoreDust.png"
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
+    },
+    "ShopCredits": {
+        "desc": "信用点",
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
+                "template": [
+                    "SmallEvent/Shop/Credits.png"
+                ],
+                "threshold": 0.98
             }
         },
         "action": {
