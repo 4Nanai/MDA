@@ -79,11 +79,20 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {
+                "target": [
+                    106,
+                    117,
+                    13,
+                    13
+                ]
+            }
         },
         "post_wait_freezes": 500,
         "next": [
-            "OutpostEnterDailyEvent"
+            "OutpostEnterDailyEvent",
+            "OutpostDailyLives"
         ]
     },
     "OutpostEnterDailyEvent": {
