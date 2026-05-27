@@ -117,7 +117,7 @@
         "next": [
             "[JumpBack]AdviseConfirmAction",
             "[JumpBack]AdviseStory",
-            "AdviseSettlement"
+            "AdviseStoryEnd"
         ]
     },
     "AdviseQuickAdvise": {
@@ -150,16 +150,45 @@
         },
         "next": [
             "[JumpBack]AdviseConfirmAction",
-            "AdviseSettlement"
+            "AdviseStoryEnd"
+        ]
+    },
+    "AdviseStoryEnd": {
+        "desc": "咨询剧情结束",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    14,
+                    17,
+                    27,
+                    15
+                ],
+                "expected": [
+                    "咨询"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]AdviseConfirmRankIncrease",
+            "[JumpBack]AdviseEpisodeUnlocked",
+            "AdviseSettlement",
+            "AdviseStoryEnd"
         ]
     },
     "AdviseSettlement": {
         "desc": "咨询结算",
-        "post_wait_freezes": 100,
+        "pre_wait_freezes": 200,
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonNoTransparentMask"
+                ]
+            }
+        },
         "next": [
             "[JumpBack]AdviseRemoveFavorites",
-            "[JumpBack]AdviseConfirmRankIncrease",
-            "[JumpBack]AdviseEpisodeUnlocked",
             "[JumpBack]AdviseBondIncreasedVisible",
             "[JumpBack]AdviseEpisodeReward",
             "AdviseNextAdvise"

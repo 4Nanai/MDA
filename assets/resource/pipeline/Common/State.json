@@ -1,0 +1,13 @@
+{
+    "CommonNoTransparentMask": {
+        "desc": "没有子页面透明遮罩",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [18,20,19,9],
+                "lower": [200, 200, 200],
+                "upper": [255, 255, 255]
+            }
+        }
+    }
+}
