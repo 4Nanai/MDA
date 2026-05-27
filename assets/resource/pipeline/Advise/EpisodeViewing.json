@@ -76,7 +76,7 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000
+        "post_wait_freezes": 500
     },
     "AdviseEpisodeViewingReward": {
         "desc": "花絮鉴赏会奖励",
@@ -90,14 +90,14 @@
                     36
                 ],
                 "expected": [
-                    "领取"
+                    "领取奖励"
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 500,
         "next": [
             "CommonConfirmReward"
         ]

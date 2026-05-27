@@ -10,23 +10,7 @@
             }
         },
         "next": [
-            "[JumpBack]DialoguesSkipStory",
-            "[JumpBack]DialoguesClickContinue",
-            "[JumpBack]DialoguesClickOption",
-            "CommonEndTask"
-        ]
-    },
-    "EnterAdviseEpisodeStory": {
-        "desc": "加载花絮剧情",
-        "action": "DoNothing",
-        "next": [
-            "AdviseEpisodeStory",
-            "EnterAdviseEpisodeStory"
-        ],
-        "timeout": 5000,
-        "on_error": [
-            "[JumpBack]CommonClosePage",
-            "AdviseSettlement",
+            "[JumpBack]DialoguesSkipWorkflow",
             "CommonEndTask"
         ]
     },
@@ -41,21 +25,53 @@
             }
         },
         "next": [
-            "[JumpBack]DialoguesSkipStory",
-            "[JumpBack]DialoguesClickContinue",
-            "[JumpBack]DialoguesClickOption",
+            "[JumpBack]DialoguesSkipWorkflow",
+            "WaitingAdviseEpisodeStoryAward"
+        ]
+    },
+    "WaitingAdviseEpisodeStoryAward": {
+        "desc": "等待花絮剧情奖励界面",
+        "action": "DoNothing",
+        "next": [
+            "AdviseEpisodeStoryAwardVisible"
+        ],
+        "timeout": 5000,
+        "rate_limit": 100,
+        "on_error": [
+            "WaitingAdviseEpisodeStoryEnd"
+        ]
+    },
+    "AdviseEpisodeStoryAwardVisible": {
+        "desc": "等待花絮剧情奖励",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonConfirmReward"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    582,
+                    430,
+                    115,
+                    62
+                ]
+            }
+        },
+        "next": [
             "WaitingAdviseEpisodeStoryEnd"
         ]
     },
     "WaitingAdviseEpisodeStoryEnd": {
         "desc": "等待花絮剧情结束",
         "action": "DoNothing",
-        "pre_delay": 1000,
         "next": [
-            "[JumpBack]CommonConfirmReward",
             "PlayNextEpisodeStory",
-            "AdviseEpisodeStoryEnd",
-            "WaitingAdviseEpisodeStoryEnd"
+            "AdviseEpisodeStoryEnd"
         ],
         "timeout": 5000
     },
@@ -85,7 +101,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [582,60,127,34],
+                "roi": [
+                    582,
+                    60,
+                    127,
+                    34
+                ],
                 "expected": [
                     ".*日.*"
                 ]

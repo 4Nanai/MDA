@@ -71,7 +71,7 @@
         },
         "next": [
             "AdviseClickEpisode",
-            "EnterAdviseEpisodeStory"
+            "AdviseEpisodeStory"
         ]
     },
     "AdviseClickAdviceCollection": {
