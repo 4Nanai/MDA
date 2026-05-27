@@ -89,6 +89,7 @@
         "next": [
             "SimulationRoomBeginSimulation",
             "SimulationRoomStartOverclock",
+            "NavigationEnterHall",
             "CommonEndTask"
         ]
     }
