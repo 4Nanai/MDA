@@ -5,7 +5,11 @@
             "label": "$task.LargeEvent.label",
             "entry": "LargeEventMain",
             "description": "$task.LargeEvent.description",
-            "option": ["LargeEventTheme", "LargeEventStoryPriority", "LargeEventContent"],
+            "option": [
+                "LargeEventTheme",
+                "LargeEventStoryPriority",
+                "LargeEventContent"
+            ],
             "group": ["daily"]
         }
     ],
@@ -52,7 +56,12 @@
                             },
                             "action": {
                                 "param": {
-                                    "target_offset": [70, -70, 0, 0]
+                                    "target_offset": [
+                                        70,
+                                        -70,
+                                        0,
+                                        0
+                                    ]
                                 }
                             }
                         },
@@ -87,7 +96,12 @@
         },
         "LargeEventContent": {
             "type": "checkbox",
-            "default_case": ["LargeEventLoginStamp", "LargeEventChallenge", "LargeEventStory", "LargeEventMission"],
+            "default_case": [
+                "LargeEventLoginStamp",
+                "LargeEventChallenge",
+                "LargeEventStory",
+                "LargeEventMission"
+            ],
             "label": "$option.LargeEventContent.label",
             "cases": [
                 {

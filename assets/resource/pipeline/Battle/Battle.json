@@ -20,45 +20,71 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["QuickBattleVisible", "QuickBattleAvailable"]
+                "all_of": [
+                    "QuickBattleVisible",
+                    "QuickBattleAvailable"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
         "post_wait_freezes": 500,
-        "next": ["MultipleBattle", "MultipleBattleStart", "BattleOperationComplete"]
+        "next": [
+            "MultipleBattle",
+            "MultipleBattleStart",
+            "BattleOperationComplete"
+        ]
     },
     "MultipleBattle": {
         "desc": "多次战斗",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [599, 463, 54, 22],
+                "roi": [
+                    599,
+                    463,
+                    54,
+                    22
+                ],
                 "expected": ["剩余次数"]
             }
         },
-        "next": ["MultipleBattleClickMax", "MultipleBattleStart"]
+        "next": [
+            "MultipleBattleClickMax",
+            "MultipleBattleStart"
+        ]
     },
     "MultipleBattleClickMax": {
         "desc": "多次战斗点击max",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["MultipleBattleClickMaxVisible", "MultipleBattleClickMaxAvailable"]
+                "all_of": [
+                    "MultipleBattleClickMaxVisible",
+                    "MultipleBattleClickMaxAvailable"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["MultipleBattleClickMax", "MultipleBattleStart"]
+        "next": [
+            "MultipleBattleClickMax",
+            "MultipleBattleStart"
+        ]
     },
     "MultipleBattleClickMaxVisible": {
         "desc": "多次战斗max可见",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [707, 491, 47, 30],
+                "roi": [
+                    707,
+                    491,
+                    47,
+                    30
+                ],
                 "template": ["Common/MAX.png"]
             }
         }
@@ -69,8 +95,16 @@
             "type": "ColorMatch",
             "param": {
                 "roi": "MultipleBattleClickMaxVisible",
-                "lower": [140, 140, 140],
-                "upper": [255, 255, 255],
+                "lower": [
+                    140,
+                    140,
+                    140
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
                 "count": 50
             }
         }
@@ -80,7 +114,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [705, 536, 88, 37],
+                "roi": [
+                    705,
+                    536,
+                    88,
+                    37
+                ],
                 "expected": ["进行战斗"]
             }
         },
@@ -108,7 +147,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [0, 0, 100, 40],
+                "roi": [
+                    0,
+                    0,
+                    100,
+                    40
+                ],
                 "template": ["Battle/AutoBurst.png"],
                 "threshold": 0.9
             }
@@ -123,7 +167,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [0, 0, 100, 40],
+                "roi": [
+                    0,
+                    0,
+                    100,
+                    40
+                ],
                 "template": ["Battle/AutoShoot.png"],
                 "threshold": 0.9
             }
@@ -137,7 +186,10 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["BattleNextStateVisible", "BattleNextStateAvailable"]
+                "all_of": [
+                    "BattleNextStateVisible",
+                    "BattleNextStateAvailable"
+                ]
             }
         },
         "action": {
@@ -150,7 +202,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [1140, 659, 122, 37],
+                "roi": [
+                    1140,
+                    659,
+                    122,
+                    37
+                ],
                 "expected": [".*关卡.*"]
             }
         }
@@ -160,7 +217,10 @@
         "recognition": {
             "type": "Or",
             "param": {
-                "any_of": ["BattleNextStateAvailableBlue", "BattleNextStateAvailableWhite"]
+                "any_of": [
+                    "BattleNextStateAvailableBlue",
+                    "BattleNextStateAvailableWhite"
+                ]
             }
         }
     },
@@ -170,8 +230,16 @@
             "type": "ColorMatch",
             "param": {
                 "roi": "BattleNextStateVisible",
-                "lower": [0, 130, 220],
-                "upper": [50, 190, 255],
+                "lower": [
+                    0,
+                    130,
+                    220
+                ],
+                "upper": [
+                    50,
+                    190,
+                    255
+                ],
                 "count": 60
             }
         }
@@ -182,8 +250,16 @@
             "type": "ColorMatch",
             "param": {
                 "roi": "BattleNextStateVisible",
-                "lower": [200, 200, 200],
-                "upper": [255, 255, 255],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
                 "count": 60
             }
         }
@@ -199,7 +275,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["BattleOperationComplete", "CommonEndTask"]
+        "next": [
+            "BattleOperationComplete",
+            "CommonEndTask"
+        ]
     },
     "BattleOperationFailed": {
         "desc": "战斗失败结算",
@@ -209,7 +288,10 @@
                 "any_of": ["BattleFailedVisible"]
             }
         },
-        "next": ["CommonGoBack", "BattleOperationFailed"]
+        "next": [
+            "CommonGoBack",
+            "BattleOperationFailed"
+        ]
     },
     "BattleOperationTimeout": {
         "desc": "战斗超时",
@@ -219,14 +301,22 @@
                 "any_of": ["BattleTimeoutVisible"]
             }
         },
-        "next": ["CommonGoBack", "BattleOperationTimeout"]
+        "next": [
+            "CommonGoBack",
+            "BattleOperationTimeout"
+        ]
     },
     "BattleEscVisible": {
         "desc": "Esc可见",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [567, 610, 160, 90],
+                "roi": [
+                    567,
+                    610,
+                    160,
+                    90
+                ],
                 "expected": ["ESC"]
             }
         }
@@ -236,7 +326,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [616, 262, 48, 30],
+                "roi": [
+                    616,
+                    262,
+                    48,
+                    30
+                ],
                 "expected": ["战败"]
             }
         }
@@ -246,7 +341,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [612, 263, 55, 28],
+                "roi": [
+                    612,
+                    263,
+                    55,
+                    28
+                ],
                 "expected": ["逾时"]
             }
         }
@@ -256,7 +356,10 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["BattleMainVisible", "BattleAvailable"]
+                "all_of": [
+                    "BattleMainVisible",
+                    "BattleAvailable"
+                ]
             }
         },
         "action": {
@@ -269,7 +372,10 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["BattleMainVisible", "BattleUnavailable"]
+                "all_of": [
+                    "BattleMainVisible",
+                    "BattleUnavailable"
+                ]
             }
         }
     },
@@ -278,7 +384,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [815, 358, 35, 31],
+                "roi": [
+                    815,
+                    358,
+                    35,
+                    31
+                ],
                 "template": ["Battle/BattleCloseButton.png"]
             }
         },
@@ -291,7 +402,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [671, 571, 157, 114],
+                "roi": [
+                    671,
+                    571,
+                    157,
+                    114
+                ],
                 "expected": [".*快速战斗.*"]
             }
         }
@@ -302,8 +418,16 @@
             "type": "ColorMatch",
             "param": {
                 "roi": "QuickBattleVisible",
-                "lower": [200, 200, 200],
-                "upper": [255, 255, 255],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
                 "count": 100
             }
         }
@@ -313,7 +437,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [671, 571, 157, 114],
+                "roi": [
+                    671,
+                    571,
+                    157,
+                    114
+                ],
                 "expected": ["进入战斗"]
             }
         }
@@ -324,8 +453,16 @@
             "type": "ColorMatch",
             "param": {
                 "roi": "BattleMainVisible",
-                "lower": [200, 200, 200],
-                "upper": [255, 255, 255],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
                 "count": 100
             }
         }
@@ -336,8 +473,16 @@
             "type": "ColorMatch",
             "param": {
                 "roi": "BattleMainVisible",
-                "lower": [60, 60, 60],
-                "upper": [170, 170, 170],
+                "lower": [
+                    60,
+                    60,
+                    60
+                ],
+                "upper": [
+                    170,
+                    170,
+                    170
+                ],
                 "count": 100
             }
         }

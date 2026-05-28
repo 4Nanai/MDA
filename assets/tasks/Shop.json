@@ -5,7 +5,12 @@
             "label": "$task.Shop.label",
             "entry": "ShopMain",
             "description": "$task.Shop.description",
-            "option": ["CommonShopFreeGoods", "CommonShopCoreDustCase", "ArenaShopItemList", "RecyclingShopList"],
+            "option": [
+                "CommonShopFreeGoods",
+                "CommonShopCoreDustCase",
+                "ArenaShopItemList",
+                "RecyclingShopList"
+            ],
             "group": ["daily"]
         }
     ],

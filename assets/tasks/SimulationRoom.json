@@ -5,7 +5,10 @@
             "label": "$task.SimulationRoom.label",
             "entry": "SimulationRoomMain",
             "description": "$task.SimulationRoom.description",
-            "option": ["BeginSimulation", "StartOverclock"],
+            "option": [
+                "BeginSimulation",
+                "StartOverclock"
+            ],
             "group": ["daily"]
         }
     ],

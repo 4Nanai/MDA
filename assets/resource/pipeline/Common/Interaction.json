@@ -4,7 +4,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [553, 400, 176, 173],
+                "roi": [
+                    553,
+                    400,
+                    176,
+                    173
+                ],
                 "expected": ["点击领取奖励"]
             }
         },
@@ -18,7 +23,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [566, 429, 248, 250],
+                "roi": [
+                    566,
+                    429,
+                    248,
+                    250
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },
@@ -32,7 +42,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [775, 31, 52, 311],
+                "roi": [
+                    775,
+                    31,
+                    52,
+                    311
+                ],
                 "template": [
                     "Common/CloseButton1.png",
                     "Common/CloseButton2.png",
@@ -76,7 +91,10 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [150, 650]
+                "target": [
+                    150,
+                    650
+                ]
             }
         }
     },

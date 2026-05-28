@@ -1,7 +1,10 @@
 {
     "DailyRewardsMain": {
         "desc": "每日奖励入口",
-        "next": ["DailyRewardsStart", "[JumpBack]NavigationEnterHall"]
+        "next": [
+            "DailyRewardsStart",
+            "[JumpBack]NavigationEnterHall"
+        ]
     },
     "DailyRewardsStart": {
         "desc": "每日奖励",

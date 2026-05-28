@@ -5,7 +5,10 @@
             "label": "$task.Interception.label",
             "entry": "InterceptionMain",
             "description": "$task.Interception.description",
-            "option": ["InterceptionType", "ManualInterceptionBattle"],
+            "option": [
+                "InterceptionType",
+                "ManualInterceptionBattle"
+            ],
             "group": ["daily"]
         }
     ],

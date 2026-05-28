@@ -5,14 +5,24 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [642, 698, 52, 16],
+                "roi": [
+                    642,
+                    698,
+                    52,
+                    16
+                ],
                 "expected": [".*公告.*"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [0, -20, 0, 0]
+                "target_offset": [
+                    0,
+                    -20,
+                    0,
+                    0
+                ]
             }
         },
         "next": ["OutpostBulletinBoardFlow"]
@@ -22,7 +32,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [482, 99, 112, 28],
+                "roi": [
+                    482,
+                    99,
+                    112,
+                    28
+                ],
                 "expected": ["派遣公告栏"]
             }
         }
@@ -48,7 +63,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [736, 592, 64, 26],
+                "roi": [
+                    736,
+                    592,
+                    64,
+                    26
+                ],
                 "expected": ["全部领取"]
             }
         },
@@ -56,7 +76,10 @@
             "type": "Click"
         },
         "post_wait_freezes": 1000,
-        "next": ["[JumpBack]CommonConfirmReward", "CommonEndTask"]
+        "next": [
+            "[JumpBack]CommonConfirmReward",
+            "CommonEndTask"
+        ]
     },
     "OutpostBulletinBoardDispatch": {
         "desc": "全部派遣",
@@ -64,7 +87,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [620, 593, 62, 24],
+                "roi": [
+                    620,
+                    593,
+                    62,
+                    24
+                ],
                 "expected": ["全部派遣"]
             }
         },
@@ -72,14 +100,22 @@
             "type": "Click"
         },
         "post_wait_freezes": 1000,
-        "next": ["OutpostConfirmDispatch", "CommonEndTask"]
+        "next": [
+            "OutpostConfirmDispatch",
+            "CommonEndTask"
+        ]
     },
     "OutpostConfirmDispatch": {
         "desc": "确认派遣",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [645, 587, 106, 40],
+                "roi": [
+                    645,
+                    587,
+                    106,
+                    40
+                ],
                 "expected": ["派遣"]
             }
         },

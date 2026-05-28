@@ -1,7 +1,10 @@
 {
     "LargeEventMain": {
         "desc": "大活动",
-        "next": ["LargeEventStart", "[JumpBack]NavigationEnterHall"]
+        "next": [
+            "LargeEventStart",
+            "[JumpBack]NavigationEnterHall"
+        ]
     },
     "LargeEventStart": {
         "desc": "大活动开始",
@@ -11,14 +14,22 @@
                 "all_of": ["NavigationArkVisible"]
             }
         },
-        "next": ["LargeEventEntry", "CommonEndTask"]
+        "next": [
+            "LargeEventEntry",
+            "CommonEndTask"
+        ]
     },
     "LargeEventEntry": {
         "desc": "大活动入口",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [824, 571, 145, 68],
+                "roi": [
+                    824,
+                    571,
+                    145,
+                    68
+                ],
                 "template": [
                     "Common/RedDot.png" //占位，应该去task页面修改
                 ]
@@ -27,14 +38,22 @@
         "action": {
             "type": "Click"
         },
-        "next": ["LargeEventMainPageFlow", "LargeEventEntry"]
+        "next": [
+            "LargeEventMainPageFlow",
+            "LargeEventEntry"
+        ]
     },
     "LargeEventMainPageEntered": {
         "desc": "已进入活动地区",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [2, 11, 82, 30],
+                "roi": [
+                    2,
+                    11,
+                    82,
+                    30
+                ],
                 "expected": [".*活动地.*"]
             }
         }
@@ -49,7 +68,12 @@
         },
         "pre_wait_freezes": {
             "time": 500,
-            "target": [446, 539, 389, 82]
+            "target": [
+                446,
+                539,
+                389,
+                82
+            ]
         },
         "action": "DoNothing",
         "next": [
@@ -62,6 +86,10 @@
     },
     "LargeEventGoBack": {
         "desc": "返回活动地区",
-        "next": ["LargeEventMainPageEntered", "[JumpBack]DialoguesSkipStory", "[JumpBack]CommonGoBack"]
+        "next": [
+            "LargeEventMainPageEntered",
+            "[JumpBack]DialoguesSkipStory",
+            "[JumpBack]CommonGoBack"
+        ]
     }
 }

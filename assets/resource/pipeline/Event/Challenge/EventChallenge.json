@@ -4,7 +4,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [442, 536, 393, 79],
+                "roi": [
+                    442,
+                    536,
+                    393,
+                    79
+                ],
                 "expected": [".*挑战.*"]
             }
         },
@@ -22,14 +27,22 @@
             }
         },
         "post_wait_freezes": 500,
-        "next": ["EventChallengeStage", "EventClearStage"]
+        "next": [
+            "EventChallengeStage",
+            "EventClearStage"
+        ]
     },
     "EventChallengeStage": {
         "desc": "未挑战的关卡",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [452, 253, 379, 424],
+                "roi": [
+                    452,
+                    253,
+                    379,
+                    424
+                ],
                 "expected": ["(?i).*CHALLENGE.*"],
                 "order_by": "Vertical",
                 "index": -1
@@ -39,14 +52,22 @@
             "type": "Click"
         },
         "post_wait_freezes": 100,
-        "next": ["BattleStart", "EventChallengeStage"]
+        "next": [
+            "BattleStart",
+            "EventChallengeStage"
+        ]
     },
     "EventClearStage": {
         "desc": "已挑战的关卡",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [452, 253, 379, 424],
+                "roi": [
+                    452,
+                    253,
+                    379,
+                    424
+                ],
                 "expected": [".*CLEAR.*"],
                 "order_by": "Vertical",
                 "index": -1
@@ -55,14 +76,22 @@
         "action": {
             "type": "Click"
         },
-        "next": ["BattleStart", "EventClearStage"]
+        "next": [
+            "BattleStart",
+            "EventClearStage"
+        ]
     },
     "EventChallengeStageVisible": {
         "desc": "活动挑战入口的标识",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [5, 18, 50, 16],
+                "roi": [
+                    5,
+                    18,
+                    50,
+                    16
+                ],
                 "expected": ["挑战关卡"]
             }
         }

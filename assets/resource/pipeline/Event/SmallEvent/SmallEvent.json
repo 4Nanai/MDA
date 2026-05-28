@@ -1,7 +1,10 @@
 {
     "SmallEventMain": {
         "desc": "小活动",
-        "next": ["SmallEventStart", "[JumpBack]NavigationEnterHall"]
+        "next": [
+            "SmallEventStart",
+            "[JumpBack]NavigationEnterHall"
+        ]
     },
     "SmallEventStart": {
         "desc": "小活动开始",
@@ -11,14 +14,22 @@
                 "all_of": ["NavigationArkVisible"]
             }
         },
-        "next": ["SmallEventEntry", "CommonEndTask"]
+        "next": [
+            "SmallEventEntry",
+            "CommonEndTask"
+        ]
     },
     "SmallEventEntry": {
         "desc": "小活动入口",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [824, 571, 145, 68],
+                "roi": [
+                    824,
+                    571,
+                    145,
+                    68
+                ],
                 "template": [
                     "Common/RedDot.png" //占位，应该去task页面修改
                 ]
@@ -31,14 +42,19 @@
             "EnteringSmallEvent",
             "[JumpBack]DialoguesSkipWorkflow",
             "SmallEventEntry"
-            ]
+        ]
     },
     "SmallEventMainPageEntered": {
         "desc": "已进入剧情活动",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [2, 11, 82, 30],
+                "roi": [
+                    2,
+                    11,
+                    82,
+                    30
+                ],
                 "expected": [".*剧情.*"]
             }
         }
@@ -54,7 +70,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [30, 30, 0, 0]
+                "target_offset": [
+                    30,
+                    30,
+                    0,
+                    0
+                ]
             }
         },
         "next": ["SmallEventMainPageFlow"]
@@ -69,7 +90,12 @@
         },
         "pre_wait_freezes": {
             "time": 500,
-            "target": [446, 539, 389, 82]
+            "target": [
+                446,
+                539,
+                389,
+                82
+            ]
         },
         "action": "DoNothing",
         "next": [
@@ -82,6 +108,10 @@
     },
     "SmallEventGoBack": {
         "desc": "返回剧情活动页面",
-        "next": ["SmallEventMainPageEntered", "[JumpBack]DialoguesSkipStory", "[JumpBack]CommonGoBack"]
+        "next": [
+            "SmallEventMainPageEntered",
+            "[JumpBack]DialoguesSkipStory",
+            "[JumpBack]CommonGoBack"
+        ]
     }
 }

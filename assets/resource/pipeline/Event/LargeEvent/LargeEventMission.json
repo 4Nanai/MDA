@@ -6,14 +6,24 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1250, 112, 30, 107],
+                "roi": [
+                    1250,
+                    112,
+                    30,
+                    107
+                ],
                 "template": ["Common/RedDot.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [-10, 10, 0, 0]
+                "target_offset": [
+                    -10,
+                    10,
+                    0,
+                    0
+                ]
             }
         },
         "timeout": 60000,
@@ -24,7 +34,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [680, 624, 137, 35],
+                "roi": [
+                    680,
+                    624,
+                    137,
+                    35
+                ],
                 "expected": [".*全部.*"]
             }
         }
@@ -44,14 +59,24 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [453, 106, 375, 59],
+                "roi": [
+                    453,
+                    106,
+                    375,
+                    59
+                ],
                 "template": ["Common/PassRedDot.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [-10, 10, 0, 0]
+                "target_offset": [
+                    -10,
+                    10,
+                    0,
+                    0
+                ]
             }
         },
         "next": [
@@ -66,9 +91,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [680, 624, 137, 35],
-                "lower": [180, 180, 180],
-                "upper": [220, 220, 220],
+                "roi": [
+                    680,
+                    624,
+                    137,
+                    35
+                ],
+                "lower": [
+                    180,
+                    180,
+                    180
+                ],
+                "upper": [
+                    220,
+                    220,
+                    220
+                ],
                 "count": 100
             }
         }
@@ -88,7 +126,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [680, 624, 137, 35],
+                "roi": [
+                    680,
+                    624,
+                    137,
+                    35
+                ],
                 "expected": [".*全部.*"]
             }
         },

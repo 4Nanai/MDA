@@ -4,14 +4,24 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [741, 686, 97, 22],
+                "roi": [
+                    741,
+                    686,
+                    97,
+                    22
+                ],
                 "expected": [".*异常个体.*"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [30, -50, 0, 0]
+                "target_offset": [
+                    30,
+                    -50,
+                    0,
+                    0
+                ]
             }
         },
         "next": [
@@ -29,7 +39,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [531, 522, 224, 36],
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
                 "expected": ["克拉肯"]
             }
         },
@@ -40,7 +55,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [615, 569, 51, 22],
+                "roi": [
+                    615,
+                    569,
+                    51,
+                    22
+                ],
                 "expected": ["挑战"]
             }
         },
@@ -55,7 +75,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [531, 522, 224, 36],
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
                 "expected": ["镜像容器"]
             }
         },
@@ -67,7 +92,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [531, 522, 224, 36],
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
                 "expected": ["茵迪维利亚"]
             }
         },
@@ -79,7 +109,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [531, 522, 224, 36],
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
                 "expected": ["死神"]
             }
         },
@@ -91,7 +126,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [531, 522, 224, 36],
+                "roi": [
+                    531,
+                    522,
+                    224,
+                    36
+                ],
                 "expected": ["过激派"]
             }
         },
@@ -102,7 +142,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [741, 523, 43, 37],
+                "roi": [
+                    741,
+                    523,
+                    43,
+                    37
+                ],
                 "template": [
                     "Interception/NextAnomaly1.png",
                     "Interception/NextAnomaly2.png",

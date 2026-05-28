@@ -2,7 +2,10 @@
     "CoordinatedOperationsMain": {
         "desc": "协同作战入口",
         "max_hit": 1,
-        "next": ["CoordinatedOperationsStart", "[JumpBack]NavigationEnterHall"]
+        "next": [
+            "CoordinatedOperationsStart",
+            "[JumpBack]NavigationEnterHall"
+        ]
     },
     "CoordinatedOperationsStart": {
         "desc": "协同作战",
@@ -12,14 +15,23 @@
                 "all_of": ["NavigationArkVisible"]
             }
         },
-        "next": ["CoordinatedOperationsSearch", "[JumpBack]CoordinatedOperationsSlideBanner", "CommonEndTask"]
+        "next": [
+            "CoordinatedOperationsSearch",
+            "[JumpBack]CoordinatedOperationsSlideBanner",
+            "CommonEndTask"
+        ]
     },
     "CoordinatedOperationsSearch": {
         "desc": "寻找协同作战",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [96, 55, 66, 59],
+                "roi": [
+                    96,
+                    55,
+                    66,
+                    59
+                ],
                 "template": ["CoordinatedOperations/CoordinatedOperations.png"],
                 "green_mask": true
             }
@@ -27,14 +39,22 @@
         "action": {
             "type": "Click"
         },
-        "next": ["CoordinatedOperationsFlow", "CoordinatedOperationsSearch"]
+        "next": [
+            "CoordinatedOperationsFlow",
+            "CoordinatedOperationsSearch"
+        ]
     },
     "CoordinatedOperationsFlow": {
         "desc": "协同作战流程",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [0, 15, 70, 25],
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
                 "expected": ["协同作战"]
             }
         },
@@ -49,7 +69,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [1095, 541, 163, 47],
+                "roi": [
+                    1095,
+                    541,
+                    163,
+                    47
+                ],
                 "expected": [".*开始匹配.*"]
             }
         },
@@ -57,14 +82,22 @@
             "type": "Click"
         },
         "post_wait_freezes": 200,
-        "next": ["CoordinatedOperationsDifficultySelect", "CommonEndTask"]
+        "next": [
+            "CoordinatedOperationsDifficultySelect",
+            "CommonEndTask"
+        ]
     },
     "CoordinatedOperationsDifficultySelect": {
         "desc": "协同作战难度选择",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [488, 323, 142, 60],
+                "roi": [
+                    488,
+                    323,
+                    142,
+                    60
+                ],
                 "expected": [".*普通.*"]
             }
         },
@@ -78,7 +111,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [479, 464, 323, 46],
+                "roi": [
+                    479,
+                    464,
+                    323,
+                    46
+                ],
                 "expected": [".*确认.*"]
             }
         },
@@ -93,7 +131,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [648, 468, 148, 52],
+                "roi": [
+                    648,
+                    468,
+                    148,
+                    52
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },
@@ -112,7 +155,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [573, 658, 136, 39],
+                "roi": [
+                    573,
+                    658,
+                    136,
+                    39
+                ],
                 "expected": [".*准备.*"]
             }
         },
@@ -127,7 +175,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [575, 437, 33, 27],
+                "roi": [
+                    575,
+                    437,
+                    33,
+                    27
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },
@@ -140,9 +193,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [1095, 541, 163, 47],
-                "lower": [35, 35, 35],
-                "upper": [50, 50, 50],
+                "roi": [
+                    1095,
+                    541,
+                    163,
+                    47
+                ],
+                "lower": [
+                    35,
+                    35,
+                    35
+                ],
+                "upper": [
+                    50,
+                    50,
+                    50
+                ],
                 "count": 3000
             }
         }
@@ -152,7 +218,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [1191, 567, 28, 14],
+                "roi": [
+                    1191,
+                    567,
+                    28,
+                    14
+                ],
                 "expected": [".*0.*"]
             }
         }
@@ -163,8 +234,14 @@
         "action": {
             "type": "Swipe",
             "param": {
-                "begin": [20, 80],
-                "end": [160, 80],
+                "begin": [
+                    20,
+                    80
+                ],
+                "end": [
+                    160,
+                    80
+                ],
                 "end_hold": 300
             }
         }

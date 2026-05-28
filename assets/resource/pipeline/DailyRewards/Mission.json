@@ -2,50 +2,84 @@
     "DailyRewardsMission": {
         "desc": "任务收取入口",
         "max_hit": 1,
-        "next": ["DailyRewardsMissionStart", "CommonEndTask"]
+        "next": [
+            "DailyRewardsMissionStart",
+            "CommonEndTask"
+        ]
     },
     "DailyRewardsMissionStart": {
         "desc": "进入任务页面",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1116, 50, 20, 20],
+                "roi": [
+                    1116,
+                    50,
+                    20,
+                    20
+                ],
                 "template": ["Common/RedDot.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [-10, 10, 0, 0]
+                "target_offset": [
+                    -10,
+                    10,
+                    0,
+                    0
+                ]
             }
         },
         "post_wait_freezes": 500,
-        "next": ["DailyRewardsMissionFlow", "DailyRewardsMissionStart"]
+        "next": [
+            "DailyRewardsMissionFlow",
+            "DailyRewardsMissionStart"
+        ]
     },
     "DailyRewardsMissionFlow": {
         "desc": "任务页面流程",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [485, 121, 53, 20],
+                "roi": [
+                    485,
+                    121,
+                    53,
+                    20
+                ],
                 "expected": ["每日任务"]
             }
         },
-        "next": ["[JumpBack]DailyRewardsClickMissionRedDot", "CommonEndTask"]
+        "next": [
+            "[JumpBack]DailyRewardsClickMissionRedDot",
+            "CommonEndTask"
+        ]
     },
     "DailyRewardsClickMissionRedDot": {
         "desc": "点击任务红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [453, 106, 375, 28],
+                "roi": [
+                    453,
+                    106,
+                    375,
+                    28
+                ],
                 "template": ["Common/RedDot.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [-10, 10, 0, 0]
+                "target_offset": [
+                    -10,
+                    10,
+                    0,
+                    0
+                ]
             }
         },
         "next": [
@@ -60,9 +94,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [707, 630, 108, 35],
-                "lower": [100, 100, 100],
-                "upper": [180, 180, 180],
+                "roi": [
+                    707,
+                    630,
+                    108,
+                    35
+                ],
+                "lower": [
+                    100,
+                    100,
+                    100
+                ],
+                "upper": [
+                    180,
+                    180,
+                    180
+                ],
                 "count": 200
             }
         }
@@ -72,7 +119,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [707, 630, 108, 35],
+                "roi": [
+                    707,
+                    630,
+                    108,
+                    35
+                ],
                 "expected": [".*全部.*"]
             }
         },

@@ -20,21 +20,34 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [0, 255, 55, 390],
+                "roi": [
+                    0,
+                    255,
+                    55,
+                    390
+                ],
                 "template": ["Shop/ArenaShop/ArenaShop.png"]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["ShopArenaShopEntered", "ShopEnterArenaShop"]
+        "next": [
+            "ShopArenaShopEntered",
+            "ShopEnterArenaShop"
+        ]
     },
     "ShopArenaShopEntered": {
         "desc": "处于竞技场商店",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [68, 264, 119, 20],
+                "roi": [
+                    68,
+                    264,
+                    119,
+                    20
+                ],
                 "expected": ["竞技场商店"]
             }
         }
@@ -46,7 +59,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/ArenaShop/FireCodeManual.png",
                 "threshold": 0.9
             }
@@ -62,7 +80,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/ArenaShop/WaterCodeManual.png",
                 "threshold": 0.9
             }
@@ -78,7 +101,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/ArenaShop/WindCodeManual.png",
                 "threshold": 0.9
             }
@@ -94,7 +122,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/ArenaShop/ElectricCodeManual.png",
                 "threshold": 0.9
             }
@@ -110,7 +143,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/ArenaShop/IronCodeManual.png",
                 "threshold": 0.9
             }
@@ -126,7 +164,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/ArenaShop/CodeManualSelectionBox.png",
                 "threshold": 0.9
             }

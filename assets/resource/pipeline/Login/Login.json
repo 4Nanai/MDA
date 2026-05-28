@@ -4,7 +4,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [567, 506, 148, 37],
+                "roi": [
+                    567,
+                    506,
+                    148,
+                    37
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },
@@ -17,7 +22,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [645, 439, 115, 40],
+                "roi": [
+                    645,
+                    439,
+                    115,
+                    40
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },
@@ -30,14 +40,24 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [0, 176, 91, 116],
+                "roi": [
+                    0,
+                    176,
+                    91,
+                    116
+                ],
                 "template": ["Common/ServerChoose.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [100, 100, 0, 0]
+                "target_offset": [
+                    100,
+                    100,
+                    0,
+                    0
+                ]
             }
         }
     },
@@ -46,7 +66,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [686, 657, 139, 35],
+                "roi": [
+                    686,
+                    657,
+                    139,
+                    35
+                ],
                 "expected": [".*领取.*"]
             }
         },

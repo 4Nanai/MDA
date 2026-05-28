@@ -5,7 +5,10 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["SpecialArena", "SpecialArenaRedDotVisible"]
+                "all_of": [
+                    "SpecialArena",
+                    "SpecialArenaRedDotVisible"
+                ]
             }
         },
         "action": {
@@ -18,7 +21,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [0, 15, 70, 25],
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
                 "expected": ["特殊竞技场"]
             }
         }
@@ -31,14 +39,23 @@
                 "all_of": ["SpecialArenaMainPageEntered"]
             }
         },
-        "next": ["[JumpBack]ArenaFreeBattle", "ArenaCornerFlow", "[JumpBack]CommonGoBack"]
+        "next": [
+            "[JumpBack]ArenaFreeBattle",
+            "ArenaCornerFlow",
+            "[JumpBack]CommonGoBack"
+        ]
     },
     "SpecialArenaRedDotVisible": {
         "desc": "特殊竞技场的红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [799, 315, 28, 27],
+                "roi": [
+                    799,
+                    315,
+                    28,
+                    27
+                ],
                 "template": ["Common/RedDot.png"]
             }
         }
@@ -48,7 +65,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [657, 365, 67, 26],
+                "roi": [
+                    657,
+                    365,
+                    67,
+                    26
+                ],
                 "expected": ["SPECIAL"]
             }
         }

@@ -6,15 +6,26 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [485, 536, 308, 79],
+                "roi": [
+                    485,
+                    536,
+                    308,
+                    79
+                ],
                 "expected": [".*挑战.*"],
-                "replace": [["排", "挑"]]
+                "replace": [[
+                        "排",
+                        "挑"
+                    ]]
             }
         },
         "action": {
             "type": "Click"
         },
         "timeout": 60000,
-        "next": ["[JumpBack]EventChallenge", "LargeEventGoBack"]
+        "next": [
+            "[JumpBack]EventChallenge",
+            "LargeEventGoBack"
+        ]
     }
 }

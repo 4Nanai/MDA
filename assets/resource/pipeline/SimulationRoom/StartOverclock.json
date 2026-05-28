@@ -4,24 +4,42 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [572, 523, 116, 115],
+                "roi": [
+                    572,
+                    523,
+                    116,
+                    115
+                ],
                 "template": ["SimulationRoom/Rewards0.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [0, -25, 0, 0]
+                "target_offset": [
+                    0,
+                    -25,
+                    0,
+                    0
+                ]
             }
         },
-        "next": ["[JumpBack]SimulationRoomOpenBiosSetting", "SimulationRoomBeginOverclockSimulation"]
+        "next": [
+            "[JumpBack]SimulationRoomOpenBiosSetting",
+            "SimulationRoomBeginOverclockSimulation"
+        ]
     },
     "SimulationRoomOpenBiosSetting": {
         "desc": "点击BIOS设置",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [597, 422, 105, 32],
+                "roi": [
+                    597,
+                    422,
+                    105,
+                    32
+                ],
                 "expected": ["BIOS SETTING"]
             }
         },
@@ -44,7 +62,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [496, 191, 33, 19],
+                "roi": [
+                    496,
+                    191,
+                    33,
+                    19
+                ],
                 "expected": ["25"]
             }
         },
@@ -57,7 +80,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [478, 255, 325, 219],
+                "roi": [
+                    478,
+                    255,
+                    325,
+                    219
+                ],
                 "template": [
                     "SimulationRoom/EnemyWeaponUpⅢ.png",
                     "SimulationRoom/EnemyArmorUpⅢ.png",
@@ -81,8 +109,14 @@
         "action": {
             "type": "Swipe",
             "param": {
-                "begin": [480, 360],
-                "end": [480, 260],
+                "begin": [
+                    480,
+                    360
+                ],
+                "end": [
+                    480,
+                    260
+                ],
                 "end_hold": 300
             }
         },
@@ -93,7 +127,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [482, 634, 316, 36],
+                "roi": [
+                    482,
+                    634,
+                    316,
+                    36
+                ],
                 "expected": ["开始模拟"]
             }
         },
@@ -107,7 +146,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [474, 406, 333, 158],
+                "roi": [
+                    474,
+                    406,
+                    333,
+                    158
+                ],
                 "template": ["SimulationRoom/BattleFlag.png"]
             }
         },
@@ -128,7 +172,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [515, 384, 249, 131],
+                "roi": [
+                    515,
+                    384,
+                    249,
+                    131
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },
@@ -143,8 +192,17 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [474, 406, 333, 158],
-                "expected": ["EPIC", "SSR", "SR"]
+                "roi": [
+                    474,
+                    406,
+                    333,
+                    158
+                ],
+                "expected": [
+                    "EPIC",
+                    "SSR",
+                    "SR"
+                ]
             }
         },
         "action": {
@@ -158,7 +216,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [650, 567, 150, 95],
+                "roi": [
+                    650,
+                    567,
+                    150,
+                    95
+                ],
                 "template": ["Common/ConfirmWithCircle.png"]
             }
         },

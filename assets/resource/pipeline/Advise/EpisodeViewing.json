@@ -4,14 +4,24 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1250, 648, 27, 27],
+                "roi": [
+                    1250,
+                    648,
+                    27,
+                    27
+                ],
                 "template": ["Common/New.png"]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [-20, 20, 0, 0]
+                "target_offset": [
+                    -20,
+                    20,
+                    0,
+                    0
+                ]
             }
         },
         "next": ["AdviseClickEpisodeViewingList"]
@@ -21,7 +31,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [484, 410, 79, 21],
+                "roi": [
+                    484,
+                    410,
+                    79,
+                    21
+                ],
                 "expected": [".*EPISODE.*"]
             }
         },
@@ -41,7 +56,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [645, 374, 169, 41],
+                "roi": [
+                    645,
+                    374,
+                    169,
+                    41
+                ],
                 "expected": ["播放花絮"]
             }
         },
@@ -55,7 +75,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [719, 647, 83, 36],
+                "roi": [
+                    719,
+                    647,
+                    83,
+                    36
+                ],
                 "expected": ["领取奖励"]
             }
         },

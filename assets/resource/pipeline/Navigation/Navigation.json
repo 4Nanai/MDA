@@ -23,7 +23,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [91, 664, 39, 32],
+                "roi": [
+                    91,
+                    664,
+                    39,
+                    32
+                ],
                 "template": ["Common/HomeButton.png"]
             }
         },
@@ -36,7 +41,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [1218, 9, 50, 16],
+                "roi": [
+                    1218,
+                    9,
+                    50,
+                    16
+                ],
                 "expected": ["SKIP"]
             }
         },
@@ -49,7 +59,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [601, 660, 66, 17],
+                "roi": [
+                    601,
+                    660,
+                    66,
+                    17
+                ],
                 "expected": ["点击关闭画面"]
             }
         },
@@ -79,14 +94,22 @@
         "action": {
             "type": "Click"
         },
-        "next": ["NavigationNoticeFlow", "[Anchor]NeedCheck"]
+        "next": [
+            "NavigationNoticeFlow",
+            "[Anchor]NeedCheck"
+        ]
     },
     "NavigationOutpostBack": {
         "desc": "前哨基地误触返回",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [633, 668, 60, 33],
+                "roi": [
+                    633,
+                    668,
+                    60,
+                    33
+                ],
                 "expected": ["关闭"]
             }
         },
@@ -100,8 +123,16 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [634, 63, 39, 25],
-                "expected": ["公告", "Notice"]
+                "roi": [
+                    634,
+                    63,
+                    39,
+                    25
+                ],
+                "expected": [
+                    "公告",
+                    "Notice"
+                ]
             }
         }
     },
@@ -120,7 +151,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [625, 686, 30, 18],
+                "roi": [
+                    625,
+                    686,
+                    30,
+                    18
+                ],
                 "expected": ["大厅"]
             }
         },
@@ -130,14 +166,23 @@
     },
     "HallEnterArk": {
         "desc": "进入方舟",
-        "next": ["NavigationArkEntered", "NavigationClickArk", "[JumpBack]NavigationEnterHall"]
+        "next": [
+            "NavigationArkEntered",
+            "NavigationClickArk",
+            "[JumpBack]NavigationEnterHall"
+        ]
     },
     "NavigationArkEntered": {
         "desc": "处于方舟内部",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [0, 15, 70, 25],
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
                 "expected": ["方舟"]
             }
         }
@@ -153,14 +198,22 @@
         "action": {
             "type": "Click"
         },
-        "next": ["NavigationArkEntered", "NavigationClickArk"]
+        "next": [
+            "NavigationArkEntered",
+            "NavigationClickArk"
+        ]
     },
     "NavigationArkVisible": {
         "desc": "大厅的方舟标识",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [896, 471, 54, 36],
+                "roi": [
+                    896,
+                    471,
+                    54,
+                    36
+                ],
                 "expected": ["方舟"]
             }
         }
@@ -170,7 +223,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [956, 448, 28, 25],
+                "roi": [
+                    956,
+                    448,
+                    28,
+                    25
+                ],
                 "template": ["Common/RedDot.png"]
             }
         }
@@ -180,7 +238,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1174, 8, 37, 35],
+                "roi": [
+                    1174,
+                    8,
+                    37,
+                    35
+                ],
                 "template": ["Common/Bell.png"]
             }
         }
@@ -191,8 +254,14 @@
         "action": {
             "type": "Swipe",
             "param": {
-                "begin": [627, 528],
-                "end": [627, 238],
+                "begin": [
+                    627,
+                    528
+                ],
+                "end": [
+                    627,
+                    238
+                ],
                 "end_hold": 300
             }
         },
@@ -203,8 +272,16 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [0, 647, 93, 73],
-                "template": ["Common/GoBack1.png", "Common/GoBack2.png"]
+                "roi": [
+                    0,
+                    647,
+                    93,
+                    73
+                ],
+                "template": [
+                    "Common/GoBack1.png",
+                    "Common/GoBack2.png"
+                ]
             }
         },
         "action": {

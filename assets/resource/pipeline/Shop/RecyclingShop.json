@@ -21,21 +21,34 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [0, 255, 55, 390],
+                "roi": [
+                    0,
+                    255,
+                    55,
+                    390
+                ],
                 "template": ["Shop/RecyclingShop/RecyclingShop.png"]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["ShopRecyclingShopEntered", "ShopEnterRecyclingShop"]
+        "next": [
+            "ShopRecyclingShopEntered",
+            "ShopEnterRecyclingShop"
+        ]
     },
     "ShopRecyclingShopEntered": {
         "desc": "处于废铁商店",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [68, 264, 119, 20],
+                "roi": [
+                    68,
+                    264,
+                    119,
+                    20
+                ],
                 "expected": ["废铁商店"]
             }
         }
@@ -47,7 +60,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/RecyclingShop/GoodTeamworkBox.png",
                 "threshold": 0.9
             }
@@ -63,7 +81,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/RecyclingShop/MaintenanceKitBox.png",
                 "threshold": 0.9
             }
@@ -79,7 +102,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/RecyclingShop/CuratedManufacturerArms.png",
                 "threshold": 0.9
             }
@@ -95,7 +123,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": "Shop/RecyclingShop/Gem.png",
                 "threshold": 0.9
             }
@@ -111,7 +144,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": [
                     "Shop/Voucher/Darlingforaday.png",
                     "Shop/Voucher/ElysionVIPBuffetVoucher.png",
@@ -134,7 +172,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [58, 338, 1222, 325],
+                "roi": [
+                    58,
+                    338,
+                    1222,
+                    325
+                ],
                 "template": [
                     "Shop/RecyclingShop/CreditCase.png",
                     "Shop/RecyclingShop/BattleDataSetCase.png",

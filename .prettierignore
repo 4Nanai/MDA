@@ -6,8 +6,12 @@ node_modules/
 assets/MaaCommonAssets
 
 # 跳过 schema 目录，避免与 sync_schema_files 冲突
-deps/tools/
+tools/schema/
 
 # 锁文件
 pnpm-lock.yaml
 package-lock.json
+
+# GitHub Workflows (avoid permission issues during auto-format)
+.github/workflows/*.yml
+.github/workflows/*.yaml

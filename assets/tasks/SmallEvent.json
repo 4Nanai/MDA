@@ -5,7 +5,10 @@
             "label": "$task.SmallEvent.label",
             "entry": "SmallEventMain",
             "description": "$task.SmallEvent.description",
-            "option": ["SmallEventTheme", "SmallEventContent"],
+            "option": [
+                "SmallEventTheme",
+                "SmallEventContent"
+            ],
             "group": ["daily"]
         }
     ],
@@ -64,7 +67,11 @@
         },
         "SmallEventContent": {
             "type": "checkbox",
-            "default_case": ["SmallEventChallenge", "SmallEventStory", "SmallEventMission"],
+            "default_case": [
+                "SmallEventChallenge",
+                "SmallEventStory",
+                "SmallEventMission"
+            ],
             "label": "$option.SmallEventContent.label",
             "cases": [
                 {

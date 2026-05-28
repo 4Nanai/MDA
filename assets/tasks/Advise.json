@@ -5,7 +5,10 @@
             "label": "$task.Advise.label",
             "entry": "AdviseMain",
             "description": "$task.Advise.description",
-            "option": ["NikkeAdvise", "AdviseEpisodeViewingReward"],
+            "option": [
+                "NikkeAdvise",
+                "AdviseEpisodeViewingReward"
+            ],
             "group": ["daily"]
         }
     ],

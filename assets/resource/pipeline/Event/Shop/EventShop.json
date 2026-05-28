@@ -4,7 +4,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [442, 536, 393, 79],
+                "roi": [
+                    442,
+                    536,
+                    393,
+                    79
+                ],
                 "expected": [".*商店.*"]
             }
         },
@@ -29,7 +34,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [5, 18, 50, 16],
+                "roi": [
+                    5,
+                    18,
+                    50,
+                    16
+                ],
                 "expected": [".*商店.*"]
             }
         }
@@ -37,7 +47,12 @@
     "EventShopPageFlow": {
         "desc": "活动商店页面流程",
         "post_wait_freezes": {
-            "target": [570, 148, 138, 143],
+            "target": [
+                570,
+                148,
+                138,
+                143
+            ],
             "time": 100
         },
         "next": [
@@ -68,28 +83,48 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [572, 119, 135, 51],
+                "roi": [
+                    572,
+                    119,
+                    135,
+                    51
+                ],
                 "expected": ["购买道具"]
             }
         },
-        "next": ["CheckEventBalance", "[JumpBack]CommonClosePage", "CommonEndTask"]
+        "next": [
+            "CheckEventBalance",
+            "[JumpBack]CommonClosePage",
+            "CommonEndTask"
+        ]
     },
     "CheckEventBalance": {
         "desc": "检测活动余额",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["GoodsCostsVisible", "GoodsCostsAffordable"]
+                "all_of": [
+                    "GoodsCostsVisible",
+                    "GoodsCostsAffordable"
+                ]
             }
         },
-        "next": ["[JumpBack]ShopConfirmPurchase", "EventShopPageFlow"]
+        "next": [
+            "[JumpBack]ShopConfirmPurchase",
+            "EventShopPageFlow"
+        ]
     },
     "GoodsCostsVisible": {
         "desc": "活动余额可见",
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [672, 485, 42, 30],
+                "roi": [
+                    672,
+                    485,
+                    42,
+                    30
+                ],
                 "expected": ["\\d+"]
             }
         }
@@ -99,9 +134,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [672, 485, 42, 30],
-                "lower": [225, 225, 225],
-                "upper": [255, 255, 255],
+                "roi": [
+                    672,
+                    485,
+                    42,
+                    30
+                ],
+                "lower": [
+                    225,
+                    225,
+                    225
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
                 "count": 100
             }
         }
@@ -112,7 +160,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/AdvancedRecruitVoucher.png"],
                 "threshold": 0.9
             }
@@ -121,10 +174,18 @@
             "type": "Click"
         },
         "post_wait_freezes": {
-            "target": [570, 148, 138, 143],
+            "target": [
+                570,
+                148,
+                138,
+                143
+            ],
             "time": 200
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopNormalRecruitVoucher": {
         "desc": "普通招募券",
@@ -132,7 +193,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/NormalRecruitVoucher.png"],
                 "threshold": 0.9
             }
@@ -140,7 +206,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopSkillManualII": {
         "desc": "技能手册II",
@@ -148,13 +217,21 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/SkillManualII.png"],
                 "threshold": 0.9
             }
         },
         "action": "Click",
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopBurstManualI": {
         "desc": "爆裂手册I",
@@ -162,13 +239,21 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/BurstManualI.png"],
                 "threshold": 0.9
             }
         },
         "action": "Click",
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopSkillManualI": {
         "desc": "技能手册I",
@@ -176,13 +261,21 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/SkillManualI.png"],
                 "threshold": 0.9
             }
         },
         "action": "Click",
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopBurstManualII": {
         "desc": "爆裂手册II",
@@ -190,13 +283,21 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/BurstManualII.png"],
                 "threshold": 0.9
             }
         },
         "action": "Click",
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopBattleDataSetCase": {
         "desc": "战斗数据集盒",
@@ -204,7 +305,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/BattleDataSetCase.png"],
                 "threshold": 0.9
             }
@@ -212,7 +318,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopCoreDustCase": {
         "desc": "芯尘盒",
@@ -220,14 +329,22 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/CoreDustCase.png"]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopAttackerConsole": {
         "desc": "火力型通用主机",
@@ -235,7 +352,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/AttackerConsole.png"],
                 "threshold": 0.9
             }
@@ -243,7 +365,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopDefenseConsole": {
         "desc": "防御型通用主机",
@@ -251,7 +376,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/DefenseConsole.png"],
                 "threshold": 0.9
             }
@@ -259,7 +389,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopSupporterConsole": {
         "desc": "辅助型通用主机",
@@ -267,7 +400,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/SupporterConsole.png"],
                 "threshold": 0.9
             }
@@ -275,7 +413,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopElysionConsole": {
         "desc": "极乐净土通用主机",
@@ -283,7 +424,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/ElysionConsole.png"],
                 "threshold": 0.9
             }
@@ -291,7 +437,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopMissilisConsole": {
         "desc": "米西利斯通用主机",
@@ -299,7 +448,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/MissilisConsole.png"],
                 "threshold": 0.9
             }
@@ -307,7 +461,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopTetraConsole": {
         "desc": "泰特拉通用主机",
@@ -315,7 +472,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/TetraConsole.png"],
                 "threshold": 0.9
             }
@@ -323,7 +485,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopPilgrimConsole": {
         "desc": "朝圣者通用主机",
@@ -331,7 +496,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/PilgrimConsole.png"],
                 "threshold": 0.9
             }
@@ -339,7 +509,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopAbnormalConsole": {
         "desc": "异常通用主机",
@@ -347,7 +520,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/AbnormalConsole.png"],
                 "threshold": 0.9
             }
@@ -355,7 +533,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopReEnergy": {
         "desc": "循环能量",
@@ -363,7 +544,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/ReEnergy.png"],
                 "threshold": 0.9
             }
@@ -371,7 +557,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopCoreDust": {
         "desc": "芯尘",
@@ -379,7 +568,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/CoreDust.png"],
                 "threshold": 0.9
             }
@@ -387,7 +581,10 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     },
     "ShopCredits": {
         "desc": "信用点",
@@ -395,7 +592,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [45, 314, 1192, 230],
+                "roi": [
+                    45,
+                    314,
+                    1192,
+                    230
+                ],
                 "template": ["SmallEvent/Shop/Credits.png"],
                 "threshold": 0.9
             }
@@ -403,6 +605,9 @@
         "action": {
             "type": "Click"
         },
-        "next": ["ShopGoodsAvailable", "EventShopPageFlow"]
+        "next": [
+            "ShopGoodsAvailable",
+            "EventShopPageFlow"
+        ]
     }
 }
