@@ -20,7 +20,7 @@
             "cases": [
                 {
                     "name": "BSideIdol",
-                    "label": "$option.SmallEventTheme.BSideIdol",
+                    "label": "$option.SmallEventTheme.Current",
                     "pipeline_override": {
                         "SmallEventEntry": {
                             "recognition": {

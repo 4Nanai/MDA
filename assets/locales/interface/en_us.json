@@ -108,7 +108,7 @@
     "task.SmallEvent.label": "Small Event",
     "task.SmallEvent.description": "Enter the small event interface and complete related tasks. (Events without SD characters are called Small Events)",
     "option.SmallEventTheme.label": "Event Theme",
-    "option.SmallEventTheme.BSideIdol": "B-SIDE IDOL",
+    "option.SmallEventTheme.Current": "BitterSpice",
     "option.SmallEventTheme.Other": "Other",
     "option.LargeEventTheme.label": "Event Theme",
     "option.LargeEventTheme.StarAnis": "STAR ANIS",

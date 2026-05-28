@@ -108,7 +108,7 @@
     "task.SmallEvent.label": "小活动",
     "task.SmallEvent.description": "进入小活动界面，完成相关任务。（没有SD小人的活动叫做小活动）",
     "option.SmallEventTheme.label": "活动主题",
-    "option.SmallEventTheme.BSideIdol": "B-SIDE IDOL",
+    "option.SmallEventTheme.Current": "BitterSpice",
     "option.SmallEventTheme.Other": "其他",
     "option.LargeEventTheme.label": "活动主题",
     "option.LargeEventTheme.StarAnis": "STAR ANIS",
