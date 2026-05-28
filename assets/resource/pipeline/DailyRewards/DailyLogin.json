@@ -35,7 +35,7 @@
                     52
                 ],
                 "template": [
-                    "DailyRewards/DailyLogin/BackStageGift.png"
+                    "Common/RedDot.png" //占位，应该去task页面修改
                 ]
             }
         },

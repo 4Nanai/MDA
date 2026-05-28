@@ -137,6 +137,13 @@
                     "pipeline_override": {
                         "DailyRewardsDailyLogin": {
                             "enabled": true
+                        },
+                        "DailyLoginSearch": {
+                            "recognition": {
+                                "param": {
+                                    "template": ["DailyRewards/DailyLogin/BackStageGift.png"]
+                                }
+                            }
                         }
                     }
                 },
