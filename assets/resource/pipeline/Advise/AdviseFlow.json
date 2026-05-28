@@ -146,15 +146,13 @@
     "AdviseStoryEnd": {
         "desc": "咨询剧情结束",
         "recognition": {
-            "type": "OCR",
+            "type": "Or",
             "param": {
-                "roi": [
-                    0,
-                    0,
-                    95,
-                    85
-                ],
-                "expected": ["咨询"]
+                "any_of": [
+                    "AdviseMainPageEntered",
+                    "AdviseConfirmRankIncrease",
+                    "AdviseEpisodeUnlocked"
+                ]
             }
         },
         "next": [

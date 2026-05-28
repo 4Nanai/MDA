@@ -103,7 +103,19 @@
         ]
     },
     "AdviseMainPageEntered": {
-        "desc": "处于咨询界面",
+        "desc": "处于咨询界面（nikke选择/咨询）",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "AdviseStateVisible",
+                    "AdviseStateNotCovered"
+                ]
+            }
+        }
+    },
+    "AdviseStateVisible": {
+        "desc": "左上角咨询标签可见",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -114,6 +126,17 @@
                     25
                 ],
                 "expected": ["咨询"]
+            }
+        }
+    },
+    "AdviseStateNotCovered": {
+        "desc": "左上角咨询标签未被覆盖",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonNoTransparentMask"
+                ]
             }
         }
     },
