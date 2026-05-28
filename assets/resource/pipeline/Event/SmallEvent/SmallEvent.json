@@ -27,7 +27,11 @@
         "action": {
             "type": "Click"
         },
-        "next": ["EnteringSmallEvent", "SmallEventEntry"]
+        "next": [
+            "EnteringSmallEvent",
+            "[JumpBack]DialoguesSkipWorkflow",
+            "SmallEventEntry"
+            ]
     },
     "SmallEventMainPageEntered": {
         "desc": "已进入剧情活动",

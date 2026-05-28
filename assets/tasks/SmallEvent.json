@@ -22,14 +22,14 @@
                         "SmallEventEntry": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/B-SideIdol/B-SideIdolLogo.png"]
+                                    "template": ["SmallEvent/BitterSpice/Logo.png"]
                                 }
                             }
                         },
                         "SmallEventStageNormalClick": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/B-SideIdol/B-SideIdolStageNormal.png"]
+                                    "template": ["SmallEvent/BitterSpice/StageNormal.png"]
                                 }
                             }
                         },
@@ -43,7 +43,7 @@
                         "SmallEventStageNormalRepeatableClick": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/B-SideIdol/B-SideIdolStageNormalRepeatable.png"]
+                                    "template": ["SmallEvent/BitterSpice/StageNormalRepeatable.png"]
                                 }
                             }
                         },
