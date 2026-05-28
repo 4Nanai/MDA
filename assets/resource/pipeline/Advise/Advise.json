@@ -57,8 +57,13 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [152, 238, 56, 24],
-                "expected": ["RANK"]
+                "roi": [
+                    152,
+                    238,
+                    56,
+                    24
+                ],
+                "expected": [".*RAN.*"]
             }
         },
         "action": {
