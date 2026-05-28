@@ -1,0 +1,48 @@
+{
+    "SoloRaidMain": {
+        "desc": "个人突击入口",
+        "max_hit": 1,
+        "next": [
+            "SoloRaidStart",
+            "[JumpBack]NavigationEnterHall"
+        ]
+    },
+    "SoloRaidStart": {
+        "desc": "个人突击",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": ["NavigationArkVisible"]
+            }
+        },
+        "next": [
+            "SoloRaidAvailable",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidAvailable": {
+        "desc": "个人突击可用",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "SoloRaidRecognition"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidLogoVisible": {
+        "desc": "个人突击logo可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [4,118,178,259],
+                "expected": ["单人突击"]
+            }
+        }
+    }
+}
