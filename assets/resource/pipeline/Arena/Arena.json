@@ -41,10 +41,13 @@
     "ArenaMainPageEntered": {
         "desc": "处于竞技场",
         "recognition": {
-            "type": "OCR",
+            "type": "Or",
             "param": {
-                "roi": [0, 15, 70, 25],
-                "expected": ["^竞技场$"]
+                "any_of": [
+                    "RookieArena",
+                    "SpecialArena",
+                    "ChampionArena"
+                ]
             }
         }
     },
