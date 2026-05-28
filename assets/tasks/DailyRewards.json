@@ -141,7 +141,7 @@
                         "DailyLoginSearch": {
                             "recognition": {
                                 "param": {
-                                    "template": ["DailyRewards/DailyLogin/BackStageGift.png"]
+                                    "template": ["DailyRewards/DailyLogin/TwinkleGreenStar.png"]
                                 }
                             }
                         }
