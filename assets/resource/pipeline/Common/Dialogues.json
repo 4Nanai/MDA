@@ -128,7 +128,8 @@
         "next": [
             "DialoguesSkipStoryAndEndTask",
             "[JumpBack]DialoguesClickContinue",
-            "[JumpBack]DialoguesClickOption"
+            "[JumpBack]DialoguesClickOption",
+            "[JumpBack]CommonClickBlank"
         ]
     },
     "DialoguesSkipStoryAndEndTask": {
