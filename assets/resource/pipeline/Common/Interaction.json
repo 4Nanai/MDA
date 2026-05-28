@@ -53,8 +53,18 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [708, 380, 138, 125],
-                "template": ["Common/MAX.png"]
+                "roi": [
+                    708,
+                    380,
+                    138,
+                    125
+                ],
+                "template": [
+                    "Common/MAX.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
             }
         },
         "action": {
