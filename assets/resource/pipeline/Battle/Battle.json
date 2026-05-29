@@ -4,7 +4,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["BattleMainVisible"]
+                "all_of": [
+                    "BattleMainVisible"
+                ]
             }
         },
         "next": [
@@ -47,7 +49,9 @@
                     54,
                     22
                 ],
-                "expected": ["剩余次数"]
+                "expected": [
+                    "剩余次数"
+                ]
             }
         },
         "next": [
@@ -85,7 +89,9 @@
                     47,
                     30
                 ],
-                "template": ["Common/MAX.png"]
+                "template": [
+                    "Common/MAX.png"
+                ]
             }
         }
     },
@@ -120,13 +126,17 @@
                     88,
                     37
                 ],
-                "expected": ["进行战斗"]
+                "expected": [
+                    "进行战斗"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["BattleInBattle"]
+        "next": [
+            "BattleInBattle"
+        ]
     },
     "BattleInBattle": {
         "desc": "战斗中",
@@ -153,7 +163,9 @@
                     100,
                     40
                 ],
-                "template": ["Battle/AutoBurst.png"],
+                "template": [
+                    "Battle/AutoBurst.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -173,7 +185,9 @@
                     100,
                     40
                 ],
-                "template": ["Battle/AutoShoot.png"],
+                "template": [
+                    "Battle/AutoShoot.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -208,7 +222,9 @@
                     122,
                     37
                 ],
-                "expected": [".*关卡.*"]
+                "expected": [
+                    ".*关卡.*"
+                ]
             }
         }
     },
@@ -269,7 +285,9 @@
         "recognition": {
             "type": "Or",
             "param": {
-                "any_of": ["BattleEscVisible"]
+                "any_of": [
+                    "BattleEscVisible"
+                ]
             }
         },
         "action": {
@@ -285,7 +303,9 @@
         "recognition": {
             "type": "Or",
             "param": {
-                "any_of": ["BattleFailedVisible"]
+                "any_of": [
+                    "BattleFailedVisible"
+                ]
             }
         },
         "next": [
@@ -298,7 +318,9 @@
         "recognition": {
             "type": "Or",
             "param": {
-                "any_of": ["BattleTimeoutVisible"]
+                "any_of": [
+                    "BattleTimeoutVisible"
+                ]
             }
         },
         "next": [
@@ -317,7 +339,9 @@
                     160,
                     90
                 ],
-                "expected": ["ESC"]
+                "expected": [
+                    "ESC"
+                ]
             }
         }
     },
@@ -332,7 +356,9 @@
                     48,
                     30
                 ],
-                "expected": ["战败"]
+                "expected": [
+                    "战败"
+                ]
             }
         }
     },
@@ -347,7 +373,9 @@
                     55,
                     28
                 ],
-                "expected": ["逾时"]
+                "expected": [
+                    "逾时"
+                ]
             }
         }
     },
@@ -365,7 +393,9 @@
         "action": {
             "type": "Click"
         },
-        "next": ["BattleInBattle"]
+        "next": [
+            "BattleInBattle"
+        ]
     },
     "BattleCannotBattle": {
         "desc": "不可战斗",
@@ -390,7 +420,9 @@
                     35,
                     31
                 ],
-                "template": ["Battle/BattleCloseButton.png"]
+                "template": [
+                    "Battle/BattleCloseButton.png"
+                ]
             }
         },
         "action": {
@@ -408,7 +440,9 @@
                     157,
                     114
                 ],
-                "expected": [".*快速战斗.*"]
+                "expected": [
+                    ".*快速战斗.*"
+                ]
             }
         }
     },
@@ -443,7 +477,9 @@
                     157,
                     114
                 ],
-                "expected": ["进入战斗"]
+                "expected": [
+                    "进入战斗"
+                ]
             }
         }
     },

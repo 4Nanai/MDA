@@ -16,7 +16,9 @@
                     87,
                     23
                 ],
-                "expected": ["无限之塔"]
+                "expected": [
+                    "无限之塔"
+                ]
             }
         },
         "action": {
@@ -32,7 +34,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["TribeTowerMainPageEntered"]
+                "all_of": [
+                    "TribeTowerMainPageEntered"
+                ]
             }
         },
         "next": [
@@ -56,13 +60,17 @@
                     51,
                     21
                 ],
-                "expected": ["^无限之塔$"]
+                "expected": [
+                    "^无限之塔$"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["TribeTowerChooseStage"]
+        "next": [
+            "TribeTowerChooseStage"
+        ]
     },
     "TribeTowerChooseStage": {
         "desc": "选择关卡",
@@ -75,7 +83,9 @@
                     33,
                     17
                 ],
-                "expected": ["STAGE"]
+                "expected": [
+                    "STAGE"
+                ]
             }
         },
         "action": {
@@ -89,7 +99,9 @@
                 ]
             }
         },
-        "next": ["TribeTowerBattleFlow"]
+        "next": [
+            "TribeTowerBattleFlow"
+        ]
     },
     "TribeTowerBattleFlow": {
         "desc": "无限之塔战斗流程",
@@ -112,7 +124,9 @@
                     92,
                     23
                 ],
-                "expected": ["OPEN"]
+                "expected": [
+                    "OPEN"
+                ]
             }
         },
         "action": {
@@ -126,7 +140,9 @@
                 ]
             }
         },
-        "next": ["TribeTowerChooseStage"]
+        "next": [
+            "TribeTowerChooseStage"
+        ]
     },
     "TribeTowerEnterMissilisTower": {
         "desc": "进入米西利斯之塔",
@@ -140,7 +156,9 @@
                     92,
                     23
                 ],
-                "expected": ["OPEN"]
+                "expected": [
+                    "OPEN"
+                ]
             }
         },
         "action": {
@@ -154,7 +172,9 @@
                 ]
             }
         },
-        "next": ["TribeTowerChooseStage"]
+        "next": [
+            "TribeTowerChooseStage"
+        ]
     },
     "TribeTowerEnterTetraTower": {
         "desc": "进入泰特拉之塔",
@@ -168,7 +188,9 @@
                     92,
                     23
                 ],
-                "expected": ["OPEN"]
+                "expected": [
+                    "OPEN"
+                ]
             }
         },
         "action": {
@@ -182,7 +204,9 @@
                 ]
             }
         },
-        "next": ["TribeTowerChooseStage"]
+        "next": [
+            "TribeTowerChooseStage"
+        ]
     },
     "TribeTowerEnterPilgrimTower": {
         "desc": "进入朝圣者之塔",
@@ -196,7 +220,9 @@
                     92,
                     23
                 ],
-                "expected": ["OPEN"]
+                "expected": [
+                    "OPEN"
+                ]
             }
         },
         "action": {
@@ -210,7 +236,9 @@
                 ]
             }
         },
-        "next": ["TribeTowerChooseStage"]
+        "next": [
+            "TribeTowerChooseStage"
+        ]
     },
     "TribeTowerMainPageEntered": {
         "desc": "处于无限之塔1级页面",
@@ -223,7 +251,9 @@
                     51,
                     21
                 ],
-                "expected": ["^无限之塔$"]
+                "expected": [
+                    "^无限之塔$"
+                ]
             }
         }
     }

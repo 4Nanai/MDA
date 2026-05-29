@@ -75,7 +75,9 @@
                     19,
                     20
                 ],
-                "expected": [".*20.*"]
+                "expected": [
+                    ".*20.*"
+                ]
             }
         }
     },
@@ -84,10 +86,14 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["AdviseCollectionCompletedVisible"]
+                "all_of": [
+                    "AdviseCollectionCompletedVisible"
+                ]
             }
         },
-        "next": ["AdviseQuickAdvise"]
+        "next": [
+            "AdviseQuickAdvise"
+        ]
     },
     "AdviseNormalAdvise": {
         "desc": "普通咨询",
@@ -100,7 +106,9 @@
                     52,
                     24
                 ],
-                "expected": ["咨询"]
+                "expected": [
+                    "咨询"
+                ]
             }
         },
         "action": {
@@ -123,7 +131,9 @@
                     66,
                     26
                 ],
-                "expected": ["快速咨询"]
+                "expected": [
+                    "快速咨询"
+                ]
             }
         },
         "action": {
@@ -167,7 +177,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["CommonNoTransparentMask"]
+                "all_of": [
+                    "CommonNoTransparentMask"
+                ]
             }
         },
         "pre_wait_freezes": 200,
@@ -205,7 +217,9 @@
                     122,
                     121
                 ],
-                "template": ["Common/ConfirmWithCircle.png"]
+                "template": [
+                    "Common/ConfirmWithCircle.png"
+                ]
             }
         },
         "action": {
@@ -224,7 +238,9 @@
                     73,
                     23
                 ],
-                "expected": ["追加能力值"]
+                "expected": [
+                    "追加能力值"
+                ]
             }
         },
         "action": {
@@ -243,7 +259,9 @@
                     95,
                     41
                 ],
-                "expected": [".*解锁花.*"]
+                "expected": [
+                    ".*解锁花.*"
+                ]
             }
         },
         "action": {
@@ -262,7 +280,9 @@
                     115,
                     47
                 ],
-                "expected": [".*好感度提升.*"]
+                "expected": [
+                    ".*好感度提升.*"
+                ]
             }
         }
     },
@@ -277,18 +297,24 @@
                     81,
                     134
                 ],
-                "template": ["Advise/NextAdvise.png"]
+                "template": [
+                    "Advise/NextAdvise.png"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
         "post_wait_freezes": 200,
-        "next": ["AdviseFlow"]
+        "next": [
+            "AdviseFlow"
+        ]
     },
     "AdviseCollectionNotCompletedFlow": {
         "desc": "未收集完咨询日志",
-        "next": ["AdviseNormalAdvise"]
+        "next": [
+            "AdviseNormalAdvise"
+        ]
     },
     "AdviseFavoriteSelected": {
         "desc": "已收藏",
@@ -326,7 +352,9 @@
                     32,
                     17
                 ],
-                "expected": ["MAX"]
+                "expected": [
+                    "MAX"
+                ]
             }
         }
     }

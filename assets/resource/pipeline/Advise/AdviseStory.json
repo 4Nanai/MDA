@@ -4,7 +4,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["DialoguesMainVisible"]
+                "all_of": [
+                    "DialoguesMainVisible"
+                ]
             }
         },
         "next": [
@@ -17,7 +19,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["DialoguesMainVisible"]
+                "all_of": [
+                    "DialoguesMainVisible"
+                ]
             }
         },
         "next": [
@@ -30,15 +34,21 @@
         "action": "DoNothing",
         "timeout": 5000,
         "rate_limit": 100,
-        "next": ["AdviseEpisodeStoryAwardVisible"],
-        "on_error": ["WaitingAdviseEpisodeStoryEnd"]
+        "next": [
+            "AdviseEpisodeStoryAwardVisible"
+        ],
+        "on_error": [
+            "WaitingAdviseEpisodeStoryEnd"
+        ]
     },
     "AdviseEpisodeStoryAwardVisible": {
         "desc": "等待花絮剧情奖励",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["CommonConfirmReward"]
+                "all_of": [
+                    "CommonConfirmReward"
+                ]
             }
         },
         "action": {
@@ -52,7 +62,9 @@
                 ]
             }
         },
-        "next": ["WaitingAdviseEpisodeStoryEnd"]
+        "next": [
+            "WaitingAdviseEpisodeStoryEnd"
+        ]
     },
     "WaitingAdviseEpisodeStoryEnd": {
         "desc": "等待花絮剧情结束",
@@ -74,11 +86,15 @@
                     92,
                     33
                 ],
-                "expected": [".*放花.*"]
+                "expected": [
+                    ".*放花.*"
+                ]
             }
         },
         "action": "Click",
-        "next": ["AdviseEpisodeStory"]
+        "next": [
+            "AdviseEpisodeStory"
+        ]
     },
     "AdviseEpisodeStoryEnd": {
         "desc": "剧情结束",
@@ -91,9 +107,13 @@
                     127,
                     34
                 ],
-                "expected": [".*日.*"]
+                "expected": [
+                    ".*日.*"
+                ]
             }
         },
-        "next": ["AdviseEpisodeWorkflow"]
+        "next": [
+            "AdviseEpisodeWorkflow"
+        ]
     }
 }

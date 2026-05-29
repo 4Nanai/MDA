@@ -12,7 +12,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["NavigationArkVisible"]
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
             }
         },
         "next": [
@@ -25,7 +27,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["DailyRewardsFreeRecruitVisible"]
+                "all_of": [
+                    "DailyRewardsFreeRecruitVisible"
+                ]
             }
         },
         "action": {
@@ -42,7 +46,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["DailyRewardsFreeRecruitVisible"]
+                "all_of": [
+                    "DailyRewardsFreeRecruitVisible"
+                ]
             }
         }
     },
@@ -51,7 +57,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["DailyRewardsFreeRecruitAvailable"]
+                "all_of": [
+                    "DailyRewardsFreeRecruitAvailable"
+                ]
             }
         },
         "next": [
@@ -70,7 +78,9 @@
                     43,
                     14
                 ],
-                "expected": [".*免费.*"]
+                "expected": [
+                    ".*免费.*"
+                ]
             }
         },
         "action": {
@@ -93,7 +103,9 @@
                     146,
                     34
                 ],
-                "expected": ["确认"]
+                "expected": [
+                    "确认"
+                ]
             }
         },
         "action": {
@@ -112,7 +124,9 @@
                     64,
                     22
                 ],
-                "template": ["DailyRewards/FreeRecruit/FreeRecruit.png"]
+                "template": [
+                    "DailyRewards/FreeRecruit/FreeRecruit.png"
+                ]
             }
         }
     },
@@ -127,7 +141,9 @@
                     46,
                     54
                 ],
-                "template": ["DailyRewards/FreeRecruit/NextRecruit.png"]
+                "template": [
+                    "DailyRewards/FreeRecruit/NextRecruit.png"
+                ]
             }
         },
         "action": {

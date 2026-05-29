@@ -39,7 +39,9 @@
                     40,
                     24
                 ],
-                "expected": ["^[1-9]\\d*$"]
+                "expected": [
+                    "^[1-9]\\d*$"
+                ]
             }
         }
     },
@@ -54,7 +56,9 @@
                     21,
                     14
                 ],
-                "expected": ["^[1-9]\\d*$"]
+                "expected": [
+                    "^[1-9]\\d*$"
+                ]
             }
         }
     },
@@ -69,7 +73,9 @@
                     183,
                     52
                 ],
-                "template": ["Outpost/DailyLives.png"]
+                "template": [
+                    "Outpost/DailyLives.png"
+                ]
             }
         },
         "action": {
@@ -100,14 +106,18 @@
                     41,
                     38
                 ],
-                "template": ["Outpost/Event.png"]
+                "template": [
+                    "Outpost/Event.png"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
         "post_delay": 500,
-        "next": ["OutpostDailyEventFlow"]
+        "next": [
+            "OutpostDailyEventFlow"
+        ]
     },
     "OutpostDailyEventFlow": {
         "desc": "进入剧情",
@@ -120,7 +130,9 @@
                     44,
                     27
                 ],
-                "expected": ["确认"]
+                "expected": [
+                    "确认"
+                ]
             }
         },
         "action": {
@@ -147,7 +159,9 @@
                     67,
                     49
                 ],
-                "template": ["Common/CloseButton5.png"],
+                "template": [
+                    "Common/CloseButton5.png"
+                ],
                 "green_mask": true
             }
         },
@@ -160,7 +174,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["OutpostMainPageEntered"]
+                "all_of": [
+                    "OutpostMainPageEntered"
+                ]
             }
         },
         "action": {

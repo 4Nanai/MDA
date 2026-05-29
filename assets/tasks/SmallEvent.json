@@ -9,7 +9,9 @@
                 "SmallEventTheme",
                 "SmallEventContent"
             ],
-            "group": ["daily"]
+            "group": [
+                "daily"
+            ]
         }
     ],
     "option": {
@@ -25,35 +27,45 @@
                         "SmallEventEntry": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/BitterSpice/Logo.png"]
+                                    "template": [
+                                        "SmallEvent/BitterSpice/Logo.png"
+                                    ]
                                 }
                             }
                         },
                         "SmallEventStageNormalClick": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/BitterSpice/StageNormal.png"]
+                                    "template": [
+                                        "SmallEvent/BitterSpice/StageNormal.png"
+                                    ]
                                 }
                             }
                         },
                         "SmallEventStageHardClick": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/B-SideIdol/B-SideIdolStageHard.png"]
+                                    "template": [
+                                        "SmallEvent/B-SideIdol/B-SideIdolStageHard.png"
+                                    ]
                                 }
                             }
                         },
                         "SmallEventStageNormalRepeatableClick": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/BitterSpice/StageNormalRepeatable.png"]
+                                    "template": [
+                                        "SmallEvent/BitterSpice/StageNormalRepeatable.png"
+                                    ]
                                 }
                             }
                         },
                         "SmallEventStageHardRepeatableClick": {
                             "recognition": {
                                 "param": {
-                                    "template": ["SmallEvent/B-SideIdol/B-SideIdolStageHardRepeatable.png"]
+                                    "template": [
+                                        "SmallEvent/B-SideIdol/B-SideIdolStageHardRepeatable.png"
+                                    ]
                                 }
                             }
                         }

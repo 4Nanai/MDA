@@ -16,11 +16,15 @@
                     85,
                     23
                 ],
-                "expected": ["拦截战"],
-                "replace": [[
+                "expected": [
+                    "拦截战"
+                ],
+                "replace": [
+                    [
                         "载",
                         "截"
-                    ]]
+                    ]
+                ]
             }
         },
         "action": {
@@ -44,7 +48,9 @@
                     70,
                     22
                 ],
-                "expected": ["剩余拦截次数"]
+                "expected": [
+                    "剩余拦截次数"
+                ]
             }
         }
     },
@@ -53,7 +59,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["InterceptionMainPageEntered"]
+                "all_of": [
+                    "InterceptionMainPageEntered"
+                ]
             }
         },
         "next": [
@@ -74,7 +82,9 @@
                     43,
                     17
                 ],
-                "expected": ["达成阶段"]
+                "expected": [
+                    "达成阶段"
+                ]
             }
         },
         "inverse": true,

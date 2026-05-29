@@ -10,7 +10,9 @@
                     25,
                     23
                 ],
-                "template": ["Common/RedDot.png"]
+                "template": [
+                    "Common/RedDot.png"
+                ]
             }
         },
         "pre_wait_freezes": 500,
@@ -26,7 +28,9 @@
             }
         },
         "post_wait_freezes": 500,
-        "next": ["AdviseEpisodeWorkflow"]
+        "next": [
+            "AdviseEpisodeWorkflow"
+        ]
     },
     "AdviseEpisodeWorkflow": {
         "desc": "花絮奖励流程",
@@ -48,7 +52,9 @@
                     28,
                     365
                 ],
-                "template": ["Common/RedDot.png"],
+                "template": [
+                    "Common/RedDot.png"
+                ],
                 "threshold": 0.8
             }
         },
@@ -79,7 +85,9 @@
                     34,
                     34
                 ],
-                "template": ["Common/RedDot.png"],
+                "template": [
+                    "Common/RedDot.png"
+                ],
                 "threshold": 0.8
             }
         },
@@ -110,7 +118,9 @@
                     28,
                     25
                 ],
-                "template": ["Common/RedDot.png"],
+                "template": [
+                    "Common/RedDot.png"
+                ],
                 "threshold": 0.8
             }
         },
@@ -142,7 +152,9 @@
                     35,
                     28
                 ],
-                "template": ["Common/RedDot.png"]
+                "template": [
+                    "Common/RedDot.png"
+                ]
             }
         },
         "action": {

@@ -18,7 +18,9 @@
                     20,
                     20
                 ],
-                "template": ["Common/RedDot.png"]
+                "template": [
+                    "Common/RedDot.png"
+                ]
             }
         },
         "action": {
@@ -49,7 +51,9 @@
                     53,
                     20
                 ],
-                "expected": ["每日任务"]
+                "expected": [
+                    "每日任务"
+                ]
             }
         },
         "next": [
@@ -68,7 +72,9 @@
                     375,
                     28
                 ],
-                "template": ["Common/RedDot.png"]
+                "template": [
+                    "Common/RedDot.png"
+                ]
             }
         },
         "action": {
@@ -125,7 +131,9 @@
                     108,
                     35
                 ],
-                "expected": [".*全部.*"]
+                "expected": [
+                    ".*全部.*"
+                ]
             }
         },
         "action": {

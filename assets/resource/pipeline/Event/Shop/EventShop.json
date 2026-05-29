@@ -10,24 +10,32 @@
                     393,
                     79
                 ],
-                "expected": [".*商店.*"]
+                "expected": [
+                    ".*商店.*"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["EventShopPage"]
+        "next": [
+            "EventShopPage"
+        ]
     },
     "EventShopPage": {
         "desc": "活动商店页面",
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["EventShopPageVisible"]
+                "all_of": [
+                    "EventShopPageVisible"
+                ]
             }
         },
         "post_wait_freezes": 500,
-        "next": ["EventShopPageFlow"]
+        "next": [
+            "EventShopPageFlow"
+        ]
     },
     "EventShopPageVisible": {
         "desc": "活动商店页面可见",
@@ -40,7 +48,9 @@
                     50,
                     16
                 ],
-                "expected": [".*商店.*"]
+                "expected": [
+                    ".*商店.*"
+                ]
             }
         }
     },
@@ -89,7 +99,9 @@
                     135,
                     51
                 ],
-                "expected": ["购买道具"]
+                "expected": [
+                    "购买道具"
+                ]
             }
         },
         "next": [
@@ -125,7 +137,9 @@
                     42,
                     30
                 ],
-                "expected": ["\\d+"]
+                "expected": [
+                    "\\d+"
+                ]
             }
         }
     },
@@ -166,7 +180,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/AdvancedRecruitVoucher.png"],
+                "template": [
+                    "SmallEvent/Shop/AdvancedRecruitVoucher.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -199,7 +215,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/NormalRecruitVoucher.png"],
+                "template": [
+                    "SmallEvent/Shop/NormalRecruitVoucher.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -223,7 +241,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/SkillManualII.png"],
+                "template": [
+                    "SmallEvent/Shop/SkillManualII.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -245,7 +265,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/BurstManualI.png"],
+                "template": [
+                    "SmallEvent/Shop/BurstManualI.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -267,7 +289,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/SkillManualI.png"],
+                "template": [
+                    "SmallEvent/Shop/SkillManualI.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -289,7 +313,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/BurstManualII.png"],
+                "template": [
+                    "SmallEvent/Shop/BurstManualII.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -311,7 +337,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/BattleDataSetCase.png"],
+                "template": [
+                    "SmallEvent/Shop/BattleDataSetCase.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -335,7 +363,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/CoreDustCase.png"]
+                "template": [
+                    "SmallEvent/Shop/CoreDustCase.png"
+                ]
             }
         },
         "action": {
@@ -358,7 +388,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/AttackerConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/AttackerConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -382,7 +414,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/DefenseConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/DefenseConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -406,7 +440,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/SupporterConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/SupporterConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -430,7 +466,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/ElysionConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/ElysionConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -454,7 +492,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/MissilisConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/MissilisConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -478,7 +518,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/TetraConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/TetraConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -502,7 +544,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/PilgrimConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/PilgrimConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -526,7 +570,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/AbnormalConsole.png"],
+                "template": [
+                    "SmallEvent/Shop/AbnormalConsole.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -550,7 +596,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/ReEnergy.png"],
+                "template": [
+                    "SmallEvent/Shop/ReEnergy.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -574,7 +622,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/CoreDust.png"],
+                "template": [
+                    "SmallEvent/Shop/CoreDust.png"
+                ],
                 "threshold": 0.9
             }
         },
@@ -598,7 +648,9 @@
                     1192,
                     230
                 ],
-                "template": ["SmallEvent/Shop/Credits.png"],
+                "template": [
+                    "SmallEvent/Shop/Credits.png"
+                ],
                 "threshold": 0.9
             }
         },

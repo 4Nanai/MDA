@@ -12,9 +12,13 @@
         "recognition": {
             "type": "NeuralNetworkDetect",
             "param": {
-                "expected": [0],
+                "expected": [
+                    0
+                ],
                 "model": "MapPushing.onnx",
-                "labels": ["monster"],
+                "labels": [
+                    "monster"
+                ],
                 "order_by": "Area"
             }
         },
@@ -36,9 +40,13 @@
         "recognition": {
             "type": "NeuralNetworkDetect",
             "param": {
-                "expected": [0],
+                "expected": [
+                    0
+                ],
                 "model": "MapPushing.onnx",
-                "labels": ["plate0"],
+                "labels": [
+                    "plate0"
+                ],
                 "order_by": "Area"
             }
         },

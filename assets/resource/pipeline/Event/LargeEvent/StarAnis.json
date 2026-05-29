@@ -10,7 +10,9 @@
                     63,
                     21
                 ],
-                "expected": ["周边包包"]
+                "expected": [
+                    "周边包包"
+                ]
             }
         },
         "action": {
@@ -33,7 +35,9 @@
                     106,
                     102
                 ],
-                "expected": ["抽取刮刮乐周边"]
+                "expected": [
+                    "抽取刮刮乐周边"
+                ]
             }
         },
         "action": {
@@ -56,7 +60,9 @@
                     58,
                     21
                 ],
-                "expected": ["抽取周边"]
+                "expected": [
+                    "抽取周边"
+                ]
             }
         },
         "action": {
@@ -80,7 +86,9 @@
                     101,
                     29
                 ],
-                "expected": [".*抽取.*"]
+                "expected": [
+                    ".*抽取.*"
+                ]
             }
         },
         "action": {
@@ -121,13 +129,17 @@
                     36,
                     33
                 ],
-                "template": ["Common/ConfirmWithCircle.png"]
+                "template": [
+                    "Common/ConfirmWithCircle.png"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "next": ["LargeEventGoBack"]
+        "next": [
+            "LargeEventGoBack"
+        ]
     },
     "LargeEventStarAnisLotteryGrayButtonVisible": {
         "desc": "抽取按钮变灰",
@@ -165,7 +177,9 @@
                     188,
                     33
                 ],
-                "expected": [".*不足.*"]
+                "expected": [
+                    ".*不足.*"
+                ]
             }
         }
     }
