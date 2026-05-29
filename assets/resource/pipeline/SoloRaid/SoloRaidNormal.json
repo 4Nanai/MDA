@@ -27,7 +27,8 @@
             "param": {
                 "all_of": [
                     "SoloRaidChallengeButtonVisible",
-                    "SoloRaidRemainingAttempts"
+                    "SoloRaidRemainingAttempts",
+                    "SoloRaidQuickBattleNotAvailable"
                 ]
             }
         },
@@ -86,6 +87,18 @@
                     54,
                     35
                 ],
+                "count": 100
+            }
+        }
+    },
+    "SoloRaidQuickBattleNotAvailable": {
+        "desc": "个突战斗界面快速战斗不可用",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [681,540,108,26],
+                "lower": [91, 92, 94],
+                "upper": [111, 113, 114],
                 "count": 100
             }
         }
