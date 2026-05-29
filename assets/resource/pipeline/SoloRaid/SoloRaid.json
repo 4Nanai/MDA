@@ -1,14 +1,15 @@
 {
     "SoloRaidMain": {
-        "desc": "个人突击入口",
+        "desc": "个突入口",
         "max_hit": 1,
+        "enabled": true,
         "next": [
             "SoloRaidStart",
             "[JumpBack]NavigationEnterHall"
         ]
     },
     "SoloRaidStart": {
-        "desc": "个人突击",
+        "desc": "开始单人突击流程",
         "recognition": {
             "type": "And",
             "param": {
@@ -21,7 +22,7 @@
         ]
     },
     "SoloRaidAvailable": {
-        "desc": "个人突击可用",
+        "desc": "个突可用",
         "recognition": {
             "type": "Custom",
             "param": {
@@ -36,6 +37,54 @@
             "type": "Click"
         },
         "next": [
+            "EnteringSoloRaid"
+        ]
+    },
+    "EnteringSoloRaid": {
+        "desc": "等待加载个突界面",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SoloRaidStateVisible",
+                    "SoloRaidStateNotCovered"
+                ]
+            }
+        },
+        "next": [
+            "SoloRaidWorkflow"
+        ]
+    },
+    "SoloRaidStateVisible": {
+        "desc": "左上角个突标签可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
+                "expected": ["单人.击"]
+            }
+        }
+    },
+    "SoloRaidStateNotCovered": {
+        "desc": "左上角个突标签未被覆盖",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonNoTransparentMask"
+                ]
+            }
+        }
+    },
+    "SoloRaidWorkflow": {
+        "desc": "个突流程",
+        "next": [
+            "[JumpBack]SoloRaidNormalBattle",
             "CommonEndTask"
         ]
     }
