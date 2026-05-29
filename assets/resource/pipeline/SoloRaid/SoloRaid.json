@@ -1,8 +1,8 @@
 {
     "SoloRaidMain": {
         "desc": "个突入口",
-        "max_hit": 1,
         "enabled": true,
+        "max_hit": 1,
         "next": [
             "SoloRaidStart",
             "[JumpBack]NavigationEnterHall"
@@ -27,10 +27,15 @@
             "type": "Custom",
             "param": {
                 "custom_recognition": "SoloRaidRecognition",
-                "roi": [4,118,178,259],
                 "custom_recognition_param": {
                     "expected": "单人.击"
-                }
+                },
+                "roi": [
+                    4,
+                    118,
+                    178,
+                    259
+                ]
             }
         },
         "action": {

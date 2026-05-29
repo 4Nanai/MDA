@@ -4,7 +4,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [463,62,354,31],
+                "roi": [
+                    463,
+                    62,
+                    354,
+                    31
+                ],
                 "template": [
                     "SoloRaid/Lock.png"
                 ]
@@ -41,7 +46,8 @@
             "[JumpBack]SoloRaidTeamNotAvailable",
             "[JumpBack]BattleStart",
             "[JumpBack]CommonConfirmAction",
-            "SoloRaidNormalBattle"
+            "SoloRaidNormalBattle",
+            "CommonEndTask"
         ]
     },
     "SoloRaidChallengeButtonVisible": {
@@ -49,7 +55,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [611,581,58,33],
+                "roi": [
+                    611,
+                    581,
+                    58,
+                    33
+                ],
                 "expected": ["挑战"]
             }
         }
@@ -59,9 +70,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [545,586,63,23],
-                "lower": [223, 34, 15],
-                "upper": [243, 54, 35],
+                "roi": [
+                    545,
+                    586,
+                    63,
+                    23
+                ],
+                "lower": [
+                    223,
+                    34,
+                    15
+                ],
+                "upper": [
+                    243,
+                    54,
+                    35
+                ],
                 "count": 100
             }
         }
@@ -87,9 +111,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [668,599,45,23],
-                "lower": [30, 30, 32],
-                "upper": [50, 50, 52],
+                "roi": [
+                    668,
+                    599,
+                    45,
+                    23
+                ],
+                "lower": [
+                    30,
+                    30,
+                    32
+                ],
+                "upper": [
+                    50,
+                    50,
+                    52
+                ],
                 "count": 100
             }
         }
@@ -100,7 +137,12 @@
             "type": "Custom",
             "param": {
                 "custom_recognition": "SoloRaidSwitchTeam",
-                "roi": [606,466,214,36]
+                "roi": [
+                    606,
+                    466,
+                    214,
+                    36
+                ]
             }
         },
         "action": "Click"
