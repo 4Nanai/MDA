@@ -25,7 +25,11 @@
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "SoloRaidRecognition"
+                "custom_recognition": "SoloRaidRecognition",
+                "roi": [4,118,178,259],
+                "custom_recognition_param": {
+                    "expected": "单人.击"
+                }
             }
         },
         "action": {
@@ -41,7 +45,7 @@
             "type": "OCR",
             "param": {
                 "roi": [4,118,178,259],
-                "expected": ["单人突击"]
+                "expected": ["单人.击"]
             }
         }
     }

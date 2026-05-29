@@ -70,7 +70,8 @@
     ],
     "agent": {
         "child_exec": "agent/go-service",
-        "child_args": []
+        "child_args": [],
+        "identifier": "mda_test"
     },
     "task": [],
     "group": [

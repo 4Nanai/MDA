@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+*.node
 
 # 测试文件
 *.test
