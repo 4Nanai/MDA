@@ -38,15 +38,5 @@
         "next": [
             "CommonEndTask"
         ]
-    },
-    "SoloRaidLogoVisible": {
-        "desc": "个人突击logo可见",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [4,118,178,259],
-                "expected": ["单人.击"]
-            }
-        }
     }
 }
