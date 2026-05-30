@@ -1,0 +1,122 @@
+{
+    "SoloRaidQuickBattle": {
+        "desc": "个突快速战斗入口",
+        "max_hit": 1,
+        "enabled": true,
+        "next": [
+            "SoloRaidQuickBattleWorkflow"
+        ]
+    },
+    "SoloRaidQuickBattleWorkflow": {
+        "desc": "个突快速战斗流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SoloRaidFreeState"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]SoloRaidSelectNextMode",
+            "SoloRaidChallengeMode"
+        ]
+    },
+    "SoloRaidSelectLastMode": {
+        "desc": "选择上一个个突模式",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [465,252,41,59],
+                "green_mask": true,
+                "template": [
+                    "SoloRaid/LeftArrow.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "SoloRaidSelectNextMode": {
+        "desc": "选择下一个个突模式",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [764,239,64,86],
+                "green_mask": true,
+                "template": [
+                    "SoloRaid/RightArrow.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "SoloRaidChallengeMode": {
+        "desc": "个突挑战模式",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [647,518,61,65],
+                "template": [
+                    "SoloRaid/ChallengeCredit.png"
+                ]
+            }
+        },
+        "next": [
+            "SoloRaidQuickBattleAvailable",
+            "[JumpBack]SoloRaidSelectLastMode",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidQuickBattleAvailable": {
+        "desc": "个突战斗界面快速战斗可用",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [681,540,108,26],
+                "lower": [240, 96, 37],
+                "upper": [255, 117, 58],
+                "count": 100
+            }
+        },
+        "action": "Click",
+        "next": [
+            "SoloRaidMultipleBattle"
+        ]
+    },
+    "SoloRaidMultipleBattle": {
+        "desc": "个突快速战斗界面多次挑战",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "MultipleBattleClickMaxVisible"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [720,501,20,11]
+            }
+        },
+        "next": [
+            "[JumpBack]SoloRaidQuickBattleStart",
+            "SoloRaidQuickBattleAvailable",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidQuickBattleStart": {
+        "desc": "个突快速战斗界面开始战斗",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [647,537,104,35],
+                "expected": ["进行战斗"]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "BattleInBattle"
+        ]
+    }
+}

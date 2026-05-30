@@ -1,6 +1,8 @@
 {
     "SoloRaidNormalBattle": {
         "desc": "个突普通战",
+        "max_hit": 1,
+        "enabled": true,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -28,7 +30,7 @@
                 "all_of": [
                     "SoloRaidChallengeButtonVisible",
                     "SoloRaidRemainingAttempts",
-                    "SoloRaidQuickBattleNotAvailable"
+                    "SoloRaidQuickBattleUnavailable"
                 ]
             }
         },
@@ -38,15 +40,38 @@
         "post_wait_freezes": 200,
         "next": [
             "[JumpBack]CommonConfirmAction",
-            "WaitingSoloRaidBattlePageAnimation"
+            "SoloRaidStartBattle"
         ]
     },
-    "WaitingSoloRaidBattlePageAnimation": {
+    "SoloRaidStartBattle": {
         "desc": "等待个突战斗界面动画",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BattleStart"
+                ]
+            }
+        },
         "next": [
-            "[JumpBack]SoloRaidTeamNotAvailable",
             "[JumpBack]BattleStart",
             "[JumpBack]CommonConfirmAction",
+            "SoloRaidNormalBattleEnd"
+        ]
+    },
+    "SoloRaidNormalBattleEnd": {
+        "desc": "个突普通战结束",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SoloRaidFreeState"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]SoloRaidTeamNotAvailable",
+            "SoloRaidStartBattle",
             "SoloRaidNormalBattle",
             "CommonEndTask"
         ]
@@ -91,7 +116,7 @@
             }
         }
     },
-    "SoloRaidQuickBattleNotAvailable": {
+    "SoloRaidQuickBattleUnavailable": {
         "desc": "个突战斗界面快速战斗不可用",
         "recognition": {
             "type": "ColorMatch",

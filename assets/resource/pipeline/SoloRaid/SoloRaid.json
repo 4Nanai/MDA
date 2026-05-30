@@ -42,11 +42,11 @@
             "type": "Click"
         },
         "next": [
-            "EnteringSoloRaid"
+            "SoloRaidFreeState"
         ]
     },
-    "EnteringSoloRaid": {
-        "desc": "等待加载个突界面",
+    "SoloRaidFreeState": {
+        "desc": "个突界面可见且未被覆盖",
         "recognition": {
             "type": "And",
             "param": {
@@ -90,6 +90,7 @@
         "desc": "个突流程",
         "next": [
             "[JumpBack]SoloRaidNormalBattle",
+            "[JumpBack]SoloRaidQuickBattle",
             "CommonEndTask"
         ]
     }
