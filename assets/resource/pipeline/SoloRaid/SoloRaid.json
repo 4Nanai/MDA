@@ -13,7 +13,9 @@
         "recognition": {
             "type": "And",
             "param": {
-                "all_of": ["NavigationArkVisible"]
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
             }
         },
         "next": [
@@ -71,7 +73,9 @@
                     70,
                     25
                 ],
-                "expected": ["单人.击"]
+                "expected": [
+                    "单人.击"
+                ]
             }
         }
     },

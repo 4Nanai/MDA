@@ -1,8 +1,8 @@
 {
     "SoloRaidNormalBattle": {
         "desc": "个突普通战",
-        "max_hit": 1,
         "enabled": false,
+        "max_hit": 1,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -88,7 +88,9 @@
                     58,
                     33
                 ],
-                "expected": ["挑战"]
+                "expected": [
+                    "挑战"
+                ]
             }
         }
     },
@@ -122,9 +124,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [681,540,108,26],
-                "lower": [91, 92, 94],
-                "upper": [111, 113, 114],
+                "roi": [
+                    681,
+                    540,
+                    108,
+                    26
+                ],
+                "lower": [
+                    91,
+                    92,
+                    94
+                ],
+                "upper": [
+                    111,
+                    113,
+                    114
+                ],
                 "count": 100
             }
         }

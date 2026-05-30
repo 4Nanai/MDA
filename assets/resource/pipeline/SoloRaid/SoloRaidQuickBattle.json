@@ -1,8 +1,8 @@
 {
     "SoloRaidQuickBattle": {
         "desc": "个突快速战斗入口",
-        "max_hit": 1,
         "enabled": false,
+        "max_hit": 1,
         "next": [
             "SoloRaidQuickBattleWorkflow"
         ]
@@ -27,11 +27,16 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [465,252,41,59],
-                "green_mask": true,
+                "roi": [
+                    465,
+                    252,
+                    41,
+                    59
+                ],
                 "template": [
                     "SoloRaid/LeftArrow.png"
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": "Click"
@@ -41,11 +46,16 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [764,239,64,86],
-                "green_mask": true,
+                "roi": [
+                    764,
+                    239,
+                    64,
+                    86
+                ],
                 "template": [
                     "SoloRaid/RightArrow.png"
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": "Click"
@@ -55,7 +65,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [647,518,61,65],
+                "roi": [
+                    647,
+                    518,
+                    61,
+                    65
+                ],
                 "template": [
                     "SoloRaid/ChallengeCredit.png"
                 ]
@@ -72,9 +87,22 @@
         "recognition": {
             "type": "ColorMatch",
             "param": {
-                "roi": [681,540,108,26],
-                "lower": [240, 96, 37],
-                "upper": [255, 117, 58],
+                "roi": [
+                    681,
+                    540,
+                    108,
+                    26
+                ],
+                "lower": [
+                    240,
+                    96,
+                    37
+                ],
+                "upper": [
+                    255,
+                    117,
+                    58
+                ],
                 "count": 100
             }
         },
@@ -96,7 +124,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [720,501,20,11]
+                "target": [
+                    720,
+                    501,
+                    20,
+                    11
+                ]
             }
         },
         "next": [
@@ -110,8 +143,15 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [647,537,104,35],
-                "expected": ["进行战斗"]
+                "roi": [
+                    647,
+                    537,
+                    104,
+                    35
+                ],
+                "expected": [
+                    "进行战斗"
+                ]
             }
         },
         "action": "Click",

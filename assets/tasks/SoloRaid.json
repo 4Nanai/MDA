@@ -8,7 +8,9 @@
             "option": [
                 "SoloRaidContent"
             ],
-            "group": ["daily"]
+            "group": [
+                "daily"
+            ]
         }
     ],
     "option": {
