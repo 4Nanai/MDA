@@ -44,7 +44,7 @@
         ]
     },
     "SoloRaidStartBattle": {
-        "desc": "等待个突战斗界面动画",
+        "desc": "个突等待开始战斗",
         "recognition": {
             "type": "And",
             "param": {
@@ -54,8 +54,9 @@
             }
         },
         "next": [
-            "[JumpBack]BattleStart",
+            "[JumpBack]BattleCanBattle",
             "[JumpBack]CommonConfirmAction",
+            "[Anchor]SoloRaidChallengeMode",
             "SoloRaidNormalBattleEnd"
         ]
     },

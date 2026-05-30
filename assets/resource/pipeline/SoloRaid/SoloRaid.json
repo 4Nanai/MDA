@@ -91,6 +91,7 @@
         "next": [
             "[JumpBack]SoloRaidNormalBattle",
             "[JumpBack]SoloRaidQuickBattle",
+            "[JumpBack]SoloRaidChallengeBattle",
             "CommonEndTask"
         ]
     }
