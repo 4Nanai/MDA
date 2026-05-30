@@ -181,6 +181,7 @@
                 "template": [
                     "Common/RedDot.png" //占位，应该去task页面修改
                 ],
+                "threshold": 0.5,
                 "order_by": "Vertical",
                 "index": -1
             }
@@ -205,6 +206,7 @@
                 "template": [
                     "Common/RedDot.png" //占位，应该去task页面修改
                 ],
+                "threshold": 0.5,
                 "order_by": "Vertical",
                 "index": -1
             }
@@ -228,6 +230,7 @@
                 "template": [
                     "Common/RedDot.png" //占位，应该去task页面修改
                 ],
+                "threshold": 0.5,
                 "order_by": "Vertical",
                 "index": -1
             }
@@ -251,6 +254,7 @@
                 "template": [
                     "Common/RedDot.png" //占位，应该去task页面修改
                 ],
+                "threshold": 0.5,
                 "order_by": "Vertical",
                 "index": -1
             }
