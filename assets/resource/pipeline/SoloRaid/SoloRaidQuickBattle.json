@@ -2,7 +2,7 @@
     "SoloRaidQuickBattle": {
         "desc": "个突快速战斗入口",
         "max_hit": 1,
-        "enabled": true,
+        "enabled": false,
         "next": [
             "SoloRaidQuickBattleWorkflow"
         ]

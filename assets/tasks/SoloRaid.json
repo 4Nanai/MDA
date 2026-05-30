@@ -5,8 +5,49 @@
             "label": "$task.SoloRaid.label",
             "entry": "SoloRaidMain",
             "description": "$task.SoloRaid.description",
+            "option": [
+                "SoloRaidContent"
+            ],
             "group": ["daily"]
         }
     ],
-    "option": {}
+    "option": {
+        "SoloRaidContent": {
+            "type": "checkbox",
+            "default_case": [
+                "SoloRaidNormalBattle",
+                "SoloRaidQuickBattle",
+                "SoloRaidChallengeBattle"
+            ],
+            "cases": [
+                {
+                    "name": "SoloRaidNormalBattle",
+                    "label": "$option.SoloRaidContent.SoloRaidNormalBattle",
+                    "pipeline_override": {
+                        "SoloRaidNormalBattle": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "SoloRaidQuickBattle",
+                    "label": "$option.SoloRaidContent.SoloRaidQuickBattle",
+                    "pipeline_override": {
+                        "SoloRaidQuickBattle": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "SoloRaidChallengeBattle",
+                    "label": "$option.SoloRaidContent.SoloRaidChallengeBattle",
+                    "pipeline_override": {
+                        "SoloRaidChallengeBattle": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

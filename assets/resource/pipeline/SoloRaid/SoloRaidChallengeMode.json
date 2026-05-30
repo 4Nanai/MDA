@@ -2,7 +2,7 @@
     "SoloRaidChallengeBattle": {
         "desc": "个突挑战模式入口",
         "max_hit": 1,
-        "enabled": true,
+        "enabled": false,
         "next": [
             "[JumpBack]SoloRaidSelectNextMode",
             "SoloRaidChallengeBattleWorkflow"

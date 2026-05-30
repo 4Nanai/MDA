@@ -58,6 +58,16 @@
                     }
                 },
                 {
+                    "name": "SoloRaid",
+                    "option": {
+                        "SoloRaidContent": [
+                            "SoloRaidNormalBattle",
+                            "SoloRaidQuickBattle",
+                            "SoloRaidChallengeBattle"
+                        ]
+                    }
+                },
+                {
                     "name": "Outpost",
                     "option": {
                         "DefenseRewards": "Yes",
