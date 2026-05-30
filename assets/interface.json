@@ -70,7 +70,8 @@
     ],
     "agent": {
         "child_exec": "agent/go-service",
-        "child_args": []
+        "child_args": [],
+        "identifier": "mda_test"
     },
     "task": [],
     "group": [
@@ -100,6 +101,7 @@
         "tasks/Outpost.json",
         "tasks/Advise.json",
         "tasks/CoordinatedOperations.json",
+        "tasks/SoloRaid.json",
         "tasks/DailyRewards.json",
         "tasks/MapPushing.json",
         "tasks/LargeEvent.json",

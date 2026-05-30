@@ -1,0 +1,98 @@
+{
+    "SoloRaidMain": {
+        "desc": "个突入口",
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "SoloRaidStart",
+            "[JumpBack]NavigationEnterHall"
+        ]
+    },
+    "SoloRaidStart": {
+        "desc": "开始单人突击流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": ["NavigationArkVisible"]
+            }
+        },
+        "next": [
+            "SoloRaidAvailable",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidAvailable": {
+        "desc": "个突可用",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "SoloRaidRecognition",
+                "custom_recognition_param": {
+                    "expected": "单人.击"
+                },
+                "roi": [
+                    4,
+                    118,
+                    178,
+                    259
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "SoloRaidFreeState"
+        ]
+    },
+    "SoloRaidFreeState": {
+        "desc": "个突界面可见且未被覆盖",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SoloRaidStateVisible",
+                    "SoloRaidStateNotCovered"
+                ]
+            }
+        },
+        "next": [
+            "SoloRaidWorkflow"
+        ]
+    },
+    "SoloRaidStateVisible": {
+        "desc": "左上角个突标签可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    15,
+                    70,
+                    25
+                ],
+                "expected": ["单人.击"]
+            }
+        }
+    },
+    "SoloRaidStateNotCovered": {
+        "desc": "左上角个突标签未被覆盖",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonNoTransparentMask"
+                ]
+            }
+        }
+    },
+    "SoloRaidWorkflow": {
+        "desc": "个突流程",
+        "next": [
+            "[JumpBack]SoloRaidNormalBattle",
+            "[JumpBack]SoloRaidQuickBattle",
+            "[JumpBack]SoloRaidChallengeBattle",
+            "CommonEndTask"
+        ]
+    }
+}

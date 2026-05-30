@@ -95,6 +95,8 @@
     "option.DailyRewardsDailyLogin.label": "每日登录奖励",
     "task.CoordinatedOperations.label": "协同作战",
     "task.CoordinatedOperations.description": "完成协同作战",
+    "task.SoloRaid.label": "个人突击",
+    "task.SoloRaid.description": "完成个人突击",
     "option.DailyRewardsFreeRecruit.label": "周年庆免费招募",
     "preset.DailyFull.label": "全量日常",
     "preset.DailyFull.description": "执行所有日常任务",

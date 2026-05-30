@@ -1,0 +1,189 @@
+{
+    "SoloRaidNormalBattle": {
+        "desc": "个突普通战",
+        "max_hit": 1,
+        "enabled": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    463,
+                    62,
+                    354,
+                    31
+                ],
+                "template": [
+                    "SoloRaid/Lock.png"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]SoloRaidNormalNewBattle",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidNormalNewBattle": {
+        "desc": "个突普通新挑战",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SoloRaidChallengeButtonVisible",
+                    "SoloRaidRemainingAttempts",
+                    "SoloRaidQuickBattleUnavailable"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 200,
+        "next": [
+            "[JumpBack]CommonConfirmAction",
+            "SoloRaidStartBattle"
+        ]
+    },
+    "SoloRaidStartBattle": {
+        "desc": "个突等待开始战斗",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BattleStart"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]BattleCanBattle",
+            "[JumpBack]CommonConfirmAction",
+            "[Anchor]SoloRaidChallengeMode",
+            "SoloRaidNormalBattleEnd"
+        ]
+    },
+    "SoloRaidNormalBattleEnd": {
+        "desc": "个突普通战结束",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "SoloRaidFreeState"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]SoloRaidTeamNotAvailable",
+            "SoloRaidStartBattle",
+            "SoloRaidNormalBattle",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidChallengeButtonVisible": {
+        "desc": "个突战斗界面挑战按钮可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    611,
+                    581,
+                    58,
+                    33
+                ],
+                "expected": ["挑战"]
+            }
+        }
+    },
+    "SoloRaidRemainingAttempts": {
+        "desc": "个突剩余挑战次数",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    545,
+                    586,
+                    63,
+                    23
+                ],
+                "lower": [
+                    223,
+                    34,
+                    15
+                ],
+                "upper": [
+                    243,
+                    54,
+                    35
+                ],
+                "count": 100
+            }
+        }
+    },
+    "SoloRaidQuickBattleUnavailable": {
+        "desc": "个突战斗界面快速战斗不可用",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [681,540,108,26],
+                "lower": [91, 92, 94],
+                "upper": [111, 113, 114],
+                "count": 100
+            }
+        }
+    },
+    "SoloRaidTeamNotAvailable": {
+        "desc": "个突队伍不可用",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BattleMainVisible",
+                    "SoloRaidBattleButtonGray"
+                ]
+            }
+        },
+        "next": [
+            "SoloRaidSwitchTeam",
+            "CommonEndTask"
+        ]
+    },
+    "SoloRaidBattleButtonGray": {
+        "desc": "个突战斗界面挑战按钮不可用",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    668,
+                    599,
+                    45,
+                    23
+                ],
+                "lower": [
+                    30,
+                    30,
+                    32
+                ],
+                "upper": [
+                    50,
+                    50,
+                    52
+                ],
+                "count": 100
+            }
+        }
+    },
+    "SoloRaidSwitchTeam": {
+        "desc": "个突切换队伍",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "SoloRaidSwitchTeam",
+                "roi": [
+                    606,
+                    466,
+                    214,
+                    36
+                ]
+            }
+        },
+        "action": "Click"
+    }
+}
