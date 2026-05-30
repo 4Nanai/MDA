@@ -36,8 +36,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "DailyRewardsEmailFlow",
-            "DailyRewardsEmailStart"
+            "DailyRewardsEmailFlow"
         ]
     },
     "DailyRewardsEmailVisible": {
