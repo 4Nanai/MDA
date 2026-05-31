@@ -93,7 +93,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1111,97,53,51],
+                "roi": [
+                    1111,
+                    97,
+                    53,
+                    51
+                ],
                 "template": [
                     "DailyRewards/Pass/UnfoldPassList.png"
                 ]
@@ -111,7 +116,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1066,93,74,56],
+                "roi": [
+                    1066,
+                    93,
+                    74,
+                    56
+                ],
                 "template": [
                     "DailyRewards/Pass/FoldPassList.png"
                 ]
@@ -134,7 +144,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1257,81,24,247],
+                "roi": [
+                    1257,
+                    81,
+                    24,
+                    247
+                ],
                 "template": [
                     "Common/RedDot.png"
                 ]
@@ -190,7 +205,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [543,634,197,63],
+                "roi": [
+                    543,
+                    634,
+                    197,
+                    63
+                ],
                 "expected": [
                     "全部领取"
                 ]
