@@ -3,8 +3,8 @@
         "desc": "Pass入口",
         "max_hit": 1,
         "next": [
-            "[JumpBack]DailyRewardsPassChangeClick",
-            "DailyRewardsPassStart",
+            "DailyRewardsPassChangeClick",
+            "DailyRewardsUnfoldPassList",
             "CommonEndTask"
         ]
     },
@@ -28,7 +28,10 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 500,
+        "next": [
+            "DailyRewardsPassStart"
+        ]
     },
     "DailyRewardsPassStart": {
         "desc": "Pass入口",
@@ -85,6 +88,74 @@
         },
         "post_wait_freezes": 500
     },
+    "DailyRewardsUnfoldPassList": {
+        "desc": "点击Pass列表",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [1111,97,53,51],
+                "template": [
+                    "DailyRewards/Pass/UnfoldPassList.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyRewardsTraversePassList"
+        ]
+    },
+    "DailyRewardsFoldPassList": {
+        "desc": "点击收起Pass列表",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [1066,93,74,56],
+                "template": [
+                    "DailyRewards/Pass/FoldPassList.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "DailyRewardsTraversePassList": {
+        "desc": "遍历Pass列表",
+        "next": [
+            "[JumpBack]DailyRewardsEnterPassFromList",
+            "[JumpBack]DailyRewardsFoldPassList",
+            "CommonEndTask"
+        ]
+    },
+    "DailyRewardsEnterPassFromList": {
+        "desc": "从列表进入Pass",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [1257,81,24,247],
+                "template": [
+                    "Common/RedDot.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -5,
+                    5,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": 200,
+        "next": [
+            "DailyRewardsWaitPassLoading"
+        ]
+    },
     "DailyRewardsEnterPass": {
         "desc": "进入Pass内部",
         "recognition": {
@@ -114,6 +185,22 @@
         },
         "post_wait_freezes": 1500
     },
+    "DailyRewardsWaitPassLoading": {
+        "desc": "等待Pass界面加载",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [543,634,197,63],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]DailyRewardsClickPassRewardRedDot",
+            "CommonClosePage"
+        ]
+    },
     "DailyRewardsClickPassRewardRedDot": {
         "desc": "点击Pass内部奖励红点",
         "recognition": {
@@ -141,7 +228,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 200,
         "next": [
             "DailyRewardsClaimRewardFlow"
         ]
