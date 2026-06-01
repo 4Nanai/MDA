@@ -24,10 +24,54 @@
         "action": {
             "type": "Click"
         },
+        // Need to wait for potential pop-up customer limitation after entering the cash shop
+        "rate_limit": 3000,
         "next": [
-            "CashShopCornerFlow",
-            "HallEnterCashShop"
+            "[JumpBack]CashShopConfirmLimitation",
+            "CashShopCornerFlow"
         ]
+    },
+    "CashShopConfirmLimitation": {
+        "desc": "确认付费商店限制",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CashShopCustomerAgeLimitation",
+                    "CashShopConsumerLimitation"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "[JumpBack]CommonConfirmAction",
+            "CashShopCornerFlow"
+        ]
+    },
+    "CashShopCustomerAgeLimitation": {
+        "desc": "付费商店年龄限制",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [512,436,108,53],
+                "expected": [
+                    "20岁以上",
+                    "无限制"
+                ]
+            }
+        }
+    },
+    "CashShopConsumerLimitation": {
+        "desc": "付费商店消费限制",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [579,137,119,90],
+                "expected": [
+                    "消费限制"
+                ]
+            }
+        }
     },
     "CashShopMainPageEntered": {
         "desc": "处于付费商店",
@@ -52,7 +96,8 @@
             "type": "And",
             "param": {
                 "all_of": [
-                    "CashShopMainPageEntered"
+                    "CashShopMainPageEntered",
+                    "CommonNoTransparentMask"
                 ]
             }
         },
@@ -110,31 +155,48 @@
         },
         "next": [
             "[JumpBack]CashShopClickRedDot",
-            "[JumpBack]CommonConfirmReward",
             "CommonEndTask"
         ]
     },
     "CashShopClickRedDot": {
-        "desc": "点击付费商店红点",
+        "desc": "点击周期性礼包红点",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    9,
-                    187,
-                    509,
-                    91
-                ],
+                "roi": [14,178,457,49],
                 "template": [
                     "Common/RedDot.png"
                 ],
-                "order_by": "Vertical",
                 "index": -1
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 200
+        "next": [
+            "CashShopClickRewardRedDot"
+        ]
+    },
+    "CashShopClickRewardRedDot": {
+        "desc": "点击周期性礼包内的奖励红点",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [12,222,125,69],
+                "template": [
+                    "Common/RedDot.png"
+                ],
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "CommonConfirmReward"
+        ],
+        "on_error": [
+            "CommonEndTask"
+        ]
     }
 }
