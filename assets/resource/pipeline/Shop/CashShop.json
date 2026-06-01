@@ -53,7 +53,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [512,436,108,53],
+                "roi": [
+                    512,
+                    436,
+                    108,
+                    53
+                ],
                 "expected": [
                     "20岁以上",
                     "无限制"
@@ -66,7 +71,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [579,137,119,90],
+                "roi": [
+                    579,
+                    137,
+                    119,
+                    90
+                ],
                 "expected": [
                     "消费限制"
                 ]
@@ -163,7 +173,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [14,178,457,49],
+                "roi": [
+                    14,
+                    178,
+                    457,
+                    49
+                ],
                 "template": [
                     "Common/RedDot.png"
                 ],
@@ -182,7 +197,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [12,222,125,69],
+                "roi": [
+                    12,
+                    222,
+                    125,
+                    69
+                ],
                 "template": [
                     "Common/RedDot.png"
                 ],
