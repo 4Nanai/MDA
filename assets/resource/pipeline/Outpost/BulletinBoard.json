@@ -69,25 +69,21 @@
         "desc": "全部领取",
         "max_hit": 1,
         "recognition": {
-            "type": "OCR",
+            "type": "And",
             "param": {
-                "roi": [
-                    736,
-                    592,
-                    64,
-                    26
-                ],
-                "expected": [
-                    "全部领取"
+                "all_of": [
+                    "OutpostBulletinBoardClaimVisible",
+                    "OutpostBulletinBoardClaimAvailable"
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000,
         "next": [
-            "[JumpBack]CommonConfirmReward",
+            "CommonConfirmReward"
+        ],
+        "on_error": [
             "CommonEndTask"
         ]
     },
@@ -135,6 +131,34 @@
         },
         "action": {
             "type": "Click"
+        }
+    },
+    "OutpostBulletinBoardClaimVisible": {
+        "desc": "领取派遣奖励可见",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    736,
+                    592,
+                    64,
+                    26
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        }
+    },
+    "OutpostBulletinBoardClaimAvailable": {
+        "desc": "有可领取的派遣奖励",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [706,590,100,32],
+                "lower": [0, 164, 244],
+                "upper": [40, 194, 255]
+            }
         }
     }
 }
