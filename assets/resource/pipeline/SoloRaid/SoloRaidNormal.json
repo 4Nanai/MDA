@@ -56,7 +56,6 @@
         "next": [
             "[JumpBack]BattleCanBattle",
             "[JumpBack]CommonConfirmAction",
-            "[Anchor]SoloRaidChallengeMode",
             "SoloRaidNormalBattleEnd"
         ]
     },

@@ -21,17 +21,29 @@
             }
         },
         "action": "Click",
-        "anchor": {
-            "SoloRaidChallengeMode": "SoloRaidChallengeBattleEnd"
-        },
         "post_wait_freezes": 200,
         "next": [
+            "SoloRaidChallengeBattleEnd",
             "[JumpBack]CommonConfirmAction",
-            "SoloRaidStartBattle"
+            "[JumpBack]SoloRaidStartBattle"
         ]
     },
     "SoloRaidChallengeBattleEnd": {
         "desc": "个突挑战模式结束",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    580,
+                    428,
+                    119,
+                    40
+                ],
+                "expected": [
+                    "我的最高纪录"
+                ]
+            }
+        },
         "next": [
             "CommonConfirmAction"
         ]
