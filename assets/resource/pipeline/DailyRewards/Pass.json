@@ -30,63 +30,59 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "DailyRewardsPassStart"
+            "[JumpBack]DailyRewardPassStart",
+            "CommonEndTask"
         ]
     },
-    "DailyRewardsPassStart": {
-        "desc": "Pass入口",
+    "DailyRewardPassStart": {
+        "desc": "切换型Pass流程入口",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "Or",
             "param": {
-                "roi": [
-                    1116,
-                    91,
-                    163,
-                    66
-                ],
-                "template": [
-                    "Common/RedDot.png",
-                    "Common/PassRedDot.png"
+                "any_of": [
+                    "DailyRewardsCurrentPassHasReward",
+                    "DailyRewardsNextPassHasReward"
                 ]
             }
         },
         "next": [
-            "[JumpBack]DailyRewardsClickPassRewardRedDot",
-            "[JumpBack]DailyRewardsEnterPass",
-            "[JumpBack]DailyRewardsClickPassRedDot",
-            "DailyRewardsPassStart",
-            "[JumpBack]CommonClosePage",
-            "CommonEndTask"
+            "DailyRewardsEnterPass"
         ]
     },
-    "DailyRewardsClickPassRedDot": {
-        "desc": "点击红点切换Pass",
-        "recognition": {
-            "type": "TemplateMatch",
+    "DailyRewardsEnterPass": {
+        "desc": "切换型Pass入口",
+        "action": {
+            "type": "Custom",
             "param": {
-                "roi": [
+                "custom_action": "DailyRewardsPassClick",
+                "target": [
                     1116,
                     91,
                     163,
                     66
                 ],
-                "template": [
-                    "Common/PassRedDot.png"
-                ]
+                "custom_action_param": {
+                    "current_pass_param": {
+                        "roi": [1246,84,33,40],
+                        "template": [
+                            "Common/RedDot.png"
+                        ]
+                    },
+                    "next_pass_param": {
+                        "roi": [1116,102,38,36],
+                        "template": [
+                            "Common/PassRedDot.png"
+                        ]
+                    }
+                }
             }
         },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -5,
-                    5,
-                    0,
-                    0
-                ]
-            }
-        },
-        "post_wait_freezes": 500
+        "next": [
+            "DailyRewardsWaitPassLoading"
+        ],
+        "on_error": [
+            "DailyRewardsPassChangeClick"
+        ]
     },
     "DailyRewardsUnfoldPassList": {
         "desc": "点击Pass列表",
@@ -171,34 +167,29 @@
             "DailyRewardsWaitPassLoading"
         ]
     },
-    "DailyRewardsEnterPass": {
-        "desc": "进入Pass内部",
+    "DailyRewardsCurrentPassHasReward": {
+        "desc": "当前Pass有奖励可领",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1116,
-                    91,
-                    163,
-                    182
-                ],
+                "roi": [1246,84,33,40],
                 "template": [
                     "Common/RedDot.png"
                 ]
             }
-        },
-        "action": {
-            "type": "Click",
+        }
+    },
+    "DailyRewardsNextPassHasReward": {
+        "desc": "下一Pass有奖励可领",
+        "recognition": {
+            "type": "TemplateMatch",
             "param": {
-                "target_offset": [
-                    -5,
-                    5,
-                    0,
-                    0
+                "roi": [1116,102,38,36],
+                "template": [
+                    "Common/PassRedDot.png"
                 ]
             }
-        },
-        "post_wait_freezes": 1500
+        }
     },
     "DailyRewardsWaitPassLoading": {
         "desc": "等待Pass界面加载",
