@@ -61,8 +61,7 @@
         },
         "post_wait_freezes": 100,
         "next": [
-            "BattleStart",
-            "EventChallengeStage"
+            "BattleStart"
         ]
     },
     "EventClearStage": {
@@ -87,8 +86,7 @@
             "type": "Click"
         },
         "next": [
-            "BattleStart",
-            "EventClearStage"
+            "BattleStart"
         ]
     },
     "EventChallengeStageVisible": {

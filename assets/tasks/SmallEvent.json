@@ -46,7 +46,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "SmallEvent/B-SideIdol/B-SideIdolStageHard.png"
+                                        "SmallEvent/BitterSpice/StageHard.png"
                                     ]
                                 }
                             }
@@ -64,7 +64,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "SmallEvent/B-SideIdol/B-SideIdolStageHardRepeatable.png"
+                                        "SmallEvent/BitterSpice/StageHardRepeatable.png"
                                     ]
                                 }
                             }
