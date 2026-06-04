@@ -55,26 +55,36 @@
             "type": "Custom",
             "param": {
                 "custom_action": "DailyRewardsPassClick",
-                "target": [
-                    1116,
-                    91,
-                    163,
-                    66
-                ],
                 "custom_action_param": {
                     "current_pass_param": {
-                        "roi": [1246,84,33,40],
+                        "roi": [
+                            1246,
+                            84,
+                            33,
+                            40
+                        ],
                         "template": [
                             "Common/RedDot.png"
                         ]
                     },
                     "next_pass_param": {
-                        "roi": [1116,102,38,36],
+                        "roi": [
+                            1116,
+                            102,
+                            38,
+                            36
+                        ],
                         "template": [
                             "Common/PassRedDot.png"
                         ]
                     }
-                }
+                },
+                "target": [
+                    1116,
+                    91,
+                    163,
+                    66
+                ]
             }
         },
         "next": [
@@ -172,7 +182,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1246,84,33,40],
+                "roi": [
+                    1246,
+                    84,
+                    33,
+                    40
+                ],
                 "template": [
                     "Common/RedDot.png"
                 ]
@@ -184,7 +199,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [1116,102,38,36],
+                "roi": [
+                    1116,
+                    102,
+                    38,
+                    36
+                ],
                 "template": [
                     "Common/PassRedDot.png"
                 ]

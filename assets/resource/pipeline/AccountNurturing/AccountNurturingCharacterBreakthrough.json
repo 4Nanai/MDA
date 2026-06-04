@@ -162,7 +162,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [771,496,47,89],
+                "roi": [
+                    771,
+                    496,
+                    47,
+                    89
+                ],
                 "template": [
                     "Common/MAX.png"
                 ]
