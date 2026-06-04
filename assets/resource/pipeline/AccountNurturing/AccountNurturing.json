@@ -1,12 +1,6 @@
 {
     "AccountNurturingMain": {
         "desc": "账号养成入口",
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "RuntimeQuotaCheck"
-            }
-        },
         "next": [
             "AccountNurturingEntryFlow",
             "[JumpBack]NavigationEnterHall"
