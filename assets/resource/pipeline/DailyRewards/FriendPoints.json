@@ -36,6 +36,22 @@
             }
         },
         "next": [
+            "DailyRewardsFriendPageEntered",
+            "DailyRewardsFriendPointsStart"
+        ]
+    },
+    "DailyRewardsFriendPageEntered": {
+        "desc": "已进入友情点页面",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [632,73,49,37],
+                "expected": [
+                    "好友"
+                ]
+            }
+        },
+        "next": [
             "DailyRewardsSendAndReceive",
             "CommonClosePage"
         ]
@@ -68,9 +84,7 @@
             }
         },
         "next": [
-            "DailyRewardsConfirmReceive",
-            "DailyRewardsSendAndReceive",
-            "CommonEndTask"
+            "DailyRewardsConfirmReceive"
         ]
     },
     "DailyRewardsConfirmReceive": {
