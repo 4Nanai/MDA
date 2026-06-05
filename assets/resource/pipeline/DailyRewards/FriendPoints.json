@@ -45,7 +45,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [632,73,49,37],
+                "roi": [
+                    632,
+                    73,
+                    49,
+                    37
+                ],
                 "expected": [
                     "好友"
                 ]
