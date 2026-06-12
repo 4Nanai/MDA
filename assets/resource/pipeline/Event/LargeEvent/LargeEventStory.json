@@ -4,24 +4,24 @@
         "enabled": true,
         "max_hit": 1,
         "recognition": {
-           "type": "Custom",
-           "param": {
-            "custom_recognition": "LargeEventStoryRecognition",
-            "roi": [
-                485,
-                536,
-                308,
-                79
-            ],
-            "custom_recognition_param": {
-                "expected": [
-                    ".*STORY.*"
-                ],
-                "lower": 209,
-                "upper": 255,
-                "priority": 1
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "LargeEventStoryRecognition",
+                "custom_recognition_param": {
+                    "expected": [
+                        ".*STORY.*"
+                    ],
+                    "lower": 209,
+                    "upper": 255,
+                    "priority": 1
+                },
+                "roi": [
+                    485,
+                    536,
+                    308,
+                    79
+                ]
             }
-           } 
         },
         "action": {
             "type": "Click"
