@@ -189,7 +189,8 @@
             "type": "Click"
         },
         "next": [
-            "CashShopClickRewardRedDot"
+            "CashShopClickRewardRedDot",
+            "CashShopClickRedDot"
         ]
     },
     "CashShopClickRewardRedDot": {
@@ -213,7 +214,8 @@
             "type": "Click"
         },
         "next": [
-            "CommonConfirmReward"
+            "CommonConfirmReward",
+            "CashShopClickRewardRedDot"
         ],
         "on_error": [
             "CommonEndTask"
