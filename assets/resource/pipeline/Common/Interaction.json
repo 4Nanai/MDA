@@ -102,6 +102,19 @@
             }
         }
     },
+    "CommonClickMiddleBlank": {
+        "desc": "点击中部空白",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    615,
+                    605
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
     "CommonEndTask": {
         "desc": "空节点，用于结束流程"
     }

@@ -41,12 +41,20 @@
             "type": "Click"
         },
         "next": [
-            "LargeEventMainPageFlow",
+            "SkipEnteringLargeEventAnimation",
             "LargeEventEntry"
         ]
     },
+    "SkipEnteringLargeEventAnimation": {
+        "desc": "跳过大活动进入动画",
+        "next": [
+            "[JumpBack]DialoguesSkipWorkflow",
+            "LargeEventMainPageFlow",
+            "[JumpBack]CommonClickMiddleBlank"
+        ]
+    },
     "LargeEventMainPageEntered": {
-        "desc": "已进入活动地区",
+        "desc": "已进入大活动地区",
         "recognition": {
             "type": "OCR",
             "param": {
