@@ -331,7 +331,7 @@
     "BattleEscVisible": {
         "desc": "Esc可见",
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
                     567,
@@ -339,8 +339,8 @@
                     160,
                     90
                 ],
-                "expected": [
-                    "ESC"
+                "template": [
+                    "Battle/BattleEscapeButton.png"
                 ]
             }
         }
