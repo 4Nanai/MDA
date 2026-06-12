@@ -242,12 +242,8 @@
                     "label": "$option.LargeEventStoryPriority.Story2First",
                     "pipeline_override": {
                         "LargeEventStory": {
-                            "recognition": {
-                                "custom_recognition_param": {
-                                    "priority": 1
-                                }
-                            }
-                        }
+                            "recognition.param.custom_recognition_param.priority": 1
+                       }
                     }
                 },
                 {
@@ -255,12 +251,8 @@
                     "label": "$option.LargeEventStoryPriority.Story1First",
                     "pipeline_override": {
                         "LargeEventStory": {
-                            "recognition": {
-                                "custom_recognition_param": {
-                                    "priority": 0
-                                }
-                            }
-                        }
+                            "recognition.param.custom_recognition_param.priority": 0
+                       }
                     }
                 }
             ]
