@@ -189,6 +189,7 @@
             }
         },
         "next": [
+            "CommonNoAvailableTeamSet",
             "[JumpBack]BattleStart",
             "LargeEventEventStagePageFlow",
             "LargeEventGoBack"

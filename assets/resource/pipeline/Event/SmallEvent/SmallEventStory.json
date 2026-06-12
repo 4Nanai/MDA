@@ -126,6 +126,7 @@
             }
         },
         "next": [
+            "CommonNoAvailableTeamSet",
             "MaximumBattlesReached",
             "[JumpBack]BattleStart",
             "[JumpBack]SkipPostBattleStory",

@@ -22,5 +22,23 @@
                 ]
             }
         }
+    },
+    "CommonNoAvailableTeamSet": {
+        "desc": "没有可用的队伍设置",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [450,511,78,79],
+                "template": [
+                    "Common/EmptyTeamSet.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Action.Succeeded": {
+                "content": "没有可用的队伍设置，可能是初次挑战此活动，请配置队伍后重试",
+                "display": "log"
+            }
+        }
     }
 }

@@ -103,7 +103,8 @@
         "next": [
             "LargeEventMainPageEntered",
             "[JumpBack]DialoguesSkipStory",
-            "[JumpBack]CommonGoBack"
+            "[JumpBack]CommonGoBack",
+            "[JumpBack]CommonClickBlank"
         ]
     }
 }
