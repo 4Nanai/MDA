@@ -146,6 +146,7 @@
             "[JumpBack]BattleClickAutoShoot",
             "[JumpBack]DialoguesSkipStory",
             "[JumpBack]BattleNextState",
+            "[JumpBack]BattleFieldChanged",
             "BattleOperationComplete",
             "BattleOperationFailed",
             "BattleOperationTimeout"
@@ -210,6 +211,21 @@
             "type": "Click"
         },
         "post_delay": 3000
+    },
+    "BattleFieldChanged": {
+        "desc": "大型活动战斗场地变化",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [618,285,43,46],
+                "template": [
+                    "Battle/FieldChanged.png"
+                ]
+            }
+        },
+        "next": [
+            "CommonClickBlank"
+        ]
     },
     "BattleNextStateVisible": {
         "desc": "下一关卡可见",
@@ -341,7 +357,8 @@
                 ],
                 "template": [
                     "Battle/BattleEscapeButton.png"
-                ]
+                ],
+                "green_mask": true
             }
         }
     },
