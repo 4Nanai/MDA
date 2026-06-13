@@ -68,6 +68,9 @@
                     }
                 },
                 {
+                    "name": "UnionRaid"
+                },
+                {
                     "name": "Outpost",
                     "option": {
                         "DefenseRewards": "Yes",

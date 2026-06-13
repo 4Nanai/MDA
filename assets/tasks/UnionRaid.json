@@ -1,0 +1,14 @@
+
+{
+    "task": [
+        {
+            "name": "UnionRaid",
+            "label": "$task.UnionRaid.label",
+            "entry": "UnionRaidMain",
+            "description": "$task.UnionRaid.description",
+            "group": [
+                "daily"
+            ]
+        }
+    ]
+}

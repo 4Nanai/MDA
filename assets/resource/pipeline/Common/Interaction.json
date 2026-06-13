@@ -41,6 +41,21 @@
         },
         "post_wait_freezes": 500
     },
+    "CommonSkipSettlement": {
+        "desc": "跳过结算",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [566,429,248,250],
+                "template": [
+                    "Common/Skip.png"
+                ],
+                "green_mask": true,
+                "threshold": 0.9
+            }
+        },
+        "action": "Click"
+    },
     "CommonClosePage": {
         "desc": "关闭页面",
         "recognition": {

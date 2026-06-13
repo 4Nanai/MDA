@@ -1,0 +1,163 @@
+{
+    "UnionRaidMain": {
+        "desc": "联盟突击入口",
+        "next": [
+            "EnterUnionRaid"
+        ]
+    },
+    "EnterUnionRaid": {
+        "desc": "联盟突击入口",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "UnionRaidEntryRecognition",
+                "roi": [1217,203,54,55],
+                "custom_recognition_param": {
+                    "expected": [
+                        "联盟"
+                    ],
+                    "template": [
+                        "Common/RedDot.png"
+                    ]
+                }
+            }
+        },
+        "action": "Click",
+        "next": [
+            "UnionEntered",
+            "UnionRaidMain"
+        ]
+    },
+    "UnionEntered": {
+        "desc": "进入联盟",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [4,9,54,32],
+                "expected": [
+                    "联盟"
+                ]
+            }
+        },
+        "next": [
+            "UnionRaidConfirmOpened",
+            "CommonEndTask"
+        ]
+    },
+    "UnionRaidConfirmOpened": {
+        "desc": "确认进入联盟突袭",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "UnionRaidOpenedRecognition",
+                "roi": [579,371,120,264],
+                "custom_recognition_param": {
+                    "expected": [
+                        "联盟突袭",
+                        "联盟.*"
+                    ],
+                    "template": [
+                        "Common/RedDot.png"
+                    ]
+                }
+            }
+        },
+        "action": "Click",
+        "next": [
+            "[JumpBack]CommonSkipSettlement",
+            "[JumpBack]CommonConfirmAction",
+            "UnionRaidMainPage"
+        ]
+    },
+    "UnionRaidMainPage": {
+        "desc": "联盟突袭主界面",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "UnionRaidEntered",
+                    "CommonNoTransparentMask"
+                ]
+            }
+        },
+
+        "next": [
+            "UnionRaidStartBattlePreparation",
+            "CommonEndTask"
+        ],
+        "on_error": [
+            "[JumpBack]CommonSkipSettlement",
+            "[JumpBack]CommonConfirmAction",
+            "UnionRaidMainPage"
+        ]
+    },
+    "UnionRaidEntered": {
+        "desc": "已进入联盟突袭",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [4,9,54,32],
+                "expected": [
+                    "联盟突袭"
+                ]
+            }
+        }
+    },
+    "UnionRaidStartBattlePreparation": {
+        "desc": "联盟突袭准备开始战斗",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "UnionRaidRemainingAttempts"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [560,319,150,157]
+            }
+        },
+        "next": [
+            "UnionRaidStartBattle"
+        ]
+    },
+    "UnionRaidStartBattle": {
+        "desc": "联盟突袭等待开始战斗",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "BattleStart"
+                ]
+            }
+        },
+        "next": [
+            "CommonNoAvailableTeamSet",
+            "[JumpBack]SoloRaidTeamNotAvailable",
+            "[JumpBack]BattleCanBattle",
+            "[JumpBack]CommonConfirmAction",
+            "UnionRaidBattleEnd"
+        ]
+    },
+    "UnionRaidBattleEnd": {
+        "desc": "联盟突袭战斗结束",
+        "next": [
+            "[JumpBack]CommonConfirmAction",
+            "UnionRaidMainPage"
+        ]
+    },
+    "UnionRaidRemainingAttempts": {
+        "desc": "联盟突袭剩余尝试次数(大于0)",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [619,213,18,16],
+                "expected": [
+                    "^[1-9]\\d*$"
+                ]
+            }
+        }
+    }
+}

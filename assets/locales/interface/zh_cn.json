@@ -107,6 +107,8 @@
     "option.SoloRaidContent.SoloRaidNormalBattle": "普通突击",
     "option.SoloRaidContent.SoloRaidQuickBattle": "快速突击",
     "option.SoloRaidContent.SoloRaidChallengeBattle": "挑战突击",
+    "task.UnionRaid.label": "联盟突袭",
+    "task.UnionRaid.description": "完成联盟突袭",
     "option.DailyRewardsFreeRecruit.label": "周年庆免费招募",
     "preset.DailyFull.label": "全量日常",
     "preset.DailyFull.description": "执行所有日常任务",

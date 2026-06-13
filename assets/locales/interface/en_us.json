@@ -107,6 +107,8 @@
     "option.SoloRaidContent.SoloRaidNormalBattle": "Normal Battle",
     "option.SoloRaidContent.SoloRaidQuickBattle": "Quick Battle",
     "option.SoloRaidContent.SoloRaidChallengeBattle": "Challenge Battle",
+    "task.UnionRaid.label": "Union Raid",
+    "task.UnionRaid.description": "Complete union raid",
     "option.DailyRewardsFreeRecruit.label": "Anniversary Free Recruitment",
     "preset.DailyFull.label": "Daily Full",
     "preset.DailyFull.description": "Execute all daily tasks, including simulation room, arena, interception, tribe tower, etc.",
