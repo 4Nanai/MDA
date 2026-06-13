@@ -71,7 +71,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [453,118,187,60],
+                "roi": [
+                    453,
+                    118,
+                    187,
+                    60
+                ],
                 "template": [
                     "Common/RedDot.png",
                     "Common/PassRedDot.png"
@@ -93,7 +98,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [638,117,187,60],
+                "roi": [
+                    638,
+                    117,
+                    187,
+                    60
+                ],
                 "template": [
                     "Common/RedDot.png",
                     "Common/PassRedDot.png"

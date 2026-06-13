@@ -11,7 +11,6 @@
             "type": "Custom",
             "param": {
                 "custom_recognition": "UnionRaidEntryRecognition",
-                "roi": [1217,203,54,55],
                 "custom_recognition_param": {
                     "expected": [
                         "联盟"
@@ -19,7 +18,13 @@
                     "template": [
                         "Common/RedDot.png"
                     ]
-                }
+                },
+                "roi": [
+                    1217,
+                    203,
+                    54,
+                    55
+                ]
             }
         },
         "action": "Click",
@@ -33,7 +38,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [4,9,54,32],
+                "roi": [
+                    4,
+                    9,
+                    54,
+                    32
+                ],
                 "expected": [
                     "联盟"
                 ]
@@ -50,7 +60,6 @@
             "type": "Custom",
             "param": {
                 "custom_recognition": "UnionRaidOpenedRecognition",
-                "roi": [579,371,120,264],
                 "custom_recognition_param": {
                     "expected": [
                         "联盟突袭",
@@ -59,7 +68,13 @@
                     "template": [
                         "Common/RedDot.png"
                     ]
-                }
+                },
+                "roi": [
+                    579,
+                    371,
+                    120,
+                    264
+                ]
             }
         },
         "action": "Click",
@@ -96,7 +111,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [4,9,54,32],
+                "roi": [
+                    4,
+                    9,
+                    54,
+                    32
+                ],
                 "expected": [
                     "联盟突袭"
                 ]
@@ -116,7 +136,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [560,319,150,157]
+                "target": [
+                    560,
+                    319,
+                    150,
+                    157
+                ]
             }
         },
         "next": [
@@ -153,7 +178,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [619,213,18,16],
+                "roi": [
+                    619,
+                    213,
+                    18,
+                    16
+                ],
                 "expected": [
                     "^[1-9]\\d*$"
                 ]

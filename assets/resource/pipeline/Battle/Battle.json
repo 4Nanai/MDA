@@ -217,7 +217,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [618,285,43,46],
+                "roi": [
+                    618,
+                    285,
+                    43,
+                    46
+                ],
                 "template": [
                     "Battle/FieldChanged.png"
                 ]

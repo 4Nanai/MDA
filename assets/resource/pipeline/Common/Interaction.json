@@ -46,7 +46,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [566,429,248,250],
+                "roi": [
+                    566,
+                    429,
+                    248,
+                    250
+                ],
                 "template": [
                     "Common/Skip.png"
                 ],

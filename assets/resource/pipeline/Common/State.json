@@ -28,7 +28,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [450,511,78,79],
+                "roi": [
+                    450,
+                    511,
+                    78,
+                    79
+                ],
                 "template": [
                     "Common/EmptyTeamSet.png"
                 ]

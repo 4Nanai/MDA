@@ -227,7 +227,7 @@
                     "pipeline_override": {
                         "LargeEventStory": {
                             "recognition.param.custom_recognition_param.priority": 1
-                       }
+                        }
                     }
                 },
                 {
@@ -236,7 +236,7 @@
                     "pipeline_override": {
                         "LargeEventStory": {
                             "recognition.param.custom_recognition_param.priority": 0
-                       }
+                        }
                     }
                 }
             ]
