@@ -61,80 +61,53 @@
             }
         },
         "next": [
-            "LargeEventClickMissionRedDot"
+            "[JumpBack]LargeEventDailyMissionFlow",
+            "[JumpBack]LargeEventAchievementMissionFlow",
+            "[JumpBack]CommonEndTask"
         ]
     },
-    "LargeEventClickMissionRedDot": {
-        "desc": "大活动任务的红点",
+    "LargeEventDailyMissionFlow": {
+        "desc": "大活动日常任务流程",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    453,
-                    106,
-                    375,
-                    59
-                ],
+                "roi": [453,118,187,60],
                 "template": [
+                    "Common/RedDot.png",
                     "Common/PassRedDot.png"
                 ]
             }
         },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -10,
-                    10,
-                    0,
-                    0
-                ]
-            }
+        "action": "Click",
+        "anchor": {
+            "LargeEventMissionFlow": "LargeEventDailyMissionFlow"
         },
         "next": [
-            "LargeEventMissionClaimedFlow",
-            "[JumpBack]LargeEventMissionClaimAll",
+            "LargeEventMissionClaimAll",
             "[JumpBack]CommonConfirmReward",
-            "LargeEventClickMissionRedDot"
+            "[JumpBack]CommonConfirmAction"
         ]
     },
-    "LargeEventMissionClaimed": {
-        "desc": "大活动任务奖励已领取",
+    "LargeEventAchievementMissionFlow": {
+        "desc": "大活动成就任务流程",
         "recognition": {
-            "type": "ColorMatch",
+            "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    680,
-                    624,
-                    137,
-                    35
-                ],
-                "lower": [
-                    180,
-                    180,
-                    180
-                ],
-                "upper": [
-                    220,
-                    220,
-                    220
-                ],
-                "count": 100
-            }
-        }
-    },
-    "LargeEventMissionClaimedFlow": {
-        "desc": "大活动任务奖励已领取流程",
-        "recognition": {
-            "type": "And",
-            "param": {
-                "all_of": [
-                    "LargeEventMissionClaimed"
+                "roi": [638,117,187,60],
+                "template": [
+                    "Common/RedDot.png",
+                    "Common/PassRedDot.png"
                 ]
             }
         },
+        "action": "Click",
+        "anchor": {
+            "LargeEventMissionFlow": "LargeEventAchievementMissionFlow"
+        },
         "next": [
-            "CommonGoBack"
+            "LargeEventMissionClaimAll",
+            "[JumpBack]CommonConfirmReward",
+            "[JumpBack]CommonConfirmAction"
         ]
     },
     "LargeEventMissionClaimAll": {
@@ -155,6 +128,10 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "next": [
+            "[Anchor]LargeEventMissionFlow",
+            "CommonEndTask"
+        ]
     }
 }
