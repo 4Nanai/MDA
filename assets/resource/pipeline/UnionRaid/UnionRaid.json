@@ -91,7 +91,6 @@
             "type": "Custom",
             "param": {
                 "custom_recognition": "UnionRaidOpenedRecognition",
-                "roi": [579,371,120,264],
                 "custom_recognition_param": {
                     "expected": [
                         "联盟突袭",
@@ -100,7 +99,13 @@
                     "template": [
                         "Common/New.png"
                     ]
-                }
+                },
+                "roi": [
+                    579,
+                    371,
+                    120,
+                    264
+                ]
             }
         },
         "action": "Click",
