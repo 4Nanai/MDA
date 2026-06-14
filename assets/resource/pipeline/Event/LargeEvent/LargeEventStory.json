@@ -11,7 +11,7 @@
                     "expected": [
                         ".*STORY.*"
                     ],
-                    "lower": 209,
+                    "lower": 250,
                     "upper": 255,
                     "priority": 1
                 },
