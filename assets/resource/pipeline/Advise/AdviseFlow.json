@@ -67,17 +67,12 @@
     "AdviseCollectionCompletedVisible": {
         "desc": "已收集完咨询日志",
         "recognition": {
-            "type": "OCR",
+            "type": "ColorMatch",
             "param": {
-                "roi": [
-                    790,
-                    469,
-                    19,
-                    20
-                ],
-                "expected": [
-                    ".*20.*"
-                ]
+                "roi": [811,486,7,4],
+                "lower": [224, 44, 30],
+                "upper":[255, 111, 102],
+                "count": 27
             }
         }
     },
