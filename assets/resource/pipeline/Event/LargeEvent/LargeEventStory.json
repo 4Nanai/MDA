@@ -1,7 +1,7 @@
 {
     "LargeEventStory": {
         "desc": "大活动剧情",
-        "enabled": true,
+        "enabled": false,
         "max_hit": 1,
         "recognition": {
             "type": "Custom",

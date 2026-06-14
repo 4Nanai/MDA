@@ -61,9 +61,10 @@
             }
         },
         "next": [
+            "[JumpBack]CommonConfirmReward",
             "[JumpBack]LargeEventDailyMissionFlow",
             "[JumpBack]LargeEventAchievementMissionFlow",
-            "[JumpBack]CommonEndTask"
+            "CommonEndTask"
         ]
     },
     "LargeEventDailyMissionFlow": {
@@ -88,9 +89,9 @@
             "LargeEventMissionFlow": "LargeEventDailyMissionFlow"
         },
         "next": [
-            "LargeEventMissionClaimAll",
             "[JumpBack]CommonConfirmReward",
-            "[JumpBack]CommonConfirmAction"
+            "[JumpBack]CommonConfirmAction",
+            "LargeEventMissionClaimAll"
         ]
     },
     "LargeEventAchievementMissionFlow": {
@@ -115,9 +116,9 @@
             "LargeEventMissionFlow": "LargeEventAchievementMissionFlow"
         },
         "next": [
-            "LargeEventMissionClaimAll",
             "[JumpBack]CommonConfirmReward",
-            "[JumpBack]CommonConfirmAction"
+            "[JumpBack]CommonConfirmAction",
+            "LargeEventMissionClaimAll"
         ]
     },
     "LargeEventMissionClaimAll": {
@@ -140,6 +141,7 @@
             "type": "Click"
         },
         "next": [
+            "[JumpBack]CommonConfirmReward",
             "[Anchor]LargeEventMissionFlow",
             "CommonEndTask"
         ]
