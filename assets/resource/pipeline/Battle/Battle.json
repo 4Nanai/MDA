@@ -140,7 +140,7 @@
     },
     "BattleInBattle": {
         "desc": "战斗中",
-        "timeout": 180000,
+        "timeout": 210000,
         "next": [
             "[JumpBack]BattleClickAutoBurst",
             "[JumpBack]BattleClickAutoShoot",
