@@ -1,6 +1,7 @@
 {
     "UnionRaidMain": {
         "desc": "联盟突击入口",
+        "enabled": false,
         "next": [
             "EnterUnionRaid"
         ]
@@ -16,7 +17,8 @@
                         "联盟"
                     ],
                     "template": [
-                        "Common/RedDot.png"
+                        "Common/RedDot.png",
+                        "Common/New.png"
                     ]
                 },
                 "roi": [
@@ -50,11 +52,12 @@
             }
         },
         "next": [
-            "UnionRaidConfirmOpened",
+            "UnionRaidEnterWithRedDot",
+            "UnionRaidEnterWithNew",
             "CommonEndTask"
         ]
     },
-    "UnionRaidConfirmOpened": {
+    "UnionRaidEnterWithRedDot": {
         "desc": "确认进入联盟突袭",
         "recognition": {
             "type": "Custom",
@@ -79,7 +82,58 @@
         },
         "action": "Click",
         "next": [
+            "UnionRaidMainPage"
+        ]
+    },
+    "UnionRaidEnterWithNew": {
+        "desc": "联盟突袭有新内容",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "UnionRaidOpenedRecognition",
+                "roi": [579,371,120,264],
+                "custom_recognition_param": {
+                    "expected": [
+                        "联盟突袭",
+                        "联盟.*"
+                    ],
+                    "template": [
+                        "Common/New.png"
+                    ]
+                }
+            }
+        },
+        "action": "Click",
+        "next": [
+            "UnionRaidSkipSettlement"
+        ]
+    },
+    "UnionRaidSkipSettlement": {
+        "desc": "联盟突袭确认奖励",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonSkipSettlement"
+                ]
+            }
+        },
+        "next": [
             "[JumpBack]CommonSkipSettlement",
+            "UnionRaidConfirmRewards"
+        ]
+    },
+    "UnionRaidConfirmRewards": {
+        "desc": "联盟突袭确认奖励",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "CommonConfirmAction"
+                ]
+            }
+        },
+        "next": [
             "[JumpBack]CommonConfirmAction",
             "UnionRaidMainPage"
         ]

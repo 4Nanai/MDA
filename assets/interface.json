@@ -107,6 +107,7 @@
         "tasks/MapPushing.json",
         "tasks/LargeEvent.json",
         "tasks/SmallEvent.json",
+        "tasks/UnionRaid.json",
         "tasks/preset/DailyFull.json",
         "tasks/preset/QuickDaily.json"
     ]
