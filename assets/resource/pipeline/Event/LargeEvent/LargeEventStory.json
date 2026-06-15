@@ -188,9 +188,14 @@
                 ]
             }
         },
+        "anchor": {
+            "GoBack": "LargeEventGoBack"
+        },
         "next": [
             "CommonNoAvailableTeamSet",
+            "MaximumBattlesReached",
             "[JumpBack]BattleStart",
+            "[JumpBack]SkipPostBattleStory",
             "LargeEventEventStagePageFlow",
             "LargeEventGoBack"
         ]

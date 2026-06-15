@@ -544,5 +544,34 @@
                 "count": 100
             }
         }
+    }, 
+   "MaximumBattlesReached": {
+        "desc": "战斗次数已达上限",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    755,
+                    672,
+                    15,
+                    14
+                ],
+                "lower": [
+                    180,
+                    0,
+                    0
+                ],
+                "upper": [
+                    255,
+                    80,
+                    80
+                ],
+                "count": 4
+            }
+        },
+        "next": [
+            "[JumpBack]BattleClosePage",
+            "[Anchor]GoBack"
+        ]
     }
 }
