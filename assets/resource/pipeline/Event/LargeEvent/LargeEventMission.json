@@ -64,7 +64,7 @@
             "[JumpBack]CommonConfirmReward",
             "[JumpBack]LargeEventDailyMissionFlow",
             "[JumpBack]LargeEventAchievementMissionFlow",
-            "CommonEndTask"
+            "LargeEventMissionComplete"
         ]
     },
     "LargeEventDailyMissionFlow": {
@@ -145,5 +145,25 @@
             "[Anchor]LargeEventMissionFlow",
             "CommonEndTask"
         ]
+    },
+    "LargeEventMissionComplete": {
+        "desc": "大活动任务完成",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "LargeEventMissionCompletedRecognition",
+                "roi": [456,104,367,81],
+                "custom_recognition_param": {
+                    "expected": [
+                        "每日任务",
+                        "成就"
+                    ],
+                    "template": [
+                        "Common/PassRedDot.png",
+                        "Common/RedDot.png"
+                    ]
+                }
+            }
+        }
     }
 }

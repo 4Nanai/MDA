@@ -26,6 +26,12 @@ const CustomRecognitionResultDetail string = "Custom large event story recognize
 
 var _ maa.CustomRecognitionRunner = &LargeEventStoryRecognizer{}
 
+type LargeEventMissionCompletedRecognizer struct{}
+type LargeEventMissionCompletedParam struct {
+	Expected []string `json:"expected"`
+	Template []string `json:"template"`
+}
+
 func (r *LargeEventStoryRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
 	var param LargeEventStoryRecognizerParam
 	if err := json.Unmarshal([]byte(arg.CustomRecognitionParam), &param); err != nil {
@@ -92,5 +98,42 @@ func (r *LargeEventStoryRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecogni
 	return &maa.CustomRecognitionResult{
 		Box:    colorRecoResult.Box,
 		Detail: CustomRecognitionResultDetail,
+	}, true
+}
+
+func (r *LargeEventMissionCompletedRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
+	var param LargeEventMissionCompletedParam
+	if err := json.Unmarshal([]byte(arg.CustomRecognitionParam), &param); err != nil {
+		log.Error().Err(err).Msg("Failed to unmarshal custom recognition param for LargeEventMissionCompletedRecognizer")
+		return nil, false
+	}
+
+	ocrResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeOCR, maa.OCRParam{
+		ROI:      maa.NewTargetRect(arg.Roi),
+		Expected: param.Expected,
+	}, arg.Img)
+	if err != nil {
+		log.Error().Err(err).Msg("Failed to run OCR recognition in LargeEventMissionCompletedRecognizer")
+		return nil, false
+	}
+	if len(ocrResult.Results.Filtered) == 0 {
+		log.Error().Msg("No OCR result found in LargeEventMissionCompletedRecognizer, returning false")
+		return nil, false
+	}
+
+	redDotRecoResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeTemplateMatch, maa.TemplateMatchParam{
+		ROI:      maa.NewTargetRect(arg.Roi),
+		Template: param.Template,
+	}, arg.Img)
+	if err != nil {
+		log.Error().Err(err).Msg("Failed to run template match recognition in LargeEventMissionCompletedRecognizer")
+		return nil, false
+	}
+	if redDotRecoResult.Results.Best != nil {
+		log.Info().Msg("Template match result found in LargeEventMissionCompletedRecognizer, marked as not completed")
+		return nil, false
+	}
+	return &maa.CustomRecognitionResult{
+		Box: arg.Roi,
 	}, true
 }
