@@ -544,8 +544,8 @@
                 "count": 100
             }
         }
-    }, 
-   "MaximumBattlesReached": {
+    },
+    "MaximumBattlesReached": {
         "desc": "战斗次数已达上限",
         "recognition": {
             "type": "ColorMatch",

@@ -152,7 +152,6 @@
             "type": "Custom",
             "param": {
                 "custom_recognition": "LargeEventMissionCompletedRecognition",
-                "roi": [456,104,367,81],
                 "custom_recognition_param": {
                     "expected": [
                         "每日任务",
@@ -162,7 +161,13 @@
                         "Common/PassRedDot.png",
                         "Common/RedDot.png"
                     ]
-                }
+                },
+                "roi": [
+                    456,
+                    104,
+                    367,
+                    81
+                ]
             }
         }
     }
