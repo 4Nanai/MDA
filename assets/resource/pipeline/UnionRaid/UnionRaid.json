@@ -1,7 +1,6 @@
 {
     "UnionRaidMain": {
         "desc": "联盟突击入口",
-        "enabled": false,
         "next": [
             "EnterUnionRaid"
         ]
@@ -140,6 +139,7 @@
         },
         "next": [
             "[JumpBack]CommonConfirmAction",
+            "[JumpBack]CommonClickBlank",
             "UnionRaidMainPage"
         ]
     },
