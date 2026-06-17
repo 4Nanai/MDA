@@ -154,7 +154,15 @@
                 ]
             }
         },
-
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    150,
+                    650
+                ]
+            }
+        },
         "next": [
             "UnionRaidStartBattlePreparation",
             "CommonEndTask"
