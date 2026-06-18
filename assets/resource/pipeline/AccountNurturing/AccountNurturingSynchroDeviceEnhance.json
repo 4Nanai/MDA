@@ -109,7 +109,7 @@
     "AutoAllocation": {
         "desc": "自动配置",
         "max_hit": 1,
-        // "enabled": false,
+        "enabled": false,
         "recognition": {
             "type": "OCR",
             "param": {

@@ -1,7 +1,7 @@
 {
     "LargeEventLoginStamp": {
         "desc": "大活动签到",
-        "enabled": false,
+        "enabled": true,
         "max_hit": 1,
         "recognition": {
             "type": "OCR",

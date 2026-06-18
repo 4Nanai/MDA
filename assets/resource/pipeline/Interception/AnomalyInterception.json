@@ -37,7 +37,7 @@
     },
     "InterceptionAnomalyKraken": {
         "desc": "克拉肯",
-        "enabled": false,
+        "enabled": true,
         "recognition": {
             "type": "OCR",
             "param": {

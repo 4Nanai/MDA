@@ -1,7 +1,7 @@
 {
     "SmallEventShop": {
         "desc": "小活动商店",
-        "enabled": false,
+        "enabled": true,
         "max_hit": 1,
         "recognition": {
             "type": "OCR",

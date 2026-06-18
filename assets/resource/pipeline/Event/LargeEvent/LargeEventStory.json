@@ -1,7 +1,7 @@
 {
     "LargeEventStory": {
         "desc": "大活动剧情",
-        "enabled": false,
+        "enabled": true,
         "max_hit": 1,
         "recognition": {
             "type": "Custom",
@@ -230,7 +230,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "LargeEvent/ArkRanger/ArkRangerStory1Stage.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -254,7 +254,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "LargeEvent/StarAnis/StarAnisStory2StageNormal.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -278,7 +278,8 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "LargeEvent/StarAnis/StarAnisStory2StageHard.png",
+                    "LargeEvent/StarAnis/StarAnisStory2StageHardSP.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -301,7 +302,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "LargeEvent/ArkRanger/ArkRangerStory1StageRepeatable.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -324,7 +325,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "LargeEvent/StarAnis/StarAnisStory2StageNormalRepeatable.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -347,7 +348,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "LargeEvent/StarAnis/StarAnisStory2StageHardRepeatable.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1

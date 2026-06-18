@@ -1,7 +1,7 @@
 {
     "SmallEventStory": {
         "desc": "小活动剧情",
-        "enabled": false,
+        "enabled": true,
         "max_hit": 1,
         "recognition": {
             "type": "OCR",
@@ -205,7 +205,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "SmallEvent/BitterSpice/StageNormal.png" //占位，应该去task页面修改
                 ],
                 "threshold": 0.5,
                 "order_by": "Vertical",
@@ -230,7 +230,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "SmallEvent/BitterSpice/StageHard.png" //占位，应该去task页面修改
                 ],
                 "threshold": 0.5,
                 "order_by": "Vertical",
@@ -254,7 +254,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "SmallEvent/BitterSpice/StageNormalRepeatable.png" //占位，应该去task页面修改
                 ],
                 "threshold": 0.5,
                 "order_by": "Vertical",
@@ -278,7 +278,7 @@
                     604
                 ],
                 "template": [
-                    "Common/RedDot.png" //占位，应该去task页面修改
+                    "SmallEvent/BitterSpice/StageHardRepeatable.png" //占位，应该去task页面修改
                 ],
                 "threshold": 0.5,
                 "order_by": "Vertical",

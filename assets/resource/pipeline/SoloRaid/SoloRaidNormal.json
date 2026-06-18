@@ -1,7 +1,7 @@
 {
     "SoloRaidNormalBattle": {
         "desc": "个突普通战",
-        "enabled": false,
+        "enabled": true,
         "max_hit": 1,
         "recognition": {
             "type": "TemplateMatch",
