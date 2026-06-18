@@ -90,18 +90,6 @@
                     "name": "CoordinatedOperations"
                 },
                 {
-                    "name": "DailyRewards",
-                    "option": {
-                        "DailyRewardsFriendPoints": "Yes",
-                        "DailyRewardsEmail": "Yes",
-                        "DailyRewardsRankingRewards": "Yes",
-                        "DailyRewardsMission": "Yes",
-                        "DailyRewardsPassMain": "Yes",
-                        "DailyRewardsDailyLogin": "Yes",
-                        "DailyRewardsFreeRecruit": "Yes"
-                    }
-                },
-                {
                     "name": "SmallEvent",
                     "option": {
                         "SmallEventTheme": "BSideIdol",
@@ -123,6 +111,18 @@
                             "LargeEventStory",
                             "LargeEventMission"
                         ]
+                    }
+                },
+                {
+                    "name": "DailyRewards",
+                    "option": {
+                        "DailyRewardsFriendPoints": "Yes",
+                        "DailyRewardsEmail": "Yes",
+                        "DailyRewardsRankingRewards": "Yes",
+                        "DailyRewardsMission": "Yes",
+                        "DailyRewardsPassMain": "Yes",
+                        "DailyRewardsDailyLogin": "Yes",
+                        "DailyRewardsFreeRecruit": "Yes"
                     }
                 }
             ]
