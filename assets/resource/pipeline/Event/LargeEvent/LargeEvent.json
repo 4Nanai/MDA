@@ -33,7 +33,7 @@
                     68
                 ],
                 "template": [
-                    "LargeEvent/ArkRanger/ArkRangerLogo.png" //占位，应该去task页面修改
+                    "LargeEvent/ArkRanger/Logo.png" //占位，应该去task页面修改
                 ]
             }
         },

@@ -29,7 +29,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/ArkRanger/ArkRangerLogo.png"
+                                        "LargeEvent/ArkRanger/Logo.png"
                                     ]
                                 }
                             }
@@ -38,7 +38,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/ArkRanger/ArkRangerStory1Stage.png"
+                                        "LargeEvent/ArkRanger/Story1Stage.png"
                                     ]
                                 }
                             }
@@ -47,7 +47,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/ArkRanger/ArkRangerStory1StageRepeatable.png"
+                                        "LargeEvent/ArkRanger/Story1StageRepeatable.png"
                                     ]
                                 }
                             }
@@ -56,7 +56,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/ArkRanger/ArkRangerStory2StageNormal.png"
+                                        "LargeEvent/ArkRanger/Story2StageNormal.png"
                                     ]
                                 }
                             }
@@ -65,7 +65,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/ArkRanger/ArkRangerStory2StageNormalRepeatable.png"
+                                        "LargeEvent/ArkRanger/Story2StageNormalRepeatable.png"
                                     ]
                                 }
                             }
@@ -83,7 +83,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisLogo.png"
+                                        "LargeEvent/StarAnis/Logo.png"
                                     ]
                                 }
                             }
@@ -92,7 +92,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisStory1Stage.png"
+                                        "LargeEvent/StarAnis/Story1Stage.png"
                                     ]
                                 }
                             }
@@ -101,7 +101,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisStory2StageNormal.png"
+                                        "LargeEvent/StarAnis/Story2StageNormal.png"
                                     ]
                                 }
                             }
@@ -110,8 +110,8 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisStory2StageHard.png",
-                                        "LargeEvent/StarAnis/StarAnisStory2StageHardSP.png"
+                                        "LargeEvent/StarAnis/Story2StageHard.png",
+                                        "LargeEvent/StarAnis/Story2StageHardSP.png"
                                     ]
                                 }
                             },
@@ -130,7 +130,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisStory1StageRepeatable.png"
+                                        "LargeEvent/StarAnis/Story1StageRepeatable.png"
                                     ]
                                 }
                             }
@@ -139,7 +139,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisStory2StageNormal.png"
+                                        "LargeEvent/StarAnis/Story2StageNormal.png"
                                     ]
                                 }
                             }
@@ -148,7 +148,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/StarAnis/StarAnisStory2StageHardRepeatable.png"
+                                        "LargeEvent/StarAnis/Story2StageHardRepeatable.png"
                                     ]
                                 }
                             }
