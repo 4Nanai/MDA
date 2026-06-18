@@ -147,6 +147,7 @@
             "[JumpBack]DialoguesSkipStory",
             "[JumpBack]BattleNextState",
             "[JumpBack]BattleFieldChanged",
+            "[JumpBack]CommonConfirmAction",
             "BattleOperationComplete",
             "BattleOperationFailed",
             "BattleOperationTimeout"

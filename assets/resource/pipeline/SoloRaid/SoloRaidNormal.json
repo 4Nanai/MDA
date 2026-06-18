@@ -14,12 +14,13 @@
                 ],
                 "template": [
                     "SoloRaid/Lock.png"
-                ]
+                ],
+                "green_mask": true
             }
         },
         "next": [
-            "[JumpBack]SoloRaidNormalNewBattle",
-            "CommonEndTask"
+            "SoloRaidNormalNewBattle",
+            "SoloRaidNormalBattle"
         ]
     },
     "SoloRaidNormalNewBattle": {
@@ -72,7 +73,24 @@
         "next": [
             "[JumpBack]SoloRaidTeamNotAvailable",
             "SoloRaidStartBattle",
-            "SoloRaidNormalBattle",
+            "SoloRaidEnemyDefeated"
+        ]
+    },
+    "SoloRaidEnemyDefeated": {
+        "desc": "个突敌人被击败",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [567,204,154,49],
+                "template": [
+                    "SoloRaid/EnemyDefeated.png"
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "[JumpBack]CommonConfirmAction",
+            "SoloRaidNormalNewBattle",
             "CommonEndTask"
         ]
     },
