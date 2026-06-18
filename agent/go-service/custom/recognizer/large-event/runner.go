@@ -2,6 +2,7 @@ package largeevent
 
 import (
 	"encoding/json"
+	"strings"
 
 	"github.com/1204244136/MDA/agent/go-service/pkg/maafocus"
 	"github.com/MaaXYZ/maa-framework-go/v4"
@@ -70,8 +71,24 @@ func (r *LargeEventStoryRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecogni
 		}, true
 	}
 
-	storyIRecoResult, _ := ocrResult.Results.Filtered[0].AsOCR()
-	storyIIRecoResult, _ := ocrResult.Results.Filtered[1].AsOCR()
+	filtered := make([]*maa.OCRResult, 2)
+	for _, result := range ocrResult.Results.Filtered {
+		ocr, _ := result.AsOCR()
+		text := strings.Trim(ocr.Text, " ")
+		text = strings.ToLower(text)
+		text = strings.TrimPrefix(text, "story")
+		text = strings.Trim(text, " ")
+		if len(text) == 1 {
+			filtered[0] = ocr
+		} else if len(text) == 2 {
+			filtered[1] = ocr
+		} else {
+			log.Warn().Str("text", ocr.Text).Msg("Unexpected OCR text format in LargeEventStoryRecognizer, expected to be STORY I or STORY II")
+		}
+	}
+
+	storyIRecoResult := filtered[0]
+	storyIIRecoResult := filtered[1]
 
 	colorRecoResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeColorMatch, maa.ColorMatchParam{
 		ROI:    maa.NewTargetRect(storyIIRecoResult.Box),
