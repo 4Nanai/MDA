@@ -81,7 +81,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [567,204,154,49],
+                "roi": [
+                    567,
+                    204,
+                    154,
+                    49
+                ],
                 "template": [
                     "SoloRaid/EnemyDefeated.png"
                 ]
