@@ -226,7 +226,8 @@
                 ],
                 "template": [
                     "Battle/FieldChanged.png"
-                ]
+                ],
+                "green_mask": true
             }
         },
         "next": [
