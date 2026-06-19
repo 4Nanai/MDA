@@ -41,7 +41,8 @@
         "post_wait_freezes": 200,
         "next": [
             "[JumpBack]CommonConfirmAction",
-            "SoloRaidStartBattle"
+            "SoloRaidStartBattle",
+            "SoloRaidNormalNewBattle"
         ]
     },
     "SoloRaidStartBattle": {
@@ -74,6 +75,10 @@
             "[JumpBack]SoloRaidTeamNotAvailable",
             "SoloRaidStartBattle",
             "SoloRaidEnemyDefeated"
+        ],
+        "on_error": [
+            "[JumpBack]CommonConfirmAction",
+            "CommonEndTask"
         ]
     },
     "SoloRaidEnemyDefeated": {
