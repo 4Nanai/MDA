@@ -197,7 +197,7 @@
             "[JumpBack]BattleStart",
             "[JumpBack]SkipPostBattleStory",
             "LargeEventEventStagePageFlow",
-            "LargeEventGoBack"
+            "LargeEventEventStageQuickBattleFlow"
         ]
     },
     "LargeEventStoryVisible": {
@@ -325,7 +325,7 @@
                     604
                 ],
                 "template": [
-                    "LargeEvent/StarAnis/Story2StageNormalRepeatable.png" //占位，应该去task页面修改
+                    "LargeEvent/ArkRanger/Story2StageNormalRepeatable.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
