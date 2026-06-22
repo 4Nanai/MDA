@@ -88,9 +88,9 @@
             "param": {
                 "roi": [
                     567,
-                    204,
+                    110,
                     154,
-                    49
+                    170
                 ],
                 "template": [
                     "SoloRaid/EnemyDefeated.png"
