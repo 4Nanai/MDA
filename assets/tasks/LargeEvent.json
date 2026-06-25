@@ -69,6 +69,24 @@
                                     ]
                                 }
                             }
+                        },
+                        "LargeEventStory2StageHardClick": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/ArkRanger/Story2StageHard.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "LargeEventStory2StageHardRepeatableClick": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/ArkRanger/Story2StageHardRepeatable.png"
+                                    ]
+                                }
+                            }
                         }
                     }
                 },

@@ -278,8 +278,7 @@
                     604
                 ],
                 "template": [
-                    "LargeEvent/StarAnis/Story2StageHard.png",
-                    "LargeEvent/StarAnis/Story2StageHardSP.png" //占位，应该去task页面修改
+                    "LargeEvent/ArkRanger/Story2StageHard.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -348,7 +347,7 @@
                     604
                 ],
                 "template": [
-                    "LargeEvent/StarAnis/Story2StageHardRepeatable.png" //占位，应该去task页面修改
+                    "LargeEvent/ArkRanger/Story2StageHardRepeatable.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1
