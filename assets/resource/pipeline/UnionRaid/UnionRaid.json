@@ -147,12 +147,15 @@
     "UnionRaidMainPage": {
         "desc": "联盟突袭主界面",
         "recognition": {
-            "type": "And",
+            "type": "Custom",
             "param": {
-                "all_of": [
-                    "UnionRaidEntered",
-                    "CommonNoTransparentMask"
-                ]
+                "custom_recognition": "CommonWaitingPageLoadRecognition",
+                "custom_recognition_param": {
+                    "expected": [
+                        "联盟突袭"
+                    ],
+                    "limitation": 10
+                } 
             }
         },
         "action": {

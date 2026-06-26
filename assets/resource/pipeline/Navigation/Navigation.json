@@ -105,6 +105,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 200,
         "next": [
             "NavigationNoticeFlow",
             "[Anchor]NeedCheck"
@@ -279,6 +280,39 @@
                 ]
             }
         }
+    },
+    "NavigationEnterNikkePage": {
+        "desc": "进入妮姬界面",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    501,
+                    632,
+                    28,
+                    23
+                ],
+                "template": [
+                    "Common/RedDot.png",
+                    "Common/New.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -30,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]NikkePageFlow"
+        ],
+        "timeout": 1000
     },
     "CommonBellVisible": {
         "desc": "右上角铃铛标识",

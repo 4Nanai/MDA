@@ -17,40 +17,16 @@
                 ]
             }
         },
+        "anchor": {
+            "NikkePageFlow": "AdviseEnterNikkePage"
+        },
         "next": [
-            "AdviseEnterNikkePage",
+            "NavigationEnterNikkePage",
             "CommonEndTask"
         ]
     },
     "AdviseEnterNikkePage": {
         "desc": "进入妮姬界面",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    501,
-                    632,
-                    28,
-                    23
-                ],
-                "template": [
-                    "Common/RedDot.png",
-                    "Common/New.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -30,
-                    30,
-                    0,
-                    0
-                ]
-            }
-        },
-        "post_wait_freezes": 1000,
         "next": [
             "AdviseEnterAdvisePage",
             "[JumpBack]AdviseNikkeMainPageEntered",
@@ -111,40 +87,15 @@
     "AdviseMainPageEntered": {
         "desc": "处于咨询界面（nikke选择/咨询）",
         "recognition": {
-            "type": "And",
+            "type": "Custom",
             "param": {
-                "all_of": [
-                    "AdviseStateVisible",
-                    "AdviseStateNotCovered"
-                ]
-            }
-        }
-    },
-    "AdviseStateVisible": {
-        "desc": "左上角咨询标签可见",
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    15,
-                    70,
-                    25
-                ],
-                "expected": [
-                    "咨询"
-                ]
-            }
-        }
-    },
-    "AdviseStateNotCovered": {
-        "desc": "左上角咨询标签未被覆盖",
-        "recognition": {
-            "type": "And",
-            "param": {
-                "all_of": [
-                    "CommonNoTransparentMask"
-                ]
+                "custom_recognition": "CommonWaitingPageLoadRecognition",
+                "custom_recognition_param": {
+                    "expected": [
+                        "咨询"
+                    ],
+                    "limitation": 10
+                }
             }
         }
     },

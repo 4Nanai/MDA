@@ -1,0 +1,99 @@
+{
+    "Rehabilitation": {
+        "desc": "解放",
+        "enabled": true,
+        "next": [
+            "RehabilitationStartFlow",
+            "[JumpBack]NavigationEnterHall"
+        ]
+    },
+    "RehabilitationStartFlow": {
+        "desc": "解放总流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
+            }
+        },
+        "anchor": {
+            "NikkePageFlow": "RehabilitationEnterNikkePage"
+        },
+        "next": [
+            "NavigationEnterNikkePage",
+            "CommonEndTask"
+        ]
+    },
+    "RehabilitationEnterNikkePage": {
+        "desc": "进入妮姬界面",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CommonTemplateOCRRecognition",
+                "custom_recognition_param": {
+                    "template": [
+                        "Common/RedDot.png"
+                    ],
+                    "expected": [
+                        "解放"
+                    ]
+                },
+                "roi": [5,62,121,48]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RehabilitationWaitingEntering"
+        ],
+        "on_error": [
+            "CommonEndTask"
+        ]
+    },
+    "RehabilitationWaitingEntering": {
+        "desc": "等待进入解放界面",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CommonWaitingPageLoadRecognition",
+                "custom_recognition_param": {
+                    "expected": [
+                        "解放"
+                    ],
+                    "limitation": 10
+                }
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "RehabilitationExecution",
+            "CommonEndTask"
+        ]
+    },
+    "RehabilitationExecution": {
+        "desc": "完成解放任务",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Advise/BlueConfirm.png",
+                    "Advise/PurpleConfirm.png",
+                    "Advise/YellowConfirm.png"
+                ],
+                "roi": [678,438,203,136],
+                "threshold": 0.9
+            }
+        },
+        "action": "Click",
+        "timeout": 2000,
+        "next": [
+            "RehabilitationExecution"
+        ],
+        "on_error": [
+            "NavigationEnterHall"
+        ]
+    }
+}
+
