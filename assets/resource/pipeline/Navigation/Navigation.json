@@ -309,10 +309,10 @@
                 ]
             }
         },
+        "timeout": 1000,
         "next": [
             "[Anchor]NikkePageFlow"
-        ],
-        "timeout": 1000
+        ]
     },
     "CommonBellVisible": {
         "desc": "右上角铃铛标识",

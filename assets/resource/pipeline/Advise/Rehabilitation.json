@@ -39,7 +39,12 @@
                         "解放"
                     ]
                 },
-                "roi": [5,62,121,48]
+                "roi": [
+                    5,
+                    62,
+                    121,
+                    48
+                ]
             }
         },
         "action": {
@@ -77,12 +82,17 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
+                "roi": [
+                    678,
+                    438,
+                    203,
+                    136
+                ],
                 "template": [
                     "Advise/BlueConfirm.png",
                     "Advise/PurpleConfirm.png",
                     "Advise/YellowConfirm.png"
                 ],
-                "roi": [678,438,203,136],
                 "threshold": 0.9
             }
         },
@@ -96,4 +106,3 @@
         ]
     }
 }
-
