@@ -1,0 +1,11 @@
+{
+    "task": [
+        {
+            "name": "Rehabilitation",
+            "label": "$task.Rehabilitation.label",
+            "description": "$task.Rehabilitation.description",
+            "entry": "Rehabilitation"
+        }
+    ]
+
+}

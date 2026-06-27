@@ -101,6 +101,7 @@
         "tasks/Outpost.json",
         "tasks/AccountNurturing.json",
         "tasks/Advise.json",
+        "tasks/Rehabilitation.json",
         "tasks/CoordinatedOperations.json",
         "tasks/SoloRaid.json",
         "tasks/DailyRewards.json",

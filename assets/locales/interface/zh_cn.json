@@ -92,6 +92,8 @@
     "task.NikkeAdvise.description": "会始终对前10个妮姬进行咨询，可以通过收藏来提升优先级，好感度满了会自动取消收藏",
     "option.AdviseEpisodeReward.label": "领取花絮奖励",
     "option.AdviseEpisodeViewingReward.label": "领取花絮鉴赏会奖励",
+    "task.Rehabilitation.label": "解放",
+    "task.Rehabilitation.description": "进入解放界面，完成相关任务",
     "task.DailyRewards.label": "每日奖励",
     "task.DailyRewards.description": "领取各类每日奖励",
     "option.DailyRewardsFriendPoints.label": "友情点收发",
