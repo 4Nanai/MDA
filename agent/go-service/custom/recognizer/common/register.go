@@ -6,4 +6,5 @@ func Register() {
 	maa.AgentServerRegisterCustomRecognition("RaidChallengeButtonUnavailableRecognition", &RaidChallengeButtonUnavailableRecognizerRunner{})
 	maa.AgentServerRegisterCustomRecognition("CommonTemplateOCRRecognition", &CommonTemplateOCRRecognizerRunner{})
 	maa.AgentServerRegisterCustomRecognition("CommonWaitingPageLoadRecognition", &CommonWaitingPageLoadRecognizerRunner{})
+	maa.AgentServerRegisterCustomRecognition("CommonTemplateColorMatchRecognition", &CommonTemplateColorMatchRecognizerRunner{})
 }

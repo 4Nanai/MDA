@@ -90,7 +90,7 @@
     "CommonClickMax": {
         "desc": "点击MAX",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "Custom",
             "param": {
                 "roi": [
                     708,
@@ -98,12 +98,31 @@
                     138,
                     125
                 ],
-                "template": [
-                    "Common/MAX.png"
-                ],
-                "threshold": [
-                    0.8
-                ]
+                "custom_recognition": "CommonTemplateColorMatchRecognition",
+                "custom_recognition_param": {
+                    "template": [
+                        "Common/MAX.png"
+                    ],
+                    "threshold": [
+                        0.8
+                    ],
+                    "method": 4,
+                    "lower": [
+                        [
+                            200,
+                            200,
+                            200
+                        ]
+                    ],
+                    "upper": [
+                        [
+                            255,
+                            255,
+                            255
+                        ]
+                    ],
+                    "count": 10
+                }
             }
         },
         "action": {

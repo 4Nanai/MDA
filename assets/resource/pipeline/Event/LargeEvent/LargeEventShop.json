@@ -1,0 +1,9 @@
+{
+    "LargeEventShop": {
+        "enabled": true,
+        "desc": "大活动商店",
+        "next": [
+            "EventShop"
+        ]
+    }
+}

@@ -185,7 +185,8 @@
                 "LargeEventLoginStamp",
                 "LargeEventChallenge",
                 "LargeEventStory",
-                "LargeEventMission"
+                "LargeEventMission",
+                "LargeEventShop"
             ],
             "label": "$option.LargeEventContent.label",
             "cases": [
@@ -221,6 +222,15 @@
                     "label": "$option.LargeEventContent.LargeEventMission",
                     "pipeline_override": {
                         "LargeEventMission": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "LargeEventShop",
+                    "label": "$option.LargeEventContent.LargeEventShop",
+                    "pipeline_override": {
+                        "LargeEventShop": {
                             "enabled": true
                         }
                     }

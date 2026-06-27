@@ -178,3 +178,65 @@ func (r *CommonWaitingPageLoadRecognizerRunner) Run(ctx *maa.Context, arg *maa.C
 		Detail: "Color match result for CommonWaitingPageLoadRecognition",
 	}, true
 }
+
+type CommonTemplateColorMatchRecognizerRunner struct{}
+
+var _ maa.CustomRecognitionRunner = &CommonTemplateColorMatchRecognizerRunner{}
+
+func (r *CommonTemplateColorMatchRecognizerRunner) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
+	var param struct {
+		Template []string `json:"template"`
+		Lower    [][]int    `json:"lower"`
+		Upper    [][]int    `json:"upper"`
+		Method   maa.ColorMatchMethod `json:"method"`
+		Threshold []float64 `json:"threshold"`
+		Count   int       `json:"count"`
+	}
+
+	if err := json.Unmarshal([]byte(arg.CustomRecognitionParam), &param); err != nil {
+		log.Error().Err(err).Msg("failed to unmarshal param")
+		return nil, false
+	}
+	log.Debug().Interface("param", param).Msg("Running CommonTemplateColorMatchRecognition with param")
+
+	templateMatchResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeTemplateMatch, &maa.TemplateMatchParam{
+		ROI:      maa.NewTargetRect(arg.Roi),
+		Template: param.Template,
+		Threshold: param.Threshold,
+	}, arg.Img)
+	if err != nil {
+		log.Error().Err(err).Msg("failed to run template match")
+		return nil, false
+	}
+	if templateMatchResult.Results.Best == nil {
+		log.Info().Msg("Could not find expected template")
+		return nil, false
+	}
+	log.Debug().Interface("templateMatchResult box", templateMatchResult.Box).Msg("Template match result for CommonTemplateMatchWithColorMatchRecognition")
+
+	method := param.Method
+	if param.Method == 0 {
+		method = maa.ColorMatchMethodRGB
+	}
+	colorMatchResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeColorMatch, &maa.ColorMatchParam{
+		ROI:   maa.NewTargetRect(templateMatchResult.Box),
+		Lower: param.Lower,
+		Upper: param.Upper,
+		Method: method,
+		Count: param.Count,
+	}, arg.Img)
+	if err != nil {
+		log.Error().Err(err).Msg("failed to run color match")
+		return nil, false
+	}
+	if colorMatchResult.Results.Best == nil {
+		log.Info().Msg("Could not find expected color match")
+		return nil, false
+	}
+	log.Debug().Interface("colorMatchResult box", colorMatchResult.Box).Msg("Color match result for CommonTemplateMatchWithColorMatchRecognition")
+
+	return &maa.CustomRecognitionResult{
+		Box:    templateMatchResult.Box,
+		Detail: "Color match result for CommonTemplateMatchWithColorMatchRecognition",
+	}, true
+}

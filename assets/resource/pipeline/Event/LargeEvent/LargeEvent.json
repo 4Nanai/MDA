@@ -95,6 +95,7 @@
             "[JumpBack]LargeEventChallenge",
             "[JumpBack]LargeEventStory",
             "[JumpBack]LargeEventMission",
+            "[JumpBack]LargeEventShop",
             "CommonEndTask"
         ]
     },
