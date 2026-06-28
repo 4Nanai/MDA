@@ -1,5 +1,6 @@
 {
     "LargeEventShop": {
+        "max_hit": 1,
         "desc": "大活动商店",
         "enabled": true,
         "next": [

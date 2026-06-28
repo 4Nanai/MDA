@@ -93,7 +93,8 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "LargeEventEventStagePageFlow"
+            "[JumpBack]LargeEventEventStagePageFlow",
+            "LargeEventGoBack"
         ]
     },
     "LargeEventEventStagePageEntered": {
