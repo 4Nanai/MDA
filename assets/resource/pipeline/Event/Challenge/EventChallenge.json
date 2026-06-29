@@ -59,7 +59,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 300,
+        "post_delay": 500,
         "next": [
             "BattleStart",
             "EventChallengeStage"
@@ -86,7 +86,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 300,
+        "post_delay": 500,
         "next": [
             "BattleStart",
             "EventClearStage"
