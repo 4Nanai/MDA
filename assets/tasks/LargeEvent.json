@@ -18,7 +18,7 @@
     "option": {
         "LargeEventTheme": {
             "type": "select",
-            "default_case": "ArkRanger",
+            "default_case": "WaveToYou",
             "label": "$option.LargeEventTheme.label",
             "cases": [
                 {
@@ -167,6 +167,39 @@
                                 "param": {
                                     "template": [
                                         "LargeEvent/StarAnis/Story2StageHardRepeatable.png"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "WaveToYou",
+                    "label": "$option.LargeEventTheme.WaveToYou",
+                    "pipeline_override": {
+                        "LargeEventEnterMainPage": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/WaveToYouLogo.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "LargeEventClickStoryStage": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/WaveToYouStory1Stage.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "LargeEventClickStoryStageRepeatable": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/WaveToYouStory1StageRepeatable.png"
                                     ]
                                 }
                             }
