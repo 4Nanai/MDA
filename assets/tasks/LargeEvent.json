@@ -177,29 +177,29 @@
                     "name": "WaveToYou",
                     "label": "$option.LargeEventTheme.WaveToYou",
                     "pipeline_override": {
-                        "LargeEventEnterMainPage": {
+                        "LargeEventEntry": {
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/WaveToYou/WaveToYouLogo.png"
+                                        "LargeEvent/WaveToYou/Logo.png"
                                     ]
                                 }
                             }
                         },
-                        "LargeEventClickStoryStage": {
+                        "LargeEventStory1StageClick": {
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/WaveToYou/WaveToYouStory1Stage.png"
+                                        "LargeEvent/WaveToYou/Story1Stage.png"
                                     ]
                                 }
                             }
                         },
-                        "LargeEventClickStoryStageRepeatable": {
+                        "LargeEventStory1StageRepeatableClick": {
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "LargeEvent/WaveToYou/WaveToYouStory1StageRepeatable.png"
+                                        "LargeEvent/WaveToYou/Story1StageRepeatable.png"
                                     ]
                                 }
                             }
