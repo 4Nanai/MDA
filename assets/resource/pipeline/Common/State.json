@@ -44,6 +44,10 @@
                 "content": "没有可用的队伍设置，可能是初次挑战此活动，请配置队伍后重试",
                 "display": "log"
             }
-        }
+        },
+        "next": [
+            "[JumpBack]CommonClosePage",
+            "CommonGoBack"
+        ]
     }
 }

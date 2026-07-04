@@ -11,9 +11,10 @@
                     "expected": [
                         "STORY.*"
                     ],
-                    "lower": 250,
-                    "upper": 255,
-                    "priority": 1
+                    "priority": 1,
+                    "template": [
+                        "Common/RedDot.png"
+                    ]
                 },
                 "roi": [
                     485,

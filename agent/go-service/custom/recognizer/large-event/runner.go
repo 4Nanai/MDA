@@ -2,7 +2,6 @@ package largeevent
 
 import (
 	"encoding/json"
-	"strings"
 
 	"github.com/1204244136/MDA/agent/go-service/pkg/maafocus"
 	"github.com/MaaXYZ/maa-framework-go/v4"
@@ -13,8 +12,7 @@ type LargeEventStoryRecognizer struct{}
 type LargeEventStoryRecognizerParam struct {
 	Expected []string                `json:"expected"`
 	Priority LargeEventStoryPriority `json:"priority"`
-	Lower    int                     `json:"lower"`
-	Upper    int                     `json:"upper"`
+	Template []string                `json:"template"`
 }
 type LargeEventStoryPriority int
 
@@ -43,6 +41,7 @@ func (r *LargeEventStoryRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecogni
 	ocrResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeOCR, maa.OCRParam{
 		ROI:      maa.NewTargetRect(arg.Roi),
 		Expected: param.Expected,
+		OrderBy: maa.OCROrderByVertical,
 	}, arg.Img)
 	if err != nil {
 		log.Error().Err(err).Msg("Failed to run OCR recognition in LargeEventStoryRecognizer")
@@ -58,10 +57,11 @@ func (r *LargeEventStoryRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecogni
 			Detail: CustomRecognitionResultDetail,
 		}, true
 	} else if len(ocrResult.Results.Filtered) > 2 {
-		log.Error().Msg("Multiple OCR results found in LargeEventStoryRecognizer, more than 2, returning false")
-		maafocus.Print(ctx, "Multiple OCR results found in LargeEventStoryRecognizer, more than 2, this is unexpected, please check the OCR results and the expected text settings")
-		return nil, false
-	} else if param.Priority == StoryI {
+		log.Warn().Int("count", len(ocrResult.Results.Filtered)).Msg("Multiple OCR results found in LargeEventStoryRecognizer, more than 2, this is unexpected")
+		maafocus.Print(ctx, "More than 2 'story' found in large event, this is unexpected, please check the OCR results and the expected text settings")
+	}
+
+	if param.Priority == StoryI {
 		log.Info().Msg("Multiple OCR results found in LargeEventStoryRecognizer, priority is StoryI, returning the first one")
 		storyI, _ := ocrResult.Results.Filtered[0].AsOCR()
 
@@ -71,41 +71,29 @@ func (r *LargeEventStoryRecognizer) Run(ctx *maa.Context, arg *maa.CustomRecogni
 		}, true
 	}
 
-	filtered := make([]*maa.OCRResult, 2)
-	for _, result := range ocrResult.Results.Filtered {
-		ocr, _ := result.AsOCR()
-		text := strings.Trim(ocr.Text, " ")
-		text = strings.ToLower(text)
-		text = strings.TrimPrefix(text, "story")
-		text = strings.Trim(text, " ")
-		if len(text) == 1 {
-			filtered[0] = ocr
-		} else if len(text) == 2 {
-			filtered[1] = ocr
-		} else {
-			log.Warn().Str("text", ocr.Text).Msg("Unexpected OCR text format in LargeEventStoryRecognizer, expected to be STORY I or STORY II")
-		}
+	// Priority is Story II
+	storyIRecoResult, ok := ocrResult.Results.Filtered[0].AsOCR()
+	if !ok {
+		log.Error().Msg("Failed to get OCR result for STORY I in LargeEventStoryRecognizer")
+		return nil, false
 	}
+	storyIIRecoResult, ok := ocrResult.Results.Filtered[1].AsOCR()
+	if !ok {
+		log.Error().Msg("Failed to get OCR result for STORY II in LargeEventStoryRecognizer")
+		return nil, false
+	}
+	extendedStoryIIBox := extendBox(storyIIRecoResult.Box, -48, -9, 48, 9)
 
-	storyIRecoResult := filtered[0]
-	storyIIRecoResult := filtered[1]
-
-	colorRecoResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeColorMatch, maa.ColorMatchParam{
-		ROI:    maa.NewTargetRect(storyIIRecoResult.Box),
-		Method: maa.ColorMatchMethodGRAY,
-		Lower: [][]int{
-			{param.Lower},
-		},
-		Upper: [][]int{
-			{param.Upper},
-		},
+	colorRecoResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeTemplateMatch, maa.TemplateMatchParam{
+		ROI:      maa.NewTargetRect(extendedStoryIIBox),
+		Template: param.Template,
 	}, arg.Img)
 	if err != nil {
-		log.Error().Err(err).Msg("Failed to run color match recognition in LargeEventStoryRecognizer")
+		log.Error().Err(err).Msg("Failed to run template match recognition in LargeEventStoryRecognizer")
 		return nil, false
 	}
 	if colorRecoResult.Results.Best == nil {
-		log.Info().Msg("No color match result found for STORY II in LargeEventStoryRecognizer, fallback to STORY I")
+		log.Info().Msg("No template match result found for STORY II in LargeEventStoryRecognizer, fallback to STORY I")
 		return &maa.CustomRecognitionResult{
 			Box:    storyIRecoResult.Box,
 			Detail: CustomRecognitionResultDetail + " (fallback to STORY I)",
@@ -153,4 +141,13 @@ func (r *LargeEventMissionCompletedRecognizer) Run(ctx *maa.Context, arg *maa.Cu
 	return &maa.CustomRecognitionResult{
 		Box: arg.Roi,
 	}, true
+}
+
+func extendBox(box maa.Rect, deltaX, deltaY, deltaWidth, deltaHeight int) maa.Rect {
+	return maa.Rect{
+		box.X() + deltaX,
+		box.Y() + deltaY,
+		box.Width() + deltaWidth,
+		box.Height() + deltaHeight,
+	}
 }
