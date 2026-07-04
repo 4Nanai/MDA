@@ -106,9 +106,9 @@
                     60
                 ],
                 "template": [
-                    "Common/RedDot.png",
-                    "Common/PassRedDot.png"
-                ]
+                    "Common/RedDotGreenMask.png.png"
+                ],
+                "green_mask": true
             }
         },
         "action": "Click",
