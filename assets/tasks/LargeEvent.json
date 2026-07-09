@@ -203,6 +203,24 @@
                                     ]
                                 }
                             }
+                        },
+                        "LargeEventStory2StageNormalClick": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/Story2StageNormal.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "LargeEventStory2StageNormalRepeatableClick": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/Story2StageNormalRepeatable.png"
+                                    ]
+                                }
+                            }
                         }
                     }
                 },
