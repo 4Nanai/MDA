@@ -167,11 +167,11 @@
                 ]
             }
         },
+        "post_delay": 1000,
+        "timeout": 500,
         "next": [
             "UnionRaidMainPage"
         ],
-        "post_delay": 1000,
-        "timeout": 500,
         "on_error": [
             "[JumpBack]CommonSkipSettlement",
             "[JumpBack]CommonConfirmAction",
