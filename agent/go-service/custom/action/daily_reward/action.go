@@ -2,8 +2,6 @@ package daily_reward
 
 import (
 	"encoding/json"
-	"image"
-	"os"
 	"time"
 
 	"github.com/MaaXYZ/maa-framework-go/v4"
@@ -30,27 +28,15 @@ func (r *DailyRewardsPassClickRunner) Run(ctx *maa.Context, arg *maa.CustomActio
 	log.Debug().Interface("current pass params", customParam.CurrentPassParam).Msg("Running DailyRewardsPassClickRunner")
 	log.Debug().Interface("next pass params", customParam.NextPassParam).Msg("Running DailyRewardsPassClickRunner")
 	log.Debug().Interface("roi", arg.Box).Msg("Running DailyRewardsPassClickRunner")
-	// Run screen capture first
-	actionResult, err := ctx.RunActionDirect(maa.ActionTypeScreencap, maa.ScreencapParam{}, arg.Box, nil)
-	if err != nil {
-		log.Error().Err(err).Msg("Failed to run screencap action in DailyRewardsPassClickRunner")
+	// Request a fresh frame from the controller instead of saving the cached task image.
+	controller := ctx.GetTasker().GetController()
+	if !controller.PostScreencap().Wait().Success() {
+		log.Error().Msg("Failed to capture a new frame in DailyRewardsPassClickRunner")
 		return false
 	}
-	screencapResult, ok := actionResult.Result.AsScreencap()
-	if !ok {
-		log.Error().Msg("Failed to get screencap result in DailyRewardsPassClickRunner")
-		return false
-	}
-	imgFilepath := screencapResult.Filepath
-	imgFile, err := os.Open(imgFilepath)
+	img, err := controller.CacheImage()
 	if err != nil {
-		log.Error().Err(err).Str("filepath", imgFilepath).Msg("Failed to open screencap image in DailyRewardsPassClickRunner")
-		return false
-	}
-	defer imgFile.Close()
-	img, _, err := image.Decode(imgFile)
-	if err != nil {
-		log.Error().Err(err).Str("filepath", imgFilepath).Msg("Failed to decode screencap image in DailyRewardsPassClickRunner")
+		log.Error().Err(err).Msg("Failed to get the latest captured image in DailyRewardsPassClickRunner")
 		return false
 	}
 
