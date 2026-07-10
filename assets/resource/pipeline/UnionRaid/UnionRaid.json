@@ -141,10 +141,10 @@
         "next": [
             "[JumpBack]CommonConfirmAction",
             "[JumpBack]CommonClickBlank",
-            "UnionRaidMainPage"
+            "UnionRaidEnteringMainPage"
         ]
     },
-    "UnionRaidMainPage": {
+    "UnionRaidEnteringMainPage": {
         "desc": "联盟突袭主界面",
         "recognition": {
             "type": "Custom",
@@ -168,13 +168,29 @@
             }
         },
         "next": [
-            "UnionRaidStartBattlePreparation",
-            "CommonEndTask"
+            "UnionRaidMainPage"
         ],
+        "post_delay": 1000,
+        "timeout": 500,
         "on_error": [
             "[JumpBack]CommonSkipSettlement",
             "[JumpBack]CommonConfirmAction",
-            "UnionRaidMainPage"
+            "UnionRaidEnteringMainPage"
+        ]
+    },
+    "UnionRaidMainPage": {
+        "desc": "联盟突袭主界面",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "UnionRaidEntered"
+                ]
+            }
+        },
+        "next": [
+            "UnionRaidStartBattlePreparation",
+            "CommonEndTask"
         ]
     },
     "UnionRaidEntered": {
