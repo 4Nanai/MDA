@@ -4,17 +4,25 @@
         "enabled": true,
         "max_hit": 1,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "Custom",
             "param": {
-                "roi": [
-                    1250,
-                    112,
-                    30,
-                    107
-                ],
-                "template": [
-                    "Common/RedDot.png"
-                ]
+                "custom_recognition": "CommonPollingRecognition",
+                "custom_recognition_param": {
+                    "timeout": 3000,
+                    "interval": 1000,
+                    "type": "TemplateMatch",
+                    "param": {
+                        "roi": [
+                            1250,
+                            112,
+                            30,
+                            107
+                        ],
+                        "template": [
+                            "Common/RedDot.png"
+                        ]
+                    }
+                }
             }
         },
         "action": {

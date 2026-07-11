@@ -1,6 +1,9 @@
 {
     "LargeEventMain": {
         "desc": "大活动",
+        "anchor": {
+            "LargeEventPostEntryRoute": "LargeEventMainPageFlow"
+        },
         "next": [
             "LargeEventStart",
             "[JumpBack]NavigationEnterHall"
@@ -33,7 +36,7 @@
                     68
                 ],
                 "template": [
-                    "LargeEvent/ArkRanger/Logo.png" //占位，应该去task页面修改
+                    "LargeEvent/WaveToYou/Logo.png" //占位，应该去task页面修改
                 ]
             }
         },
@@ -49,7 +52,7 @@
         "desc": "跳过大活动进入动画",
         "next": [
             "[JumpBack]DialoguesSkipWorkflow",
-            "LargeEventMainPageFlow",
+            "[Anchor]LargeEventPostEntryRoute",
             "[JumpBack]CommonClickMiddleBlank"
         ]
     },

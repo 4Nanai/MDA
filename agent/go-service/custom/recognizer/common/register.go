@@ -7,4 +7,5 @@ func Register() {
 	maa.AgentServerRegisterCustomRecognition("CommonTemplateOCRRecognition", &CommonTemplateOCRRecognizerRunner{})
 	maa.AgentServerRegisterCustomRecognition("CommonWaitingPageLoadRecognition", &CommonWaitingPageLoadRecognizerRunner{})
 	maa.AgentServerRegisterCustomRecognition("CommonTemplateColorMatchRecognition", &CommonTemplateColorMatchRecognizerRunner{})
+	maa.AgentServerRegisterCustomRecognition("CommonPollingRecognition", &CommonPollingRecognizerRunner{})
 }

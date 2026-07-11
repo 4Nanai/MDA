@@ -1,0 +1,76 @@
+{
+    "DailyRewardsLargeEventMissionReward": {
+        "desc": "补领大活动任务奖励",
+        "max_hit": 1,
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
+            }
+        },
+        "anchor": {
+            "LargeEventPostEntryRoute": "DailyRewardsLargeEventMissionRewardFlow"
+        },
+        "next": [
+            "LargeEventEntry",
+            "CommonEndTask"
+        ]
+    },
+    "DailyRewardsLargeEventMissionRewardFlow": {
+        "desc": "大活动任务奖励补领流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "LargeEventMainPageEntered"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]LargeEventMission",
+            "DailyRewardsLargeEventCurrentPassHasReward",
+            "CommonEndTask"
+        ]
+    },
+    "DailyRewardsLargeEventCurrentPassHasReward": {
+        "desc": "补领大活动任务奖励后当前Pass有奖励可领",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CommonPollingRecognition",
+                "custom_recognition_param": {
+                    "timeout": 3000,
+                    "interval": 1000,
+                    "type": "TemplateMatch",
+                    "param": {
+                        "roi": [
+                            1229,
+                            49,
+                            52,
+                            56
+                        ],
+                        "template": [
+                            "Common/RedDot.png"
+                        ]
+                    }
+                }
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -20,
+                    20,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "DailyRewardsWaitPassLoading"
+        ]
+    }
+}

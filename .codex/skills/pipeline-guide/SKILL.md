@@ -24,7 +24,15 @@ description: "Universal Pipeline orchestration 编写指南。基于 MaaFramewor
 
 - 使用 **PascalCase**，同一任务内节点以任务名/模块名为前缀。
 - 内部实现节点以 `__` 开头（如 `__ScenePrivateXXX`），不对外暴露。
+- Anchor 使用描述路由职责的独立名称，如 `LargeEventPostEntryRoute`、`BattleExitRoute`；不要与任何 Pipeline 节点同名。
 - 示例：`ResellMain`、`DailyProtocolPassInMenu`、`RealTimeAutoFightEntry`。
+
+## 文件组织
+
+- 一个独立业务流程使用一个独立 Pipeline JSON 文件；文件名反映业务用途，并放在所属模块目录中。
+- 模块入口文件只保留主入口、顶层状态编排和对独立流程入口节点的引用，不在入口文件中堆放完整子流程实现。
+- 同一业务流程的入口、状态路由、回退和收尾节点放在同一文件；仅 Common 节点和明确设计为跨模块复用的节点允许跨文件实现。
+- 新增流程前检查模块目录结构并沿用现有拆分方式。例如每日奖励中的独立奖励类型应放入 `assets\resource\pipeline\DailyRewards\<FlowName>.json`，再由 `DailyRewards.json` 引用入口节点。
 
 ## Pipeline v2 格式（推荐）
 
@@ -176,7 +184,7 @@ Universal pipeline 使用 v2 格式，recognition 和 action 放入二级字典�
 ]
 ```
 
-**`[Anchor]`**：动态引用锚点，运行时解析为最后设置该锚点的节点。
+**`[Anchor]`**：动态引用锚点，运行时解析为最后设置该锚点的节点。锚点是可重定向的路由插槽，不是节点别名；名称应描述连接点或后续职责，并与所有节点名保持不同。为正常流程设置明确的默认映射，再由复用流程按需覆盖同一锚点。
 
 ### 等待画面稳定
 
@@ -348,8 +356,10 @@ Universal pipeline 使用 v2 格式，recognition 和 action 放入二级字典�
 - [ ] OCR `expected` 写完整文本
 - [ ] 优先通过中间节点避免重复点击，只在必须时用 `post_wait_freezes`
 - [ ] 未引用 `__ScenePrivate*` 内部节点
+- [ ] Anchor 名称表达路由职责，且不与任何 Pipeline 节点同名
 - [ ] 已优先复用 Common 交互、状态或现有 Go Custom
 - [ ] 新增通用交互/状态/Custom 已放入约定文件或目录并完成注册
+- [ ] 独立业务流程已放入独立 JSON，模块入口文件仅保留顶层编排
 
 ## 参考
 
