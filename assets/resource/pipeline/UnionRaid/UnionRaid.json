@@ -95,11 +95,11 @@
                 ]
             }
         },
+        "timeout": 6000,
         "next": [
             "[JumpBack]CommonSkipSettlement",
             "UnionRaidConfirmRewards"
         ],
-        "timeout": 6000,
         "on_error": [
             "UnionRaidEnteringMainPage"
         ]

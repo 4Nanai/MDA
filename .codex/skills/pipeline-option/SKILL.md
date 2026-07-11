@@ -9,12 +9,12 @@ description: "Add MaaFramework runtime UI options (select/checkbox/switch/input)
 
 新增 UI 选项时同时检查以下位置：
 
-| # | 位置 | 内容 |
-| --- | --- | --- |
-| 1 | `assets\tasks\<Task>.json` 的 `option` 对象 | 定义 type、cases/inputs、默认值和 `pipeline_override` |
-| 2 | 同文件对应 task 的 `option` 数组 | 引用选项名，否则 UI 不显示 |
-| 3 | `assets\resource\pipeline\*.json` | 预定义 override 目标节点 |
-| 4 | `agent\go-service\custom\...` | 仅当 Go 必须读取配置并作运行时决策时修改 |
+| #   | 位置                                        | 内容                                                  |
+| --- | ------------------------------------------- | ----------------------------------------------------- |
+| 1   | `assets\tasks\<Task>.json` 的 `option` 对象 | 定义 type、cases/inputs、默认值和 `pipeline_override` |
+| 2   | 同文件对应 task 的 `option` 数组            | 引用选项名，否则 UI 不显示                            |
+| 3   | `assets\resource\pipeline\*.json`           | 预定义 override 目标节点                              |
+| 4   | `agent\go-service\custom\...`               | 仅当 Go 必须读取配置并作运行时决策时修改              |
 
 `assets\interface.json` 通过 `import` 加载任务文件。若任务未拆分，才直接在 interface 根文件定义 task/option。`pipeline_override` 只覆盖已加载节点，不创建节点。
 
@@ -33,12 +33,12 @@ description: "Add MaaFramework runtime UI options (select/checkbox/switch/input)
 
 新增一个 UI 选项需要**同时**改 3 个地方，缺一不可：
 
-| # | 位置 | 内容 |
-|---|------|------|
-| 1 | `assets\tasks\<Task>.json` 的 `option` 字典 | 选项定义（type / cases / pipeline_override） |
-| 2 | 同文件对应 task 的 `option: []` 数组 | 注册到具体任务（否则 UI 上看不到） |
-| 3 | `assets\resource\pipeline\*.json` | **预定义**目标节点（pipeline_override 不会创建节点） |
-| 4 | Go Custom（仅代码决策必需） | `ctx.GetNode()` 或 Custom 参数读取；pure override 无需 Go 改动 |
+| #   | 位置                                        | 内容                                                           |
+| --- | ------------------------------------------- | -------------------------------------------------------------- |
+| 1   | `assets\tasks\<Task>.json` 的 `option` 字典 | 选项定义（type / cases / pipeline_override）                   |
+| 2   | 同文件对应 task 的 `option: []` 数组        | 注册到具体任务（否则 UI 上看不到）                             |
+| 3   | `assets\resource\pipeline\*.json`           | **预定义**目标节点（pipeline_override 不会创建节点）           |
+| 4   | Go Custom（仅代码决策必需）                 | `ctx.GetNode()` 或 Custom 参数读取；pure override 无需 Go 改动 |
 
 > ⚠️ **pipeline_override 只做属性合并，不会凭空创建节点。** 少了第 3 步，`ctx.GetNode()` 会报错，运行时覆盖也不会得到预期结果。
 
@@ -48,22 +48,22 @@ description: "Add MaaFramework runtime UI options (select/checkbox/switch/input)
 
 ## 4 种 type 速查
 
-| type | 选择 | override 字段 | 节点预定义形态 |
-|------|------|---------------|---------------|
-| `select` | 单选互斥 | `expected` | `recognition: "OCR"` + `expected: [...]` |
-| `switch` | 二元 Yes/No | `enabled` | `{"enabled": bool}` |
-| `input` | 自由文本 | `custom_action_param` | `action.param.custom_action_param` |
-| `checkbox` | 多选 | `enabled` | `{"enabled": false}` |
+| type       | 选择        | override 字段         | 节点预定义形态                           |
+| ---------- | ----------- | --------------------- | ---------------------------------------- |
+| `select`   | 单选互斥    | `expected`            | `recognition: "OCR"` + `expected: [...]` |
+| `switch`   | 二元 Yes/No | `enabled`             | `{"enabled": bool}`                      |
+| `input`    | 自由文本    | `custom_action_param` | `action.param.custom_action_param`       |
+| `checkbox` | 多选        | `enabled`             | `{"enabled": false}`                     |
 
 ## 选哪个模式？
 
-| 你的需求 | 推荐模式 |
-|---------|---------|
-| 启用/禁用一个 Go Custom 业务分支 | **A**（优先直接覆盖执行节点；必要时 Flag + Go 读取） |
-| 从多个互斥选项里选一个值 | **B**（select + OCR 节点） |
-| 同时启用多个独立的功能模块 | **C**（checkbox + 多个 Flag 节点） |
-| 用户输入自定义文本 | **D**（input + 占位符注入） |
-| 切换行为（点哪个按钮 / 走哪条 next 链）且不需要代码判断 | **E**（pure override 现有节点字段） |
+| 你的需求                                                | 推荐模式                                             |
+| ------------------------------------------------------- | ---------------------------------------------------- |
+| 启用/禁用一个 Go Custom 业务分支                        | **A**（优先直接覆盖执行节点；必要时 Flag + Go 读取） |
+| 从多个互斥选项里选一个值                                | **B**（select + OCR 节点）                           |
+| 同时启用多个独立的功能模块                              | **C**（checkbox + 多个 Flag 节点）                   |
+| 用户输入自定义文本                                      | **D**（input + 占位符注入）                          |
+| 切换行为（点哪个按钮 / 走哪条 next 链）且不需要代码判断 | **E**（pure override 现有节点字段）                  |
 
 > **黄金法则**：能 pure override 解决就不加 Flag + Go 改动。
 
@@ -311,34 +311,34 @@ if err := json.Unmarshal([]byte(arg.CustomActionParam), &param); err != nil {
 
 ### `next` 数组的单元素 vs 多元素语义
 
-| 写法 | 语义 | 何时用 |
-|------|------|-------|
-| `["A"]` | **强约束**：只走 A | 行为已确定，单路径足够（**模式 E 的典型形态**） |
-| `["A", "B"]` | **回退链**：优先 A，A 失败走 B | 兜底机制（"优先点确认，找不到才点取消"） |
-| `["A", "B", "[JumpBack]C"]` | 失败后跳回 C 节点重试 | 复杂回退 |
+| 写法                        | 语义                           | 何时用                                          |
+| --------------------------- | ------------------------------ | ----------------------------------------------- |
+| `["A"]`                     | **强约束**：只走 A             | 行为已确定，单路径足够（**模式 E 的典型形态**） |
+| `["A", "B"]`                | **回退链**：优先 A，A 失败走 B | 兜底机制（"优先点确认，找不到才点取消"）        |
+| `["A", "B", "[JumpBack]C"]` | 失败后跳回 C 节点重试          | 复杂回退                                        |
 
 ### 可被 override 的字段
 
-| 字段 | override 效果 | 典型用途 |
-|------|--------------|---------|
-| `next` | 改变后续节点列表 | 切换行为路径（模式 E 主力） |
-| `action` | 改变点击/滑动/输入动作 | 切换操作类型 |
-| `recognition` | 改变识别算法 | 切换识别方式（OCR ↔ Template） |
-| `expected` | 改变识别期望值 | 配合 select 选值 |
-| `roi` | 改变识别区域 | 适配不同界面尺寸 |
-| `timeout` | 改变超时时间 | 适配不同网络/性能 |
+| 字段          | override 效果          | 典型用途                        |
+| ------------- | ---------------------- | ------------------------------- |
+| `next`        | 改变后续节点列表       | 切换行为路径（模式 E 主力）     |
+| `action`      | 改变点击/滑动/输入动作 | 切换操作类型                    |
+| `recognition` | 改变识别算法           | 切换识别方式（OCR ↔ Template） |
+| `expected`    | 改变识别期望值         | 配合 select 选值                |
+| `roi`         | 改变识别区域           | 适配不同界面尺寸                |
+| `timeout`     | 改变超时时间           | 适配不同网络/性能               |
 
 > **关键认识**：上面这些字段都是普通 JSON 值，pipeline_override 一视同仁做深合并。**模式 A 用的 `enabled` 字段只是最常见的入口，不是唯一可 override 的字段。**
 
 ### 模式 A vs 模式 E 对比
 
-| 场景 | 模式 A（Flag + Go） | 模式 E（pure override） |
-|------|------------------------|----------------------|
-| Go Custom 必须执行条件逻辑 | ✅ 适用 | ❌ 无法替代 |
-| 行为由 pipeline 字段决定 | ❌ 多此一举 | ✅ 最简 |
-| 需要运行时根据 flag 走不同代码分支 | ✅ 唯一选择 | ❌ 不行 |
-| 改动 Go 代码 | ✅ 需要 | ❌ 不需要 |
-| 需要新加 Flag 节点 | ✅ 需要 | ❌ 不需要 |
+| 场景                               | 模式 A（Flag + Go） | 模式 E（pure override） |
+| ---------------------------------- | ------------------- | ----------------------- |
+| Go Custom 必须执行条件逻辑         | ✅ 适用             | ❌ 无法替代             |
+| 行为由 pipeline 字段决定           | ❌ 多此一举         | ✅ 最简                 |
+| 需要运行时根据 flag 走不同代码分支 | ✅ 唯一选择         | ❌ 不行                 |
+| 改动 Go 代码                       | ✅ 需要             | ❌ 不需要               |
+| 需要新加 Flag 节点                 | ✅ 需要             | ❌ 不需要               |
 
 ### 实战决策流程
 
@@ -363,17 +363,18 @@ if err := json.Unmarshal([]byte(arg.CustomActionParam), &param); err != nil {
 
 ### 状态机 vs Go Custom 对比
 
-| 场景 | 状态机（推荐） | Go Custom |
-|------|--------------|--------------------------|
+| 场景                           | 状态机（推荐）              | Go Custom                  |
+| ------------------------------ | --------------------------- | -------------------------- |
 | 有限页面状态推进（如活动流程） | ✅ 链 `next` + `[JumpBack]` | ❌ 自己写 `for/while` 调度 |
-| 按配置执行复杂计算或动作 | ❌ 不适合 | ✅ 参数化 Custom |
-| 组合识别与运行时数据处理 | ❌ 难表达 | ✅ Go 实现 |
+| 按配置执行复杂计算或动作       | ❌ 不适合                   | ✅ 参数化 Custom           |
+| 组合识别与运行时数据处理       | ❌ 难表达                   | ✅ Go 实现                 |
 
 ### 跨文件节点引用的测试陷阱
 
 MaaFramework 加载 `assets\resource\pipeline\*.json` 后合并节点命名空间，跨文件引用可解析。单文件节点工具无法代表完整集成加载。
 
 **应对**：
+
 - 集成测试必须用 MaaFramework GUI / CLI 触发，不能依赖 `run_pipeline`
 - 单元测试每个节点用 `run_pipeline` 是 OK 的（无跨文件依赖）
 - 若某个流程有跨文件引用，本地调试时考虑用 `MaaCli` 跑全 bundle
@@ -383,6 +384,7 @@ MaaFramework 加载 `assets\resource\pipeline\*.json` 后合并节点命名空�
 ## 补充：状态机驱动的「流程型选项」
 
 如果一个 UI 选项代表的是**进入某个跨页面流程**（如"开启成长试炼"→ 大地图 → 难度选择 → 队伍 → 战斗），把选项的 `pipeline_override` 用于：
+
 1. 切换"是否启用流程"的 Flag 节点
 2. 注入该流程入口节点所需参数（如难度 `expected`）
 
@@ -441,31 +443,31 @@ MaaFramework 加载 `assets\resource\pipeline\*.json` 后合并节点命名空�
 
 ### 命名约定
 
-| 角色 | 风格 | 示例 |
-|------|------|------|
-| option 名（用户可见） | 中文动词起头 | `开启5月城堡相亲`、`选择刷取任务国家` |
-| 节点名（pipeline） | 英文 | `Flag_EnableMarryTask`、`EnterCity`、`检测_科内塔之怒` |
-| switch case 名 | **严格 `Yes` / `No`** | 不要用 `true/false` 或 `是/否`（Client 解析跨平台不一致） |
+| 角色                  | 风格                  | 示例                                                      |
+| --------------------- | --------------------- | --------------------------------------------------------- |
+| option 名（用户可见） | 中文动词起头          | `开启5月城堡相亲`、`选择刷取任务国家`                     |
+| 节点名（pipeline）    | 英文                  | `Flag_EnableMarryTask`、`EnterCity`、`检测_科内塔之怒`    |
+| switch case 名        | **严格 `Yes` / `No`** | 不要用 `true/false` 或 `是/否`（Client 解析跨平台不一致） |
 
 ### 默认值策略
 
 > **保持现有行为是底线。** 老用户不该因新选项而行为改变。
 
-| 场景 | 推荐 default |
-|------|-------------|
+| 场景                 | 推荐 default               |
+| -------------------- | -------------------------- |
 | 新开关让功能默认关闭 | `No`（明确告知用户"关了"） |
-| 新开关让功能默认开启 | `Yes`（保留旧行为） |
-| 旧代码无条件开启 | `Yes`（兼容） |
-| 旧代码无条件关闭 | `No`（兼容） |
+| 新开关让功能默认开启 | `Yes`（保留旧行为）        |
+| 旧代码无条件开启     | `Yes`（兼容）              |
+| 旧代码无条件关闭     | `No`（兼容）               |
 
 ---
 
 ## Go 读取位置
 
-| 决策类型 | 放哪读 | 理由 |
-|---------|-------|------|
-| 是否执行 Custom 逻辑 | 对应 runner 的 `Run` 入口 | 逻辑与配置消费位置保持一致 |
-| 多处复用的选项值 | `Run` 入口读取后传给辅助函数 | 一次读取、多次复用 |
+| 决策类型             | 放哪读                       | 理由                       |
+| -------------------- | ---------------------------- | -------------------------- |
+| 是否执行 Custom 逻辑 | 对应 runner 的 `Run` 入口    | 逻辑与配置消费位置保持一致 |
+| 多处复用的选项值     | `Run` 入口读取后传给辅助函数 | 一次读取、多次复用         |
 
 > 不要把各功能开关集中堆进通用 dispatch；让实际消费该配置的 runner 自治。
 
@@ -517,12 +519,12 @@ if err != nil {
 
 ### 4. 不要混淆字段路径
 
-| 用途 | 字段路径 | 备注 |
-|------|---------|------|
-| `select` | `node.Recognition.Param.(*maa.OCRParam).Expected` | 先检查 recognition 与类型断言 |
-| `input` | `json.Unmarshal(arg.CustomActionParam, &param)` | 当前 Custom 直接读取参数 |
-| `switch` / `checkbox` | `node.Enabled` | 处理 nil 所代表的默认 true |
-| 模式 E 不读 | （不读，直接执行 override 后节点） | pure override 不需要 flag |
+| 用途                  | 字段路径                                          | 备注                          |
+| --------------------- | ------------------------------------------------- | ----------------------------- |
+| `select`              | `node.Recognition.Param.(*maa.OCRParam).Expected` | 先检查 recognition 与类型断言 |
+| `input`               | `json.Unmarshal(arg.CustomActionParam, &param)`   | 当前 Custom 直接读取参数      |
+| `switch` / `checkbox` | `node.Enabled`                                    | 处理 nil 所代表的默认 true    |
+| 模式 E 不读           | （不读，直接执行 override 后节点）                | pure override 不需要 flag     |
 
 ### 5. 不要用非 `Yes`/`No` 的 switch case 名
 
@@ -609,6 +611,7 @@ rg -n '^\s*"YourNodeName"\s*:' 'assets\resource\pipeline'
 ```
 
 **自检问题**：
+
 - 我的 Go 代码是否只在调用 `ctx.RunTask()` 把控制权交给 Pipeline？是 → 改用 `next` 链
 - 我的"流程推进"是否依赖**显式的状态变量**（如 `found`）？是 → 改用 `[JumpBack]` 让框架自动回退
 - 我的"流程"是否**可以画成状态机图**？是 → 用 JSON `next` 链
@@ -623,15 +626,15 @@ rg -n '^\s*"YourNodeName"\s*:' 'assets\resource\pipeline'
 
 1. **JSON 语法检查**
 
-   ```powershell
-   Get-Content -Raw -Encoding utf8 -LiteralPath 'assets\interface.json' | ConvertFrom-Json | Out-Null
-   ```
+    ```powershell
+    Get-Content -Raw -Encoding utf8 -LiteralPath 'assets\interface.json' | ConvertFrom-Json | Out-Null
+    ```
 
 2. **资源加载检查**
 
-   ```powershell
-   python tools\validate_schema.py --task-dirs assets\tasks
-   ```
+    ```powershell
+    python tools\validate_schema.py --task-dirs assets\tasks
+    ```
 
 3. **Go 测试**：修改 Go 时在 `agent\go-service` 运行 `gofmt` 与 `go test ./...`。
 

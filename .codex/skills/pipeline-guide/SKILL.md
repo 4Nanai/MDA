@@ -17,7 +17,7 @@ description: "Universal Pipeline orchestration 编写指南。基于 MaaFramewor
 1. **状态驱动**：遵循"识别 → 操作 → 识别"循环。每次操作必须基于识别结果，禁止假设操作后画面状态。
 2. **高命中率**：扩充 `next` 列表，覆盖当前操作后所有可能画面，力争一次截图命中。
 3. **避免硬延迟**：尽量不用 `pre_delay` / `post_delay` / `timeout`，优先通过增加中间识别节点解决；只在必须等画面稳定时才用 `pre_wait_freezes` / `post_wait_freezes`。当确实不需要延迟时，要在节点上显式将 `rate_limit` / `pre_delay` / `post_delay` 设为 0（协议默认 `rate_limit=1000ms`、`pre_delay/post_delay=200ms`，省略字段会引入隐式等待；仓库的 `tools/add_node_defaults.py` 会为 Common 节点补齐这些 0 值字段）。
-4. **720p 基准**：所有坐标、ROI、图片必须基于 **1280*720**。
+4. **720p 基准**：所有坐标、ROI、图片必须基于 **1280\*720**。
 5. **格式化**：JSON 遵循 `.prettierrc`（4 空格缩进，数组元素换行）。
 
 ## 节点命名
@@ -215,17 +215,17 @@ Universal pipeline 使用 v2 格式，recognition 和 action 放入二级字典�
 
 通用按钮和交互以 `assets\resource\pipeline\Common\` 为唯一事实来源。优先复用：
 
-| 节点 | 用途 |
-| --- | --- |
-| `CommonConfirmReward` | 领取奖励确认 |
-| `CommonConfirmAction` | 通用操作确认 |
-| `CommonSkipSettlement` | 跳过结算 |
-| `CommonClosePage` | 匹配多种右上角关闭按钮 |
-| `CommonClickMax` | 点击 MAX |
-| `CommonClickBlank` / `CommonClickMiddleBlank` | 点击空白区域 |
-| `CommonEndTask` | 显式结束流程 |
-| `DialoguesSkipWorkflow` | 完整跳过剧情流程 |
-| `DialoguesClickContinue` / `DialoguesClickOption` | 对话继续或选择选项 |
+| 节点                                              | 用途                   |
+| ------------------------------------------------- | ---------------------- |
+| `CommonConfirmReward`                             | 领取奖励确认           |
+| `CommonConfirmAction`                             | 通用操作确认           |
+| `CommonSkipSettlement`                            | 跳过结算               |
+| `CommonClosePage`                                 | 匹配多种右上角关闭按钮 |
+| `CommonClickMax`                                  | 点击 MAX               |
+| `CommonClickBlank` / `CommonClickMiddleBlank`     | 点击空白区域           |
+| `CommonEndTask`                                   | 显式结束流程           |
+| `DialoguesSkipWorkflow`                           | 完整跳过剧情流程       |
+| `DialoguesClickContinue` / `DialoguesClickOption` | 对话继续或选择选项     |
 
 完整辅助识别节点与语义见 [repository_reference.md](repository_reference.md)。新增可跨任务复用的按钮、对话交互或工作流时，添加到上述对应文件；任务私有交互留在任务自己的 Pipeline 文件中。
 
