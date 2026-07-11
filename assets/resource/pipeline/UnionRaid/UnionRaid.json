@@ -82,7 +82,7 @@
         },
         "action": "Click",
         "next": [
-            "UnionRaidMainPage"
+            "UnionRaidEnteringMainPage"
         ]
     },
     "UnionRaidEnterWithNew": {
@@ -140,7 +140,6 @@
         },
         "next": [
             "[JumpBack]CommonConfirmAction",
-            "[JumpBack]CommonClickBlank",
             "UnionRaidEnteringMainPage"
         ]
     },
