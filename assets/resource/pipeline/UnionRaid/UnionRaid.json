@@ -52,13 +52,12 @@
             }
         },
         "next": [
-            "UnionRaidEnterWithRedDot",
-            "UnionRaidEnterWithNew",
+            "UnionRaidEnterWithNotification",
             "CommonEndTask"
         ]
     },
-    "UnionRaidEnterWithRedDot": {
-        "desc": "确认进入联盟突袭",
+    "UnionRaidEnterWithNotification": {
+        "desc": "联盟突袭有红点或新内容",
         "recognition": {
             "type": "Custom",
             "param": {
@@ -69,34 +68,7 @@
                         "联盟.*"
                     ],
                     "template": [
-                        "Common/RedDot.png"
-                    ]
-                },
-                "roi": [
-                    579,
-                    371,
-                    120,
-                    264
-                ]
-            }
-        },
-        "action": "Click",
-        "next": [
-            "UnionRaidEnteringMainPage"
-        ]
-    },
-    "UnionRaidEnterWithNew": {
-        "desc": "联盟突袭有新内容",
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "UnionRaidOpenedRecognition",
-                "custom_recognition_param": {
-                    "expected": [
-                        "联盟突袭",
-                        "联盟.*"
-                    ],
-                    "template": [
+                        "Common/RedDot.png",
                         "Common/New.png"
                     ]
                 },
@@ -126,6 +98,10 @@
         "next": [
             "[JumpBack]CommonSkipSettlement",
             "UnionRaidConfirmRewards"
+        ],
+        "timeout": 6000,
+        "on_error": [
+            "UnionRaidEnteringMainPage"
         ]
     },
     "UnionRaidConfirmRewards": {
