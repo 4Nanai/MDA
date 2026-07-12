@@ -172,6 +172,23 @@
     },
     "LargeEventEventStageQuickBattleFlow": {
         "desc": "大活动活动关卡页面快速战斗流程",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "LargeEventEventStagePageEntered"
+                ]
+            }
+        },
+        "pre_wait_freezes": {
+            "time": 1000,
+            "target": [
+                314,
+                103,
+                661,
+                604
+            ]
+        },
         "next": [
             "LargeEventEventStageBattlePage",
             "[JumpBack]LargeEventStory1StageRepeatableClick",
@@ -198,7 +215,6 @@
             "MaximumBattlesReached",
             "[JumpBack]BattleStart",
             "[JumpBack]SkipPostBattleStory",
-            "LargeEventEventStagePageFlow",
             "LargeEventEventStageQuickBattleFlow"
         ]
     },
