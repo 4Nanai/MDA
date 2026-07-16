@@ -296,10 +296,11 @@
                     604
                 ],
                 "template": [
-                    "LargeEvent/ArkRanger/Story2StageHard.png" //占位，应该去task页面修改
+                    "LargeEvent/WaveToYou/Story2StageHard.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
-                "index": -1
+                "index": -1,
+                "threshold": 0.9
             }
         },
         "action": {
@@ -365,7 +366,7 @@
                     604
                 ],
                 "template": [
-                    "LargeEvent/ArkRanger/Story2StageHardRepeatable.png" //占位，应该去task页面修改
+                    "LargeEvent/WaveToYou/Story2StageHardRepeatable.png" //占位，应该去task页面修改
                 ],
                 "order_by": "Vertical",
                 "index": -1

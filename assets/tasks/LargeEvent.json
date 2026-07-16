@@ -221,6 +221,24 @@
                                     ]
                                 }
                             }
+                        },
+                        "LargeEventStory2StageHardClick": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/Story2StageHard.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "LargeEventStory2StageHardRepeatableClick": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "LargeEvent/WaveToYou/Story2StageHardRepeatable.png"
+                                    ]
+                                }
+                            }
                         }
                     }
                 },
