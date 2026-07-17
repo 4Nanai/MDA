@@ -298,9 +298,9 @@
                 "template": [
                     "LargeEvent/WaveToYou/Story2StageHard.png" //占位，应该去task页面修改
                 ],
+                "threshold": 0.9,
                 "order_by": "Vertical",
-                "index": -1,
-                "threshold": 0.9
+                "index": -1
             }
         },
         "action": {
