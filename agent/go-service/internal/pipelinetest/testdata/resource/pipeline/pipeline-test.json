@@ -1,0 +1,142 @@
+{
+    "PipelineTestTemplateHit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "pipeline-test-template.png",
+                "threshold": 0.95
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "PipelineTestMustNotRun"
+            }
+        },
+        "pre_delay": 30000,
+        "post_delay": 30000,
+        "next": [
+            "PipelineTestMustNotRunNext"
+        ],
+        "on_error": [
+            "PipelineTestMustNotRunOnError"
+        ]
+    },
+    "PipelineTestColorHit": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    96,
+                    116,
+                    40,
+                    32
+                ],
+                "lower": [
+                    [
+                        220,
+                        20,
+                        20
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        80,
+                        80
+                    ]
+                ],
+                "count": 50
+            }
+        }
+    },
+    "PipelineTestAnd": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "PipelineTestTemplateHit",
+                    "PipelineTestColorHit"
+                ]
+            }
+        }
+    },
+    "PipelineTestOr": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "PipelineTestTemplateMiss",
+                    "PipelineTestColorHit"
+                ]
+            }
+        }
+    },
+    "PipelineTestTemplateMiss": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "pipeline-test-miss.png",
+                "threshold": 0.99
+            }
+        }
+    },
+    "PipelineTestOCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    280,
+                    440,
+                    120
+                ],
+                "expected": [
+                    "ARENA"
+                ],
+                "only_rec": true
+            }
+        }
+    },
+    "PipelineTestCustom": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CommonTemplateColorMatchRecognition",
+                "custom_recognition_param": {
+                    "template": [
+                        "pipeline-test-template.png"
+                    ],
+                    "lower": [
+                        [
+                            220,
+                            20,
+                            20
+                        ]
+                    ],
+                    "upper": [
+                        [
+                            255,
+                            80,
+                            80
+                        ]
+                    ],
+                    "threshold": [
+                        0.95
+                    ],
+                    "count": 50
+                }
+            }
+        }
+    },
+    "PipelineTestMustNotRunNext": {
+        "recognition": {
+            "type": "DirectHit"
+        }
+    },
+    "PipelineTestMustNotRunOnError": {
+        "recognition": {
+            "type": "DirectHit"
+        }
+    }
+}

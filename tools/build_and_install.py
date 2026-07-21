@@ -235,31 +235,34 @@ def build_go_agent(
     if ldflags:
         build_cmd.append(f"-ldflags={ldflags}")
 
-    build_cmd.extend(["-o", str(output_path), "."])
-
     build_mode_text = t("build_mode_ci") if ci_mode else t("build_mode_dev")
     print(f"  {Console.warn(t('build_mode'))}: {build_mode_text}")
-    print(f"  {Console.info(t('build_command'))}: {' '.join(build_cmd)}")
 
-    result = subprocess.run(
-        build_cmd,
-        cwd=go_service_dir,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        env=env,
-    )
-    if result.stdout:
-        print(result.stdout)
-    if result.returncode != 0:
-        print(f"  {Console.err(t('error'))} {t('go_build_failed')}:")
+    targets = [
+        (output_path, "."),
+        (install_dir / f"pipeline-test{ext}", "./cmd/pipeline-test"),
+    ]
+    for target_path, package in targets:
+        target_cmd = [*build_cmd, "-o", str(target_path), package]
+        print(f"  {Console.info(t('build_command'))}: {' '.join(target_cmd)}")
+        result = subprocess.run(
+            target_cmd,
+            cwd=go_service_dir,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            env=env,
+        )
+        if result.stdout:
+            print(result.stdout)
+        if result.returncode != 0:
+            print(f"  {Console.err(t('error'))} {t('go_build_failed')}:")
+            if result.stderr:
+                print(result.stderr)
+            return False
         if result.stderr:
             print(result.stderr)
-        return False
-    if result.stderr:
-        print(result.stderr)
-
-    print(f"  {Console.ok('->')} {output_path}")
+        print(f"  {Console.ok('->')} {target_path}")
     return True
 
 

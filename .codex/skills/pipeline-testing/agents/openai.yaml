@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pipeline Testing"
+  short_description: "Test MaaFramework Pipeline recognition against screenshots"
+  default_prompt: "Use $pipeline-testing to verify a Pipeline node against local positive and negative screenshots."
