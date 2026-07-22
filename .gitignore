@@ -430,6 +430,8 @@ FodyWeavers.xsd
 # Claude Code
 .claude/*
 !.claude/skills/
+.claude/skills/openspec-*/
+.codex/skills/openspec-*/
 
 # Windows Installer files from build outputs
 *.cab
