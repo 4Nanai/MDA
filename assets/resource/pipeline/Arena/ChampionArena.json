@@ -154,22 +154,16 @@
     "ArenaClickCheerUp": {
         "desc": "应援",
         "recognition": {
-            "type": "Custom",
+            "type": "OCR",
             "param": {
-                "custom_recognition": "CommonTemplateOCRRecognition",
-                "custom_recognition_param": {
-                    "template": [
-                        "Common/RedDot.png"
-                    ],
-                    "expected": [
-                        "应援"
-                    ]
-                },
                 "roi": [
-                    563,
-                    619,
-                    157,
-                    54
+                    571,
+                    630,
+                    141,
+                    32
+                ],
+                "expected": [
+                    "应援"
                 ]
             }
         },
