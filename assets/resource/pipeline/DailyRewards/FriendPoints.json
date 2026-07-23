@@ -89,30 +89,7 @@
             }
         },
         "next": [
-            "DailyRewardsConfirmReceive"
-        ]
-    },
-    "DailyRewardsConfirmReceive": {
-        "desc": "操作确认",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    574,
-                    434,
-                    36,
-                    33
-                ],
-                "template": [
-                    "Common/ConfirmWithCircle.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
+            "[JumpBack]CommonConfirmReward",
             "CommonClosePage"
         ]
     }
