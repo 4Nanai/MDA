@@ -17,18 +17,18 @@
     "option": {
         "SmallEventTheme": {
             "type": "select",
-            "default_case": "BSideIdol",
+            "default_case": "ProjectMatis",
             "label": "$option.SmallEventTheme.label",
             "cases": [
                 {
-                    "name": "BSideIdol",
+                    "name": "ProjectMatis",
                     "label": "$option.SmallEventTheme.Current",
                     "pipeline_override": {
                         "SmallEventEntry": {
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "SmallEvent/BitterSpice/Logo.png"
+                                        "SmallEvent/ProjectMatis/Logo.png"
                                     ]
                                 }
                             }
@@ -37,16 +37,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "SmallEvent/BitterSpice/StageNormal.png"
-                                    ]
-                                }
-                            }
-                        },
-                        "SmallEventStageHardClick": {
-                            "recognition": {
-                                "param": {
-                                    "template": [
-                                        "SmallEvent/BitterSpice/StageHard.png"
+                                        "SmallEvent/ProjectMatis/StageNormal.png"
                                     ]
                                 }
                             }
@@ -55,16 +46,7 @@
                             "recognition": {
                                 "param": {
                                     "template": [
-                                        "SmallEvent/BitterSpice/StageNormalRepeatable.png"
-                                    ]
-                                }
-                            }
-                        },
-                        "SmallEventStageHardRepeatableClick": {
-                            "recognition": {
-                                "param": {
-                                    "template": [
-                                        "SmallEvent/BitterSpice/StageHardRepeatable.png"
+                                        "SmallEvent/ProjectMatis/StageNormalRepeatable.png"
                                     ]
                                 }
                             }

@@ -124,7 +124,7 @@
     "task.SmallEvent.label": "Small Event",
     "task.SmallEvent.description": "Enter the small event interface and complete related tasks. (Events without SD characters are called Small Events)",
     "option.SmallEventTheme.label": "Event Theme",
-    "option.SmallEventTheme.Current": "BitterSpice",
+    "option.SmallEventTheme.Current": "PROJECT MATIS",
     "option.SmallEventTheme.Other": "Other",
     "option.LargeEventTheme.label": "Event Theme",
     "option.LargeEventTheme.ArkRanger": "ARK RANGER",
