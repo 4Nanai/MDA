@@ -66,6 +66,7 @@
             "type": "Click"
         },
         "repeat": 3,
+        "repeat_delay": 100,
         "post_wait_freezes": 500,
         "next": [
             "[JumpBack]CommonConfirmReward",
