@@ -45,7 +45,8 @@
         "next": [
             "[JumpBack]DailyLoginRewardsClaim",
             "[JumpBack]CommonConfirmReward",
-            "CommonClosePage"
+            "CommonClosePage",
+            "CommonGoBack"
         ]
     },
     "DailyLoginRewardsClaim": {
