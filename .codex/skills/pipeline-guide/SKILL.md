@@ -1,6 +1,6 @@
 ---
 name: pipeline-guide
-description: "Universal Pipeline orchestration 编写指南。基于 MaaFramework Pipeline 协议，覆盖 Pipeline JSON、Go Agent Custom Recognition/Action、节点命名、识别算法、动作类型、流程控制与可复用节点。在编写、修改或审查 Pipeline JSON，设计 Go Agent + JSON 流程，或使用 TemplateMatch/OCR/Custom 识别及 Click/Swipe/Custom 动作时使用。"
+description: "Universal Pipeline orchestration 编写指南。基于 MaaFramework Pipeline 协议，覆盖 Pipeline JSON、Go Agent Custom Recognition/Action、节点命名、识别算法、动作类型、流程控制与可复用节点。在编写、修改或审查 Pipeline JSON，设计 Go Agent + JSON 流程，使用 TemplateMatch/OCR/Custom 识别及 Click/Swipe/Custom 动作，或从 origin 合并、重命名并接入活动图片资源时使用。"
 ---
 
 # Universal Pipeline Orchestration 编写指南
@@ -11,6 +11,7 @@ description: "Universal Pipeline orchestration 编写指南。基于 MaaFramewor
 - 简单、有限且可枚举的页面状态仍直接使用 JSON 的 `next`、`on_error`、`[JumpBack]`，不要为了包装单次识别或点击而新增 Custom。
 - 不使用 Python 编排。需要扩展时使用 `maa-framework-go/v4` 的 Custom Recognition 或 Custom Action，并由 JSON 节点调用。
 - 编写前先读取 [repository_reference.md](repository_reference.md)，核对仓库现有通用交互、状态和 Go Custom；不要凭记忆复制节点。
+- 从 origin 合并、同步或 cherry-pick 大小活动图片时，必须读取并完整执行[活动图片合并子技能](references/event-image-merge.md)，同时更新图片命名、任务覆盖、Pipeline 默认引用、预设与本地化。
 
 ## 核心原则
 
