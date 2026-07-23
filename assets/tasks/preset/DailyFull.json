@@ -95,7 +95,7 @@
                 {
                     "name": "SmallEvent",
                     "option": {
-                        "SmallEventTheme": "BSideIdol",
+                        "SmallEventTheme": "ProjectMatis",
                         "SmallEventContent": [
                             "SmallEventChallenge",
                             "SmallEventStory",
