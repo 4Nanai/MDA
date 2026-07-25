@@ -12,7 +12,8 @@
                 "DailyRewardsMission",
                 "DailyRewardsPassMain",
                 "DailyRewardsDailyLogin",
-                "DailyRewardsFreeRecruit"
+                "DailyRewardsFreeRecruit",
+                "DailyRewardsFashionRecruit"
             ],
             "group": [
                 "daily"
@@ -179,6 +180,29 @@
                     "name": "No",
                     "pipeline_override": {
                         "DailyRewardsFreeRecruitMain": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "DailyRewardsFashionRecruit": {
+            "type": "switch",
+            "default_case": "Yes",
+            "label": "$option.DailyRewardsFashionRecruit.label",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "DailyRewardsFashionRecruitMain": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "DailyRewardsFashionRecruitMain": {
                             "enabled": false
                         }
                     }

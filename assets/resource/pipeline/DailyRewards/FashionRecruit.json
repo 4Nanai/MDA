@@ -1,0 +1,104 @@
+{
+    "DailyRewardsFashionRecruitMain": {
+        "desc": "免费时装抽取入口",
+        "max_hit": 1,
+        "next": [
+            "DailyRewardsFashionRecruitEntry",
+            "[JumpBack]NavigationEnterHall"
+        ]
+    },
+    "DailyRewardsFashionRecruitEntry": {
+        "desc": "在大厅寻找免费时装抽取入口",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "NavigationArkVisible"
+                ]
+            }
+        },
+        "next": [
+            "DailyRewardsFashionRecruitStart",
+            "CommonEndTask"
+        ]
+    },
+    "DailyRewardsFashionRecruitStart": {
+        "desc": "打开时装抽取",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CommonTemplateOCRRecognition",
+                "custom_recognition_param": {
+                    "template": [
+                        "Common/RedDot.png"
+                    ],
+                    "expected": [
+                        "时.*取" // @i18n-skip
+                    ]
+                },
+                "roi": [
+                    4,
+                    118,
+                    178,
+                    259
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyRewardsFashionRecruitTicketShopVisible"
+        ]
+    },
+    "DailyRewardsFashionRecruitTicketShopVisible": {
+        "desc": "等待票券商店加载",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    611,
+                    57,
+                    51,
+                    18
+                ],
+                "expected": [
+                    "票.*店" // @i18n-skip
+                ]
+            }
+        },
+        "next": [
+            "DailyRewardsFashionRecruitFreeDraw"
+        ]
+    },
+    "DailyRewardsFashionRecruitFreeDraw": {
+        "desc": "免费时装抽取",
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CommonTemplateOCRRecognition",
+                "custom_recognition_param": {
+                    "template": [
+                        "Common/RedDot.png"
+                    ],
+                    "expected": [
+                        "免.*" // @i18n-skip
+                    ]
+                },
+                "roi": [
+                    511,
+                    589,
+                    264,
+                    62
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]CommonConfirmReward",
+            "NavigationEnterHall"
+        ]
+    }
+}
