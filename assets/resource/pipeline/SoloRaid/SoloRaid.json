@@ -28,9 +28,11 @@
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "SoloRaidRecognition",
+                "custom_recognition": "CommonOCRRedDotRecognition",
                 "custom_recognition_param": {
-                    "expected": "单人.击"
+                    "expected": [
+                        "单人.击" // @i18n-skip
+                    ]
                 },
                 "roi": [
                     4,

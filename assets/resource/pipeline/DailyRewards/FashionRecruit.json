@@ -27,11 +27,8 @@
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "CommonTemplateOCRRecognition",
+                "custom_recognition": "CommonOCRRedDotRecognition",
                 "custom_recognition_param": {
-                    "template": [
-                        "Common/RedDot.png"
-                    ],
                     "expected": [
                         "时.*取" // @i18n-skip
                     ]

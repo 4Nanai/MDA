@@ -58,13 +58,13 @@
 | 注册名                                      | 包目录                   | 用途                                                 |
 | ------------------------------------------- | ------------------------ | ---------------------------------------------------- |
 | `RaidChallengeButtonUnavailableRecognition` | `recognizer\common`      | OCR 与颜色组合判断挑战按钮不可用                     |
+| `CommonOCRRedDotRecognition`                | `recognizer\common`      | OCR 定位文字并匹配其右上方红点，返回入口点击位置     |
 | `CommonTemplateOCRRecognition`              | `recognizer\common`      | 模板与 OCR 组合识别                                  |
 | `CommonWaitingPageLoadRecognition`          | `recognizer\common`      | OCR 与遮罩状态组合判断页面加载完成                   |
 | `CommonTemplateColorMatchRecognition`       | `recognizer\common`      | 模板与颜色组合识别                                   |
 | `CommonPollingRecognition`                  | `recognizer\common`      | 按 timeout/interval 获取新截图并重复执行指定内置识别 |
 | `LargeEventStoryRecognition`                | `recognizer\large-event` | 大型活动剧情识别                                     |
 | `LargeEventMissionCompletedRecognition`     | `recognizer\large-event` | 大型活动任务完成识别                                 |
-| `SoloRaidRecognition`                       | `recognizer\soloraid`    | 单人突袭入口/红点组合识别                            |
 | `SoloRaidSwitchTeam`                        | `recognizer\soloraid`    | 识别当前队伍并返回下一队伍点击框                     |
 | `UnionRaidEntryRecognition`                 | `recognizer\unionraid`   | 联盟突袭入口识别                                     |
 | `UnionRaidOpenedRecognition`                | `recognizer\unionraid`   | 联盟突袭开启状态识别                                 |

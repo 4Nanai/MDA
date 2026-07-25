@@ -62,6 +62,56 @@ type CommonTemplateOCRRecognizerRunner struct{}
 
 var _ maa.CustomRecognitionRunner = &CommonTemplateOCRRecognizerRunner{}
 
+type CommonOCRRedDotRecognizerRunner struct{}
+
+var _ maa.CustomRecognitionRunner = &CommonOCRRedDotRecognizerRunner{}
+
+// CommonOCRRedDotRecognizerRunner finds expected text and then verifies the red dot immediately above it.
+func (r *CommonOCRRedDotRecognizerRunner) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
+	var param struct {
+		Expected []string `json:"expected"`
+	}
+	if err := json.Unmarshal([]byte(arg.CustomRecognitionParam), &param); err != nil {
+		log.Error().Err(err).Msg("failed to unmarshal param")
+		return nil, false
+	}
+	if len(param.Expected) == 0 {
+		log.Error().Msg("expected text is required")
+		return nil, false
+	}
+
+	ocrResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeOCR, &maa.OCRParam{
+		Expected: param.Expected,
+		ROI:      maa.NewTargetRect(arg.Roi),
+	}, arg.Img)
+	if err != nil {
+		log.Error().Err(err).Msg("failed to run ocr")
+		return nil, false
+	}
+	if ocrResult.Results.Best == nil {
+		return nil, false
+	}
+
+	ocrBox := ocrResult.Box
+	redDotROI := maa.NewTargetRect(maa.Rect{ocrBox.X(), ocrBox.Y() - 60, ocrBox.Width() + 20, ocrBox.Height() + 60})
+	redDotResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeTemplateMatch, &maa.TemplateMatchParam{
+		ROI:      redDotROI,
+		Template: []string{"Common/RedDot.png"},
+	}, arg.Img)
+	if err != nil {
+		log.Error().Err(err).Msg("failed to run red dot template match")
+		return nil, false
+	}
+	if redDotResult.Results.Best == nil {
+		return nil, false
+	}
+
+	return &maa.CustomRecognitionResult{
+		Box:    maa.Rect{redDotResult.Box.X() - 18, redDotResult.Box.Y() + 16, 8, 8},
+		Detail: "OCR text and red dot recognized",
+	}, true
+}
+
 func (r *CommonTemplateOCRRecognizerRunner) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
 	var param struct {
 		Expected []string `json:"expected"`
@@ -118,7 +168,7 @@ var _ maa.CustomRecognitionRunner = &CommonWaitingPageLoadRecognizerRunner{}
 
 func (r *CommonWaitingPageLoadRecognizerRunner) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
 	var param struct {
-		Expected  []string `json:"expected"`
+		Expected   []string `json:"expected"`
 		Limitation int      `json:"limitation"`
 	}
 	if err := json.Unmarshal([]byte(arg.CustomRecognitionParam), &param); err != nil {
@@ -172,7 +222,7 @@ func (r *CommonWaitingPageLoadRecognizerRunner) Run(ctx *maa.Context, arg *maa.C
 	}
 
 	log.Debug().Interface("colorMatchResult box", colorMatchResult.Box).Msg("Color match result for CommonWaitingPageLoadRecognition")
-	
+
 	return &maa.CustomRecognitionResult{
 		Box:    ocrResult.Box,
 		Detail: "Color match result for CommonWaitingPageLoadRecognition",
@@ -185,12 +235,12 @@ var _ maa.CustomRecognitionRunner = &CommonTemplateColorMatchRecognizerRunner{}
 
 func (r *CommonTemplateColorMatchRecognizerRunner) Run(ctx *maa.Context, arg *maa.CustomRecognitionArg) (*maa.CustomRecognitionResult, bool) {
 	var param struct {
-		Template []string `json:"template"`
-		Lower    [][]int    `json:"lower"`
-		Upper    [][]int    `json:"upper"`
-		Method   maa.ColorMatchMethod `json:"method"`
-		Threshold []float64 `json:"threshold"`
-		Count   int       `json:"count"`
+		Template  []string             `json:"template"`
+		Lower     [][]int              `json:"lower"`
+		Upper     [][]int              `json:"upper"`
+		Method    maa.ColorMatchMethod `json:"method"`
+		Threshold []float64            `json:"threshold"`
+		Count     int                  `json:"count"`
 	}
 
 	if err := json.Unmarshal([]byte(arg.CustomRecognitionParam), &param); err != nil {
@@ -200,8 +250,8 @@ func (r *CommonTemplateColorMatchRecognizerRunner) Run(ctx *maa.Context, arg *ma
 	log.Debug().Interface("param", param).Msg("Running CommonTemplateColorMatchRecognition with param")
 
 	templateMatchResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeTemplateMatch, &maa.TemplateMatchParam{
-		ROI:      maa.NewTargetRect(arg.Roi),
-		Template: param.Template,
+		ROI:       maa.NewTargetRect(arg.Roi),
+		Template:  param.Template,
 		Threshold: param.Threshold,
 	}, arg.Img)
 	if err != nil {
@@ -219,11 +269,11 @@ func (r *CommonTemplateColorMatchRecognizerRunner) Run(ctx *maa.Context, arg *ma
 		method = maa.ColorMatchMethodRGB
 	}
 	colorMatchResult, err := ctx.RunRecognitionDirect(maa.RecognitionTypeColorMatch, &maa.ColorMatchParam{
-		ROI:   maa.NewTargetRect(templateMatchResult.Box),
-		Lower: param.Lower,
-		Upper: param.Upper,
+		ROI:    maa.NewTargetRect(templateMatchResult.Box),
+		Lower:  param.Lower,
+		Upper:  param.Upper,
 		Method: method,
-		Count: param.Count,
+		Count:  param.Count,
 	}, arg.Img)
 	if err != nil {
 		log.Error().Err(err).Msg("failed to run color match")
