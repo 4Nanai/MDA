@@ -29,7 +29,7 @@ description: "Universal Pipeline orchestration 编写指南。基于 MaaFramewor
 按以下流程发布：
 
 1. 完成实现与验证，将本次改动（含必要的技能更新）提交；确认 `git status --short` 为空。
-2. 同时查询本地标签与 `git ls-remote --tags <remote>` 返回的目标远程标签；只将稳定版 `v<major>.<minor>.<patch>` 参与语义化排序，忽略 `-beta`、`-rc` 等预发布标签。以两者中的最高稳定版的 patch 加一生成新标签，并确认该标签尚不存在。
+2. 只用 `git ls-remote --tags <remote>` 查询**传入远程**的标签；只将稳定版 `v<major>.<minor>.<patch>` 参与语义化排序，忽略 `-beta`、`-rc` 等预发布标签。以该远程的最高稳定版的 patch 加一生成新标签，并确认该标签尚不存在；本地或其他远程的标签不能参与计算。
 3. 运行 `.\scripts\rebase-push.ps1 <remote> <new-version>`。该命令会产生远程分支和标签写入；仅在用户明确授权发布时执行。
 4. 结束后核验 `git status --short` 为空，并用 `git ls-remote --heads <remote> <branch>` 与 `git ls-remote --tags <remote> <new-version>` 确认分支和标签均已推送。
 
