@@ -89,8 +89,27 @@
             }
         },
         "next": [
-            "[JumpBack]CommonConfirmReward",
-            "CommonClosePage"
+            "DailyRewardsSendResult"
+        ]
+    },
+    "DailyRewardsSendResult": {
+        "desc": "等待赠送结果",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    595,
+                    128,
+                    90,
+                    39
+                ],
+                "expected": [
+                    "赠送结果"
+                ]
+            }
+        },
+        "next": [
+            "CommonConfirmAction"
         ]
     }
 }
