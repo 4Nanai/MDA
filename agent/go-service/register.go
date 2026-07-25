@@ -5,6 +5,7 @@ import (
 	"github.com/1204244136/MDA/agent/go-service/common/myreco"
 	"github.com/1204244136/MDA/agent/go-service/custom/action/daily_reward"
 	"github.com/1204244136/MDA/agent/go-service/custom/recognizer/common"
+	"github.com/1204244136/MDA/agent/go-service/custom/recognizer/dailylogin"
 	largeevent "github.com/1204244136/MDA/agent/go-service/custom/recognizer/large-event"
 	"github.com/1204244136/MDA/agent/go-service/custom/recognizer/soloraid"
 	"github.com/1204244136/MDA/agent/go-service/custom/recognizer/unionraid"
@@ -33,6 +34,7 @@ func registerAll() {
 	common.Register()
 	myreco.Register()
 	soloraid.Register()
+	dailylogin.Register()
 	daily_reward.Register()
 	largeevent.Register()
 	unionraid.Register()

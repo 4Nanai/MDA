@@ -140,12 +140,14 @@
                         "DailyRewardsDailyLogin": {
                             "enabled": true
                         },
-                        "DailyLoginSearch": {
+                        "DailyLoginFindCurrentActivity": {
                             "recognition": {
                                 "param": {
-                                    "template": [
-                                        "DailyRewards/DailyLogin/HeroDays.png"
-                                    ]
+                                    "custom_recognition_param": {
+                                        "template": [
+                                            "DailyRewards/DailyLogin/HeroDays.png"
+                                        ]
+                                    }
                                 }
                             }
                         }

@@ -240,6 +240,24 @@ Universal pipeline 使用 v2 格式，recognition 和 action 放入二级字典�
 
 先复用已注册 Custom，再新增实现；名称、类别和用途见 [repository_reference.md](repository_reference.md)。新增 Custom 必须同时完成 Go runner、包内注册、总注册入口与 Pipeline JSON 调用，参数使用明确的 JSON struct 校验。
 
+### Custom Recognition 结果与滚动搜索
+
+Custom Recognition 成功时应返回**实际命中的最小可操作框**；如需安全边距，只对该命中框做几何变换。普通点击仍由 Pipeline 节点的 `Click` action 执行，不要在 Recognition 内重复派发点击；只有为继续识别而必需的动作（如滚动到未见内容）才在 Custom 内执行。
+
+实现可滚动搜索时，每轮遵循“完整识别 → 保存滚动前画面探针 → 滚动 → 获取新截图 → 判断是否仍有内容变化 → 从完整识别重新开始”。为搜索设置明确的最大滚动次数；用稳定、与目标无关的视觉区域判断列表是否停止变化，避免因目标本身消失而误判到达末尾。
+
+### 排查 Go Custom 动作失败
+
+先读取同一运行时间窗口内的两个日志：`agent\go-service\debug\go-service.log` 用于定位 Go runner 的报错位置，`agent\go-service\debug\maafw.log` 用于还原框架事件与动作生命周期。用任务 ID、节点名、`context_id` 和时间戳关联记录；不要只搜索错误文本后直接归因。
+
+对 `RunActionDirect` / `RunRecognitionDirect`，按以下顺序判断失败阶段：
+
+1. 找到对应 `MaaContextRun*Direct ... | enter`，确认调用参数与动作类型。
+2. 在其后检查 `Node.ActionNode.Starting`、`Node.Action.Starting`、`Node.Action.Succeeded` 或 `Node.ActionNode.Failed`。已出现 `Node.Action.Starting` 后失败，说明框架已经派发动作，Go 中的 `failed to run action direct` 只是对底层失败的泛化结果；不要据此断言 Custom 回调或参数构造未被支持。
+3. 若动作已 `Succeeded`，而后续 `screencap`/`GetImage` 报错，应将其归为截图阶段，而不是该动作失败。
+4. Custom Recognition 可能在同一 Pipeline 节点内反复执行。以单次 `handle_recognition_request` 到 `_CustomRecognitionResponse` 的窗口判断“开始/中间/结束”；不要把整个节点的首次启动或最终失败误当作当前动作的阶段。
+5. Go 与 MaaFramework 日志未提供控制器失败详情时，结论止于“控制器执行失败”；需要继续定位时再查客户端/控制器日志。并发截图导致的 `unexpected ...Screencap...Response` 是回包乱序证据，须与动作成功/失败事件分开分析。
+
 ## 典型模式
 
 ### 带弹窗处理的任务入口
