@@ -20,6 +20,20 @@ description: "Universal Pipeline orchestration 编写指南。基于 MaaFramewor
 3. **避免硬延迟**：尽量不用 `pre_delay` / `post_delay` / `timeout`，优先通过增加中间识别节点解决；只在必须等画面稳定时才用 `pre_wait_freezes` / `post_wait_freezes`。当确实不需要延迟时，要在节点上显式将 `rate_limit` / `pre_delay` / `post_delay` 设为 0（协议默认 `rate_limit=1000ms`、`pre_delay/post_delay=200ms`，省略字段会引入隐式等待；仓库的 `tools/add_node_defaults.py` 会为 Common 节点补齐这些 0 值字段）。
 4. **720p 基准**：所有坐标、ROI、图片必须基于 **1280\*720**。
 5. **格式化**：JSON 遵循 `.prettierrc`（4 空格缩进，数组元素换行）。
+6. **UTF-8 文本**：Pipeline JSON 与相关文本文件使用 UTF-8（可无 BOM）。读取时使用 PowerShell 7；若只能使用 Windows PowerShell 5.1，必须显式指定 `Get-Content -Encoding UTF8`，不要依赖本地代码页。出现中文乱码时先用显式 UTF-8 或严格解析器验证原始文件，不能据终端显示直接判定文件损坏。
+
+## 版本发布
+
+发布前先读取 `scripts\rebase-push.ps1`，确认其当前参数与副作用。该脚本按位置接收远程名和标签：`.\scripts\rebase-push.ps1 <remote> <version>`；它会 fetch 当前分支、rebase 到 `<remote>/<当前分支>`、以 `--force-with-lease` 推送当前分支，并强制更新和推送该标签。
+
+按以下流程发布：
+
+1. 完成实现与验证，将本次改动（含必要的技能更新）提交；确认 `git status --short` 为空。
+2. 同时查询本地标签与 `git ls-remote --tags <remote>` 返回的目标远程标签；只将稳定版 `v<major>.<minor>.<patch>` 参与语义化排序，忽略 `-beta`、`-rc` 等预发布标签。以两者中的最高稳定版的 patch 加一生成新标签，并确认该标签尚不存在。
+3. 运行 `.\scripts\rebase-push.ps1 <remote> <new-version>`。该命令会产生远程分支和标签写入；仅在用户明确授权发布时执行。
+4. 结束后核验 `git status --short` 为空，并用 `git ls-remote --heads <remote> <branch>` 与 `git ls-remote --tags <remote> <new-version>` 确认分支和标签均已推送。
+
+遇到 rebase 冲突时，停止发布推送：解决冲突后执行 `git rebase --continue`，或用 `git rebase --abort` 回退，再重新确认版本号和用户意图；不要跳过冲突或改用无保护的 force push。
 
 ## 节点命名
 

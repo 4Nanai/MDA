@@ -109,7 +109,8 @@
             }
         },
         "next": [
-            "CommonConfirmAction"
+            "[JumpBack]CommonConfirmAction",
+            "CommonClosePage"
         ]
     }
 }
