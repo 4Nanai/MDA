@@ -56,14 +56,14 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template": [
-                    "DailyRewards/DailyLogin/BreakingNews.png"
-                ],
                 "roi": [
                     431,
                     68,
                     219,
                     66
+                ],
+                "template": [
+                    "DailyRewards/DailyLogin/BreakingNews.png"
                 ]
             }
         },
