@@ -205,8 +205,7 @@
                     604
                 ],
                 "template": [
-                    "SmallEvent/ProjectMatis/StageNormal.png",
-                    "SmallEvent/ProjectMatis/Story2StageNormal.png" //占位，应该去task页面修改
+                    "SmallEvent/ProjectMatis/StageNormal.png" //占位，应该去task页面修改
                 ],
                 "threshold": 0.5,
                 "order_by": "Vertical",
@@ -255,8 +254,7 @@
                     604
                 ],
                 "template": [
-                    "SmallEvent/ProjectMatis/StageNormalRepeatable.png",
-                    "SmallEvent/ProjectMatis/Story2StageNormalRepeatable.png" //占位，应该去task页面修改
+                    "SmallEvent/ProjectMatis/StageNormalRepeatable.png" //占位，应该去task页面修改
                 ],
                 "threshold": 0.5,
                 "order_by": "Vertical",
